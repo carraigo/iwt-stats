@@ -82,6 +82,16 @@ details.prof .rows { padding: 8px 0 4px 1.4em; }
 .pill { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
 .pill.closed { background: var(--bar); color: var(--muted); }
 
+.btn { font: 700 .9rem var(--body); border-radius: 10px; padding: 8px 14px; border: 1px solid var(--line);
+  background: var(--paper); color: var(--ink); cursor: pointer; text-decoration: none; display: inline-block; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn:hover { border-color: var(--accent); }
+textarea { width: 100%; box-sizing: border-box; min-height: 90px; font: .8rem/1.4 var(--mono); padding: 10px;
+  border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); resize: vertical; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ok { color: #2f9e5b; } .bad { color: var(--accent); }
+.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; font-size: .92rem; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; overflow-wrap: anywhere; }
 .empty { color: var(--muted); font-size: .92rem; border: 1px dashed var(--line); border-radius: 12px; padding: 12px; }
 
 .table-wrap { overflow-x: auto; }
@@ -131,7 +141,17 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
     <div id="roster"></div>
   </section>
 
+  <section class="card" id="report" hidden>
+    <h2>Send a diagnostics report</h2>
+    <p class="muted" style="margin:0">In game, type <code>/iwt report</code> (or Settings, Diagnostics report), press Ctrl+C, and paste it here. You'll see exactly what's inside before anything is sent.</p>
+    <label for="reportText" class="muted" style="font-size:.8rem;font-weight:700">Report</label>
+    <textarea id="reportText" spellcheck="false" placeholder="IWT1.eyJ…"></textarea>
+    <div class="actions"><button class="btn primary" id="decode" type="button">Check report</button><span id="reportStatus" class="muted"></span></div>
+    <div id="reportView" hidden></div>
+  </section>
+
   <footer id="foot">Made from the Issues with Tissues addon's shared guild data.</footer>
+  <div class="actions" style="justify-content:center"><a class="btn" href="#report" id="reportLink">Send a diagnostics report</a></div>
 </div>
 
 <!-- Prototype data is placed here; the published site leaves it empty and loads data.json. -->
@@ -228,6 +248,66 @@ function render(d) {
   }
   $("foot").textContent = "Made from the Issues with Tissues addon's shared guild data" + (d.addonVersion ? `, version ${d.addonVersion}.` : ".");
 }
+
+// ---- Diagnostics reports: "IWT1." + base64(JSON) + "." + Adler-32 of the JSON ----
+const REPO = "https://github.com/carraigo/issues-with-tissues";
+function adler32(bytes) { let a = 1, b = 0; for (const x of bytes) { a = (a + x) % 65521; b = (b + a) % 65521; }
+  return b.toString(16).padStart(4, "0") + a.toString(16).padStart(4, "0"); }
+function decodeReport(text) {
+  const m = text.replace(/\s+/g, "").match(/^IWT1\.([A-Za-z0-9+/=]+)\.([0-9a-f]{8})$/);
+  if (!m) throw new Error("That doesn't look like a report. It should start with IWT1. Copy it again from /iwt report.");
+  const bytes = Uint8Array.from(atob(m[1]), c => c.charCodeAt(0));
+  if (adler32(bytes) !== m[2]) throw new Error("The report got cut off or changed while copying. Copy it again from /iwt report.");
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+const when = t => t ? new Date(t * 1000).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "?";
+function summary(r) {
+  const lines = [`Addon ${r.addon}` + (r.client ? `, client ${r.client.version} (${r.client.build})` : ""),
+    `Errors: ${r.errorTotal || 0}` + (r.errors || []).slice(0, 3).map(e => `\n- x${e.count} ${e.text}`).join(""),
+    r.selftest ? `Self-test: ${r.selftest.passed} passed, ${r.selftest.failed} failed` : "Self-test: not run"];
+  return lines.join("\n");
+}
+function showReport(raw) {
+  const st = $("reportStatus"), view = $("reportView");
+  let r;
+  try { r = decodeReport(raw); } catch (e) { st.innerHTML = `<span class="bad">${esc(e.message)}</span>`; view.hidden = true; return; }
+  st.innerHTML = `<span class="ok">Report checks out.</span>`;
+  const cnt = o => Object.entries(o || {}).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${esc(k)} ${v}`).join(", ") || "none";
+  const title = `Diagnostics report: ${r.addon}` + (r.errorTotal ? `, ${r.errorTotal} error${r.errorTotal === 1 ? "" : "s"}` : "");
+  const body = summary(r) + "\n\n<!-- The report (decode at carraigo.github.io/iwt-stats/#report) -->\n```\n" + raw.trim() + "\n```\n";
+  const url = `${REPO}/issues/new?labels=diagnostics&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+  const tooLong = url.length > 7800;
+  const issueUrl = tooLong ? `${REPO}/issues/new?labels=diagnostics&title=${encodeURIComponent(title)}&body=${encodeURIComponent(summary(r) + "\n\nPaste the report below:\n\n")}` : url;
+  view.innerHTML = `<dl class="kv">
+      <dt>Addon</dt><dd>${esc(r.addon)}${r.client ? `, client ${esc(r.client.version)} (${esc(r.client.build)})` : ""}</dd>
+      <dt>Made</dt><dd>${when(r.time)}${r.character ? ` by ${esc(r.character)}` : ""}</dd>
+      <dt>Guild</dt><dd>${r.roster ? `${r.roster.members} members, ${r.roster.online} online, ` : ""}${r.addonUsersSeen ?? 0} others seen with the addon</dd>
+      <dt>Self-test</dt><dd>${r.selftest ? `${r.selftest.passed} passed, ${r.selftest.failed} failed` + (r.selftest.checks || []).filter(c => !c.ok).map(c => `<br><span class="bad">failed: ${esc(c.name)}</span>`).join("") : "not run this session"}</dd>
+      <dt>Shared data</dt><dd>${cnt(r.sync && r.sync.records)}</dd>
+      <dt>Pages opened</dt><dd>${cnt(r.usage && r.usage.pages)}</dd>
+      <dt>Commands</dt><dd>${cnt(r.usage && r.usage.commands)}</dd>
+      <dt>Profiler</dt><dd>${r.perf && r.perf.top && r.perf.top.length ? r.perf.top.slice(0, 5).map(p => `${esc(p.what)}: ${p.ms} ms over ${p.calls} calls`).join("<br>") : (r.perf && r.perf.on ? "nothing measured yet" : "off")}</dd>
+    </dl>
+    <h2 style="margin-top:6px">Errors <small>${r.errorTotal || 0}</small></h2>
+    ${(r.errors || []).length ? `<div class="table-wrap"><table><thead><tr><th>Times</th><th>Last</th><th>Error</th></tr></thead><tbody>${r.errors.map(e =>
+      `<tr><td class="n">${e.count}</td><td class="muted">${when(e.last)}</td><td style="white-space:normal">${esc(e.text)}</td></tr>`).join("")}</tbody></table></div>` : `<div class="empty">No errors. Nice.</div>`}
+    <div class="actions">
+      <a class="btn primary" href="${esc(issueUrl)}" target="_blank" rel="noopener">Send as a GitHub issue</a>
+      <button class="btn" type="button" id="copyDiscord">Copy for Discord</button>
+      <span id="copyStatus" class="muted"></span>
+    </div>
+    <p class="muted" style="font-size:.85rem;margin:0">${tooLong ? "This report is long, so it's copied for you when you press Send: paste it into the issue. " : ""}Sending needs a GitHub account. Without one, copy it and post it in the guild Discord.</p>`;
+  view.hidden = false;
+  const copy = async (text, msg) => { try { await navigator.clipboard.writeText(text); $("copyStatus").textContent = msg; }
+    catch { $("reportText").select(); $("copyStatus").textContent = "Press Ctrl+C to copy the selected report."; } };
+  $("copyDiscord").onclick = () => copy("**" + title + "**\n" + summary(r) + "\n```\n" + raw.trim() + "\n```", "Copied. Paste it in Discord.");
+  if (tooLong) view.querySelector("a.btn").addEventListener("click", () => copy(raw.trim(), "Report copied: paste it into the issue."));
+}
+function openReport() { const sec = $("report"); sec.hidden = false; if (location.hash === "#report") sec.scrollIntoView({ block: "start" }); }
+$("decode").onclick = () => showReport($("reportText").value);
+$("reportText").addEventListener("paste", () => setTimeout(() => showReport($("reportText").value), 0));
+window.addEventListener("hashchange", () => { if (location.hash === "#report") openReport(); });
+if (location.hash === "#report") openReport();
 
 (async () => {
   const inline = $("iwt-data").textContent.trim();
