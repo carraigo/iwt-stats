@@ -1,165 +1,106 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Issues with Tissues</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The Issues with Tissues guild on WoW: Forever, as a Teletext service.">
+<meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
 <style>
-/* Layout: a soft "tissue box" column, a big kill-count opener, then two-up cards that stack on phones. */
+/* Teletext: eight colours, a 40-column screen, mosaic banners, coloured bands and Fastext keys.
+   Pages: 100 index, 200 kills, 300 crafters, 400 guild life, 500 loot, 600 roster, 888 report. */
 :root {
-  --bg: #eef3f8;          /* tissue blue-white */
-  --paper: #ffffff;
-  --ink: #23303f;
-  --muted: #6a7889;
-  --line: #d9e2ec;
-  --accent: #d9587a;      /* a sneeze-pink */
-  --accent-soft: #fbe3ea;
-  --gold: #b88a1e;        /* WoW gold for money and the Elite Soldier */
-  --bar: #e4ebf2;
-  --display: "Fredoka", "Nunito", ui-rounded, system-ui, sans-serif;
-  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --k: #000; --r: #ff2020; --g: #20ff20; --y: #ffff20; --b: #2030ff; --m: #ff20ff; --c: #20ffff; --w: #ffffff;
+  --tt: "VT323", "Lucida Console", "Courier New", monospace;
+  --ratio: 0.5;  /* width of one character in em; measured once the font loads */
+  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646;
-  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646;
-  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242; color-scheme: dark }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #0b0b0b; }
+body { color: var(--w); font-family: var(--tt); min-height: 100vh; display: grid; justify-items: center; align-content: start;
+  padding: 24px max(16px, env(safe-area-inset-right, 0px)) 40px max(16px, env(safe-area-inset-left, 0px)); gap: 14px; }
 
-body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
-.wrap { max-width: 1040px; margin: 0 auto; padding-block: 28px 56px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  display: grid; gap: 20px; }
-h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
-h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.05; }
-h2 { font-size: 1.15rem; font-weight: 600; display: flex; align-items: baseline; gap: 8px; }
-h2 small { font-family: var(--body); font-size: .8rem; color: var(--muted); font-weight: 600; }
-.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
-.muted { color: var(--muted); }
+/* The TV */
+.tv { width: min(100%, 880px); background: #1a1a1a; border-radius: 22px; padding: 14px; box-shadow: 0 0 0 2px #2a2a2a inset, 0 20px 50px #000; }
+.screen { position: relative; container-type: inline-size; background: var(--k); border-radius: 10px; overflow: hidden; }
+.screen::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,.035) 0 1px, transparent 1px 3px); }
+.page { font-size: calc(100cqi / (42 * var(--ratio))); line-height: 1.12; padding: 0.4em calc(var(--ratio) * 1em) 0.5em;
+  min-height: calc(25 * 1.12em + 0.9em); white-space: pre; overflow: hidden; display: flex; flex-direction: column; }
+@media (max-width: 480px) { .tv { padding: 8px; border-radius: 14px; } body { padding-top: 12px; } }
 
-header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
-header .tag { color: var(--muted); margin-top: 6px; }
-.stamp { font-size: .82rem; color: var(--muted); background: var(--paper); border: 1px solid var(--line);
-  border-radius: 999px; padding: 4px 12px; }
+.l { display: flex; min-height: 1.12em; }
+.l > * { flex: none; overflow: hidden; }
+.grow { flex: 1 1 auto !important; min-width: 0; }
+.right { text-align: right; }
+.k { color: var(--k); } .r { color: var(--r); } .g { color: var(--g); } .y { color: var(--y); }
+.b { color: var(--b); } .m { color: var(--m); } .c { color: var(--c); } .w { color: var(--w); }
+.bg-r { background: var(--r); } .bg-g { background: var(--g); } .bg-y { background: var(--y); } .bg-b { background: var(--b); }
+.bg-m { background: var(--m); } .bg-c { background: var(--c); } .bg-w { background: var(--w); }
+.band { padding-inline: calc(var(--ratio) * 1em); margin-inline: calc(var(--ratio) * -1em); }
+.dh { height: 2.24em; }
+.dh > span { display: inline-block; transform: scaleY(2); transform-origin: top left; }
+.flash { animation: flash 1.2s steps(1) infinite; }
+@keyframes flash { 50% { visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .flash { animation: none; } }
 
-.hero { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 22px;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px; }
-.stat .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
-.stat .value { font-family: var(--display); font-size: 2rem; font-weight: 600; line-height: 1.1; }
-.stat.big .value { color: var(--accent); }
+/* Mosaic banner and block bars */
+.mosaic { display: block; width: 100%; height: auto; margin: .2em 0 .3em; shape-rendering: crispEdges; }
+.bar { display: inline-block; height: .8em; vertical-align: -.05em;
+  background: repeating-linear-gradient(to right, currentColor 0 calc(var(--ratio) * 1em - 1px), transparent 0 calc(var(--ratio) * 1em)); }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start; }
-.card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 18px; display: grid; gap: 12px; min-width: 0; }
+a { color: inherit; text-decoration: none; }
+a.go:hover, a.go:focus-visible { background: var(--w); color: var(--k); outline: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--y); outline-offset: 1px; }
 
-.elite { display: flex; align-items: center; gap: 14px; background: var(--accent-soft); border-radius: 14px; padding: 12px 14px; }
-.badge { width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center;
-  background: var(--paper); border: 2px solid var(--gold); color: var(--gold); font-family: var(--display); font-weight: 700; }
-.elite .who { font-family: var(--display); font-weight: 600; font-size: 1.15rem; }
+/* Fastext keys */
+.fastext { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: auto; padding-top: .5em; }
+.fastext a { display: block; overflow: hidden; }
+.fastext a:hover, .fastext a:focus-visible { background: var(--w) !important; color: var(--k) !important; outline: none; }
 
-.rows { display: grid; gap: 8px; }
-.row { display: grid; grid-template-columns: 1.4em minmax(0, 1fr) auto; gap: 8px; align-items: center; }
-.row .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
-.track { grid-column: 2 / -1; height: 6px; border-radius: 6px; background: var(--bar); overflow: hidden; }
-.fill { height: 100%; border-radius: 6px; background: var(--accent); }
-.rank { color: var(--muted); font-size: .8rem; text-align: right; }
+/* The remote */
+.remote { width: min(100%, 880px); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 26px; }
+.remote button { min-width: 44px; height: 44px; border-radius: 10px; background: #1d1d1d; color: #ddd; box-shadow: 0 2px 0 #000, 0 0 0 1px #333 inset; }
+.remote button:active { transform: translateY(1px); box-shadow: none; }
+.remote .wide { padding: 0 12px; }
+.hint { color: #999; font-size: 20px; text-align: center; width: min(100%, 880px); }
 
-details.prof { border-top: 1px solid var(--line); padding-top: 8px; }
-details.prof:first-of-type { border-top: 0; padding-top: 0; }
-details.prof summary { cursor: pointer; display: flex; justify-content: space-between; gap: 8px; font-weight: 700; list-style: none; padding: 2px 0; }
-details.prof summary::-webkit-details-marker { display: none; }
-details.prof summary::before { content: "+"; font-family: var(--mono); color: var(--accent); width: 1em; }
-details.prof[open] summary::before { content: "–"; }
-details.prof summary span:first-of-type { flex: 1; }
-details.prof .rows { padding: 8px 0 4px 1.4em; }
-.skill { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; }
-.skill .track { grid-column: 1 / -1; }
-
-.goal .money { font-family: var(--display); font-size: 1.6rem; font-weight: 600; color: var(--gold); }
-.goal .track { height: 12px; }
-.goal .fill { background: var(--gold); }
-
-.poll { display: grid; gap: 8px; }
-.poll .q { font-weight: 700; }
-.pill { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
-.pill.closed { background: var(--bar); color: var(--muted); }
-
-.btn { font: 700 .9rem var(--body); border-radius: 10px; padding: 8px 14px; border: 1px solid var(--line);
-  background: var(--paper); color: var(--ink); cursor: pointer; text-decoration: none; display: inline-block; }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn:hover { border-color: var(--accent); }
-textarea { width: 100%; box-sizing: border-box; min-height: 90px; font: .8rem/1.4 var(--mono); padding: 10px;
-  border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); resize: vertical; }
-.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.ok { color: #2f9e5b; } .bad { color: var(--accent); }
-.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; font-size: .92rem; }
-.kv dt { color: var(--muted); } .kv dd { margin: 0; overflow-wrap: anywhere; }
-.empty { color: var(--muted); font-size: .92rem; border: 1px dashed var(--line); border-radius: 12px; padding: 12px; }
-
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
-th { text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); }
-td { padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
-td.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
-footer { color: var(--muted); font-size: .82rem; text-align: center; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+/* Report page */
+textarea.tt { width: 100%; height: 4.6em; resize: vertical; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; line-height: 1.12;
+  background: var(--k); color: var(--c); border: 0; outline: 1px dashed var(--c); padding: .1em .3em; margin: .2em 0; }
+.wrap { white-space: pre-wrap; overflow-wrap: anywhere; }
+.btn { display: inline-block; padding: 0 .4em; color: var(--k); }
+.btn:hover, .btn:focus-visible { background: var(--w) !important; outline: none; }
 </style>
+</head>
+<body>
 
-<div class="wrap">
-  <header>
-    <div>
-      <h1 id="guild">Issues with Tissues</h1>
-      <div class="tag">A guild on WoW: Forever. Bless you.</div>
+<div class="tv">
+  <div class="screen">
+    <div class="page" id="page" aria-live="polite">
+      <div class="l"><span class="w">P100 </span><span class="y">Loading...</span></div>
     </div>
-    <div class="stamp" id="stamp">Loading…</div>
-  </header>
-
-  <section class="hero" id="hero" aria-label="Guild totals"></section>
-
-  <div class="grid">
-    <section class="card">
-      <h2>Honourable kills <small id="hkNote"></small></h2>
-      <div id="elite"></div>
-      <div class="rows" id="hk"></div>
-    </section>
-    <section class="card">
-      <h2>Crafters <small>open a profession</small></h2>
-      <div id="crafting"></div>
-    </section>
   </div>
-
-  <div class="grid">
-    <section class="card goal" id="goal"><h2>Donation goal</h2></section>
-    <section class="card" id="polls"><h2>Polls</h2></section>
-  </div>
-
-  <section class="card" id="lootCard">
-    <h2>Loot notes</h2>
-    <div id="loot"></div>
-  </section>
-
-  <section class="card" id="rosterCard">
-    <h2>Roster <small id="rosterNote"></small></h2>
-    <div id="roster"></div>
-  </section>
-
-  <section class="card" id="report" hidden>
-    <h2>Send a diagnostics report</h2>
-    <p class="muted" style="margin:0">In game, type <code>/iwt report</code> (or Settings, Diagnostics report), press Ctrl+C, and paste it here. You'll see exactly what's inside before anything is sent.</p>
-    <label for="reportText" class="muted" style="font-size:.8rem;font-weight:700">Report</label>
-    <textarea id="reportText" spellcheck="false" placeholder="IWT1.eyJ…"></textarea>
-    <div class="actions"><button class="btn primary" id="decode" type="button">Check report</button><span id="reportStatus" class="muted"></span></div>
-    <div id="reportView" hidden></div>
-  </section>
-
-  <footer id="foot">Made from the Issues with Tissues addon's shared guild data.</footer>
-  <div class="actions" style="justify-content:center"><a class="btn" href="#report" id="reportLink">Send a diagnostics report</a></div>
 </div>
+
+<nav class="remote" aria-label="Remote control">
+  <button type="button" data-digit="1">1</button><button type="button" data-digit="2">2</button><button type="button" data-digit="3">3</button>
+  <button type="button" data-digit="4">4</button><button type="button" data-digit="5">5</button><button type="button" data-digit="6">6</button>
+  <button type="button" data-digit="7">7</button><button type="button" data-digit="8">8</button><button type="button" data-digit="9">9</button>
+  <button type="button" data-digit="0">0</button>
+  <button type="button" class="wide" id="prevSub" aria-label="Previous subpage">&lt;</button>
+  <button type="button" class="wide" id="nextSub" aria-label="Next subpage">&gt;</button>
+</nav>
+<div class="hint">Type a page number, click a page, or use the coloured keys.</div>
 
 <!-- Prototype data is placed here; the published site leaves it empty and loads data.json. -->
 <script id="iwt-data" type="application/json"></script>
 
 <script>
-const CLASS = { WARRIOR:"#c79c6e", PALADIN:"#f58cba", HUNTER:"#abd473", ROGUE:"#c9b23a", PRIEST:"#9aa3ad",
-  SHAMAN:"#0070de", MAGE:"#3fc7eb", WARLOCK:"#8788ee", DRUID:"#ff7d0a" };
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
 const fmt = n => Number(n || 0).toLocaleString("en-GB");
@@ -170,152 +111,347 @@ function money(c) {
 }
 function ago(t) {
   const s = Math.max(0, Date.now() / 1000 - t);
-  if (s < 90) return "just now"; if (s < 5400) return Math.round(s / 60) + " minutes ago";
+  if (s < 90) return "just now"; if (s < 5400) return Math.round(s / 60) + " mins ago";
   if (s < 129600) return Math.round(s / 3600) + " hours ago"; return Math.round(s / 86400) + " days ago";
 }
+const cut = (s, n) => { s = String(s ?? ""); return s.length > n ? s.slice(0, n - 1) + "." : s; };
+const up = s => String(s ?? "").toUpperCase();
 
-function render(d) {
-  const roster = d.roster || [], byName = Object.fromEntries(roster.map(m => [m.name, m]));
-  const color = n => (byName[n] && CLASS[byName[n].classFile]) || "";
-  const nameHtml = n => `<span class="name" style="${color(n) ? "color:" + color(n) : ""}">${esc(n)}</span>`;
-  const enemy = "Alliance";
+// ---- Building blocks -------------------------------------------------------------------
+// A line of cells. Each cell is raw HTML, or [text, colour, width in characters or "grow", class, link].
+function line(...cells) {
+  return `<div class="l">${cells.map(c => {
+    if (typeof c === "string") return c;
+    const [text, col = "w", width, cls = "", href] = c;
+    const style = width && width !== "grow" ? `style="width:${width}ch"` : "";
+    const klass = `${col} ${width === "grow" ? "grow" : ""} ${cls}`.trim();
+    const inner = href ? `<a class="go" href="${href}">${esc(text)}</a>` : esc(text);
+    return `<span class="${klass}" ${style}>${inner}</span>`;
+  }).join("")}</div>`;
+}
+const blank = () => `<div class="l"> </div>`;
+const band = (text, fg, bg, right = "", rightCol = fg) =>
+  `<div class="l band bg-${bg}"><span class="${fg} grow">${esc(text)}</span>${right ? `<span class="${rightCol}">${esc(right)}</span>` : ""}</div>`;
+const dh = (text, col) => `<div class="l dh"><span class="${col}">${esc(text)}</span></div>`;
+const bar = (n, col) => n > 0 ? `<span class="bar ${col}" style="width:calc(${n} * var(--ratio) * 1em)"></span>` : "";
 
-  $("guild").textContent = d.guild || "Issues with Tissues";
-  $("stamp").textContent = "Updated " + ago(d.snapshotAt || d.generated);
-
-  const stats = [];
-  if (roster.length) stats.push(["Members", fmt(roster.length), d.players ? fmt(d.players) + " players, alts counted once" : ""]);
-  stats.push(["Enemy kills", fmt(d.totals.mobs), "", true]);
-  stats.push([enemy + " kills", fmt(d.totals.hk), "", true]);
-  stats.push(["Using the addon", fmt(d.totals.chars), "characters sharing kills"]);
-  $("hero").innerHTML = stats.map(([l, v, sub, big]) =>
-    `<div class="stat${big ? " big" : ""}"><div class="label">${l}</div><div class="value num">${v}</div>${sub ? `<div class="muted" style="font-size:.82rem">${sub}</div>` : ""}</div>`).join("");
-
-  // Honourable kills
-  const e = d.eliteSoldier;
-  $("elite").innerHTML = e ? `<div class="elite"><div class="badge" aria-hidden="true">#1</div><div>
-      <div class="muted" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700">Elite Soldier</div>
-      <div class="who" style="${color(e.name) ? "color:" + color(e.name) : ""}">${esc(e.name)}</div>
-      <div class="muted"><span class="num">${fmt(e.hk)}</span> honourable kills</div></div></div>`
-    : `<div class="empty">No honourable kills yet. The first one makes you Elite Soldier.</div>`;
-  const top = Math.max(1, ...d.kills.map(k => k.hk));
-  $("hkNote").textContent = d.kills.length + " characters";
-  $("hk").innerHTML = d.kills.map((k, i) => `<div class="row"><span class="muted num">${i + 1}</span>${nameHtml(k.name)}
-      <span class="num">${fmt(k.hk)}</span><div class="track"><div class="fill" style="width:${(k.hk / top * 100).toFixed(1)}%"></div></div></div>`).join("");
-
-  // Crafters
-  $("crafting").innerHTML = d.crafting.length ? d.crafting.map(p => `<details class="prof">
-      <summary><span>${esc(p.profession)}</span><span class="muted">${p.crafters.length} ${p.crafters.length === 1 ? "crafter" : "crafters"}</span></summary>
-      <div class="rows">${p.crafters.map(c => `<div class="skill">${nameHtml(c.name)}
-        <span class="rank num">${c.rank != null ? c.rank + " / " + c.max : ""}${c.recipes ? ` · ${c.recipes} recipes` : ""}</span>
-        ${c.rank != null ? `<div class="track"><div class="fill" style="width:${(c.rank / Math.max(c.max, 1) * 100).toFixed(1)}%"></div></div>` : ""}</div>`).join("")}</div>
-    </details>`).join("") : `<div class="empty">No professions shared yet.</div>`;
-
-  // Donations
-  const g = d.donations;
-  $("goal").innerHTML = "<h2>Donation goal</h2>" + (g ? `
-    <div style="font-weight:700">${esc(g.title)}</div>
-    <div><span class="money">${money(g.total)}</span>${g.target ? ` <span class="muted">of ${money(g.target)}</span>` : ""}</div>
-    ${g.target ? `<div class="track"><div class="fill" style="width:${Math.min(100, g.total / g.target * 100).toFixed(1)}%"></div></div>` : ""}
-    <div class="muted" style="font-size:.88rem">${g.givers.length ? g.givers.length + " guildmates have given" : "Nobody has given yet. Gold put into the guild bank counts."}${g.owner ? ` · Set by ${esc(g.owner)}` : ""}</div>
-    ${g.givers.length ? `<div class="rows">${g.givers.slice(0, 5).map(x => `<div class="skill">${nameHtml(x.name)}<span class="rank num">${money(x.copper)}</span></div>`).join("")}</div>` : ""}`
-    : `<div class="empty">No donation goal set.</div>`);
-
-  // Polls
-  $("polls").innerHTML = "<h2>Polls</h2>" + (d.polls.length ? d.polls.map(p => {
-    const total = p.answers.reduce((a, b) => a + b.votes, 0) || 1;
-    return `<div class="poll"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
-      <span class="q">${esc(p.question)}</span><span class="pill${p.open ? "" : " closed"}">${p.open ? "Open" : "Closed"}</span></div>
-      ${p.answers.map(a => `<div class="skill"><span>${esc(a.text)}</span><span class="rank num">${a.votes} ${a.votes === 1 ? "vote" : "votes"}</span>
-        <div class="track"><div class="fill" style="width:${(a.votes / total * 100).toFixed(1)}%"></div></div></div>`).join("")}</div>`;
-  }).join("") : `<div class="empty">No polls right now.</div>`);
-
-  // Loot notes
-  $("loot").innerHTML = d.loot.length ? `<div class="table-wrap"><table><thead><tr><th>Date</th><th>Given to</th><th>Item</th><th>Note</th></tr></thead><tbody>
-    ${d.loot.slice(0, 25).map(n => `<tr><td class="muted">${new Date(n.time * 1000).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</td>
-      <td>${nameHtml(n.player)}</td><td>${esc(n.item)}</td><td class="muted">${esc(n.note)}</td></tr>`).join("")}</tbody></table></div>`
-    : `<div class="empty">No loot handed out yet. Officers add notes in the addon under Guild life, Loot notes.</div>`;
-
-  // Roster
-  if (roster.length) {
-    $("rosterNote").textContent = roster.length + " characters";
-    const hk = Object.fromEntries(d.kills.map(k => [k.name, k.hk]));
-    $("roster").innerHTML = `<div class="table-wrap"><table><thead><tr><th>Name</th><th>Level</th><th>Class</th><th>Rank</th><th style="text-align:right">Honourable kills</th></tr></thead><tbody>
-      ${roster.map(m => `<tr><td>${nameHtml(m.name)}${m.main ? ` <span class="muted">(${esc(m.main)})</span>` : ""}</td><td class="n">${m.level ?? ""}</td>
-        <td>${esc(m.class || "")}</td><td>${esc(m.rank || "")}</td><td class="n">${hk[m.name] != null ? fmt(hk[m.name]) : "–"}</td></tr>`).join("")}</tbody></table></div>`;
-  } else {
-    $("roster").innerHTML = `<div class="empty">The roster (levels, classes and class colours) appears after the next /reload or logout with the addon's latest version.</div>`;
+// Chunky mosaic letters (teletext graphics), drawn as blocks in an SVG.
+const FONT = {
+  A: [".##.", "#..#", "####", "#..#", "#..#"], C: [".###", "#...", "#...", "#...", ".###"], D: ["###.", "#..#", "#..#", "#..#", "###."],
+  E: ["####", "#...", "###.", "#...", "####"], F: ["####", "#...", "###.", "#...", "#..."], G: [".###", "#...", "#.##", "#..#", ".###"],
+  H: ["#..#", "#..#", "####", "#..#", "#..#"], I: ["###", ".#.", ".#.", ".#.", "###"], K: ["#..#", "#.#.", "##..", "#.#.", "#..#"],
+  L: ["#...", "#...", "#...", "#...", "####"], N: ["#..#", "##.#", "#.##", "#..#", "#..#"], O: [".##.", "#..#", "#..#", "#..#", ".##."],
+  P: ["###.", "#..#", "###.", "#...", "#..."], R: ["###.", "#..#", "###.", "#.#.", "#..#"], S: [".###", "#...", ".##.", "...#", "###."],
+  T: ["#####", "..#..", "..#..", "..#..", "..#.."], U: ["#..#", "#..#", "#..#", "#..#", ".##."], W: ["#...#", "#...#", "#.#.#", "##.##", "#...#"],
+  X: ["#...#", ".#.#.", "..#..", ".#.#.", "#...#"], Y: ["#...#", ".#.#.", "..#..", "..#..", "..#.."], " ": ["..", "..", "..", "..", ".."],
+};
+function mosaic(word, col, bg) {
+  const glyphs = [...up(word)].map(ch => FONT[ch] || FONT[" "]);
+  const w = glyphs.reduce((a, g) => a + g[0].length + 1, 1), h = 7;
+  let x = 1, rects = "";
+  for (const g of glyphs) {
+    g.forEach((row, y) => [...row].forEach((p, i) => { if (p === "#") rects += `<rect x="${x + i}" y="${y + 1}" width="1" height="1"/>`; }));
+    x += g[0].length + 1;
   }
-  $("foot").textContent = "Made from the Issues with Tissues addon's shared guild data" + (d.addonVersion ? `, version ${d.addonVersion}.` : ".");
+  const width = Math.max(w, 52);
+  return `<svg class="mosaic" viewBox="0 0 ${width} ${h}" role="img" aria-label="${esc(word)}" style="background:var(--${bg})">
+    <g fill="var(--${col})" transform="translate(${Math.floor((width - w) / 2)} 0)">${rects}</g></svg>`;
 }
 
-// ---- Diagnostics reports: "IWT1." + base64(JSON) + "." + Adler-32 of the JSON ----
+// ---- Pages -------------------------------------------------------------------------------
+const PAGES = {
+  100: "Index", 200: "Kills", 300: "Crafters", 400: "Guild", 500: "Loot", 600: "Roster", 888: "Report",
+};
+let data = null, current = 100, sub = 1, subs = 1, typed = "", searching = null;
+
+function header(shown) {
+  const now = new Date();
+  const date = now.toLocaleDateString("en-GB", { weekday: "short", day: "2-digit", month: "short" }).replace(/,/g, "");
+  const time = now.toLocaleTimeString("en-GB", { hour12: false });
+  return line([`P${shown} `, "w", 5], ["TISSUETEXT ", "c", 11], [`${current} `, "w", 4], [date + " ", "w", "grow"], [time, "y", 8]);
+}
+// The four coloured keys: [colour, page, label (or the page's name), subpage step]
+function fastext(keys) {
+  return `<div class="fastext">${keys.map(([col, p, label, step]) =>
+    `<a href="#p${p}" class="${col}"${step ? ` data-step="${step}"` : ""}>${esc(label || PAGES[p])}</a>`).join("")}</div>`;
+}
+function fastFor(p) {
+  const order = p === 100 ? [200, 300, 400, 600] : [100, ...[200, 300, 400, 500, 600].filter(n => n !== p)].slice(0, 4);
+  if (p === 600 && subs > 1) order.splice(2, 2, 600, 600);
+  return fastext(order.map((n, i) => {
+    const col = ["r", "g", "y", "c"][i];
+    if (p === 600 && subs > 1 && i === 2) return [col, 600, "< Back", -1];
+    if (p === 600 && subs > 1 && i === 3) return [col, 600, "More >", 1];
+    return [col, n];
+  }));
+}
+
+function page100(d) {
+  const e = d.eliteSoldier, r = d.roster || [];
+  const out = [mosaic("IWT TEXT", "y", "b"),
+    band("ISSUES WITH TISSUES", "w", "b", "WoW: FOREVER", "c"),
+    line(["Bless you. Updated " + ago(d.snapshotAt || d.generated), "g", "grow"]),
+    blank(),
+    dh(e ? cut(`ELITE SOLDIER: ${up(e.name)}`, 40) : "NO ELITE SOLDIER YET", "y"),
+    line([e ? `${fmt(e.hk)} honourable kills. Who can stop them?` : "The first honourable kill takes the title.", "w", "grow"]),
+    blank()];
+  [["Honourable kills league", 200], ["Who can craft it", 300], ["Polls and donation goal", 400], ["Loot notes", 500],
+   ["The roster", 600], ["Send a diagnostics report", 888]].forEach(([label, p], i) => {
+    const href = p === 888 ? "#report" : `#p${p}`;
+    out.push(line([label + " " + ".".repeat(Math.max(2, 35 - label.length)), i % 2 ? "c" : "w", 37, "", href], [String(p), "y", 3, "", href]));
+  });
+  out.push(blank(), band("THE GUILD IN NUMBERS", "k", "c"));
+  const row = (label, value, col) => out.push(line([label, "w", 24], [value, col, "grow", "right"]));
+  row("Members", r.length ? fmt(r.length) : "-", "y");
+  if (d.players) row("Players, alts once", fmt(d.players), "y");
+  row("Alliance slain", fmt(d.totals.hk), "r");
+  row("Enemies slain", fmt(d.totals.mobs), "g");
+  row("Sharing their kills", `${fmt(d.totals.chars)} chars`, "c");
+  return out;
+}
+
+function page200(d) {
+  const out = [mosaic("KILLS", "r", "k"), band("HONOURABLE KILLS LEAGUE", "y", "r", `${d.kills.length} PLAYERS`, "w"),
+    line(["POS", "c", 4], ["NAME", "c", "grow"], ["HK", "c", 7, "right"], ["ENEMIES", "c", 9, "right"])];
+  const top = Math.max(1, ...d.kills.map(k => k.hk));
+  d.kills.forEach((k, i) => {
+    const col = i === 0 ? "y" : i < 3 ? "w" : "g";
+    out.push(line([String(i + 1).padStart(3), col, 4], [cut(k.name, 20), col, "grow"], [fmt(k.hk), col, 7, "right"], [fmt(k.mobs), "c", 9, "right"]));
+  });
+  if (!d.kills.length) out.push(line(["No kills shared yet.", "w", "grow"]));
+  out.push(blank(), band("TOP TEN AT A GLANCE", "k", "y"));
+  d.kills.slice(0, 10).forEach(k => out.push(line([cut(k.name.split(" ")[0], 12), "w", 13],
+    `<span class="r grow">${bar(Math.max(k.hk ? 1 : 0, Math.round(k.hk / top * 20)), "r")} <span class="w">${fmt(k.hk)}</span></span>`)));
+  return out;
+}
+
+function page300(d) {
+  const out = [mosaic("CRAFTERS", "g", "k"), band("WHO CAN MAKE IT", "k", "g", `${d.crafting.length} TRADES`)];
+  if (!d.crafting.length) return out.concat(line(["No professions shared yet.", "w", "grow"]));
+  const cols = ["c", "y", "m", "g", "w", "r"];
+  d.crafting.forEach((p, i) => {
+    out.push(line([up(p.profession), cols[i % cols.length], "grow"], [`${p.crafters.length} ${p.crafters.length === 1 ? "crafter" : "crafters"}`, "w", 12, "right"]));
+    p.crafters.forEach(c => out.push(line(["  " + cut(c.name, 20), "w", "grow"],
+      [c.rank != null ? `${c.rank}/${c.max}` : "", "g", 8, "right"], [c.recipes ? `${c.recipes} rec` : "", "c", 8, "right"])));
+  });
+  return out;
+}
+
+function page400(d) {
+  const out = [mosaic("GUILD LIFE", "m", "k"), band("DONATION GOAL", "w", "m")];
+  const g = d.donations;
+  if (g) {
+    out.push(dh(cut(up(g.title), 40), "y"));
+    out.push(line([money(g.total), "y", "grow"], [g.target ? "of " + money(g.target) : "", "w", 18, "right"]));
+    if (g.target) {
+      const pct = Math.min(1, g.total / g.target);
+      out.push(line(`<span class="y grow">${bar(Math.max(pct > 0 ? 1 : 0, Math.round(pct * 34)), "y")}</span>`, [`${Math.round(pct * 100)}%`, "w", 5, "right"]));
+    }
+    out.push(line([g.givers.length ? `${g.givers.length} guildmates have given` : "Nobody has given yet.", "c", "grow"]));
+    g.givers.slice(0, 5).forEach(x => out.push(line(["  " + cut(x.name, 24), "w", "grow"], [money(x.copper), "y", 12, "right"])));
+    if (g.owner) out.push(line([`Set by ${g.owner}`, "g", "grow"]));
+  } else out.push(line(["No donation goal set.", "w", "grow"]));
+  out.push(blank(), band("POLLS", "w", "b", d.polls.filter(p => p.open).length + " OPEN", "y"));
+  if (!d.polls.length) out.push(line(["No polls right now.", "w", "grow"]));
+  d.polls.forEach(p => {
+    const total = p.answers.reduce((a, b) => a + b.votes, 0);
+    out.push(line([cut(p.question, 32), "y", "grow"], [p.open ? "OPEN" : "CLOSED", p.open ? "g" : "r", 7, `right ${p.open ? "flash" : ""}`]));
+    p.answers.forEach(a => out.push(line([cut(a.text, 11), "w", 12],
+      `<span class="c grow">${bar(total ? Math.round(a.votes / total * 20) : 0, "c")} <span class="w">${a.votes} ${a.votes === 1 ? "vote" : "votes"}</span></span>`)));
+  });
+  return out;
+}
+
+function page500(d) {
+  const out = [mosaic("LOOT", "c", "k"), band("LOOT NOTES", "k", "c", `${d.loot.length} NOTES`)];
+  if (!d.loot.length) return out.concat(line(["No loot handed out yet.", "w", "grow"]));
+  d.loot.slice(0, 20).forEach((n, i) => {
+    const date = new Date(n.time * 1000).toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
+    out.push(line([date, "g", 7], [cut(n.player, 15), "y", 16], [cut(n.item, 17), i % 2 ? "c" : "w", "grow"]));
+    if (n.note) out.push(line(["", "w", 7], [cut(n.note, 33), "w", "grow"]));
+  });
+  return out;
+}
+
+const PER_SUB = 15;
+function page600(d) {
+  const r = d.roster || [];
+  if (!r.length) return [mosaic("ROSTER", "y", "k"), line(["The roster appears after the next /reload.", "w", "grow"])];
+  subs = Math.max(1, Math.ceil(r.length / PER_SUB));
+  sub = Math.min(Math.max(1, sub), subs);
+  const hk = Object.fromEntries(d.kills.map(k => [k.name, k.hk]));
+  const out = [mosaic("ROSTER", "y", "k"), band(`${r.length} CHARACTERS`, "k", "y", `${sub}/${subs}`),
+    line(["NAME", "c", "grow"], ["LV", "c", 3, "right"], ["", "c", 1], ["CLASS", "c", 8], ["HK", "c", 6, "right"])];
+  r.slice((sub - 1) * PER_SUB, sub * PER_SUB).forEach((m, i) => {
+    const col = (m.rankIndex ?? 9) <= 1 ? "y" : i % 2 ? "c" : "w";
+    out.push(line([cut(m.name, 22), col, "grow"], [String(m.level ?? ""), "w", 3, "right"], ["", "w", 1], [cut(m.class || "", 8), "g", 8],
+      [hk[m.name] != null ? fmt(hk[m.name]) : "-", "r", 6, "right"]));
+  });
+  out.push(line(["Officers in yellow", "y", "grow"], [subs > 1 ? "More: cyan key" : "", "w", 15, "right"]));
+  return out;
+}
+
+// ---- Page 888: diagnostics reports ("IWT1." + base64(JSON) + "." + Adler-32 of the JSON) ----
 const REPO = "https://github.com/carraigo/issues-with-tissues";
+let reportRaw = "", reportMsg = "";
 function adler32(bytes) { let a = 1, b = 0; for (const x of bytes) { a = (a + x) % 65521; b = (b + a) % 65521; }
   return b.toString(16).padStart(4, "0") + a.toString(16).padStart(4, "0"); }
 function decodeReport(text) {
   const m = text.replace(/\s+/g, "").match(/^IWT1\.([A-Za-z0-9+/=]+)\.([0-9a-f]{8})$/);
-  if (!m) throw new Error("That doesn't look like a report. It should start with IWT1. Copy it again from /iwt report.");
+  if (!m) throw new Error("That isn't a report. It starts with IWT1. Copy it again from /iwt report.");
   const bytes = Uint8Array.from(atob(m[1]), c => c.charCodeAt(0));
-  if (adler32(bytes) !== m[2]) throw new Error("The report got cut off or changed while copying. Copy it again from /iwt report.");
+  if (adler32(bytes) !== m[2]) throw new Error("The report got cut off while copying. Copy it again from /iwt report.");
   return JSON.parse(new TextDecoder().decode(bytes));
 }
 const when = t => t ? new Date(t * 1000).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "?";
 function summary(r) {
-  const lines = [`Addon ${r.addon}` + (r.client ? `, client ${r.client.version} (${r.client.build})` : ""),
+  return [`Addon ${r.addon}` + (r.client ? `, client ${r.client.version} (${r.client.build})` : ""),
     `Errors: ${r.errorTotal || 0}` + (r.errors || []).slice(0, 3).map(e => `\n- x${e.count} ${e.text}` + (e.version && e.version !== r.addon ? ` (last on ${e.version})` : "")).join(""),
-    r.selftest ? `Self-test: ${r.selftest.passed} passed, ${r.selftest.failed} failed` : "Self-test: not run"];
-  return lines.join("\n");
+    r.selftest ? `Self-test: ${r.selftest.passed} passed, ${r.selftest.failed} failed` : "Self-test: not run"].join("\n");
 }
-function showReport(raw) {
-  const st = $("reportStatus"), view = $("reportView");
+let afterDraw = null;
+function page888() {
+  const out = [mosaic("REPORT", "w", "r"), band("SEND A DIAGNOSTICS REPORT", "w", "r"),
+    `<div class="l wrap g">In game type /iwt report, press Ctrl+C and paste it below. You see what is inside before anything is sent.</div>`,
+    `<textarea class="tt" id="reportText" spellcheck="false" placeholder="IWT1.eyJ..." aria-label="Report">${esc(reportRaw)}</textarea>`,
+    `<div class="l"><button type="button" class="btn bg-y" id="decode">CHECK REPORT</button></div>`];
+  if (!reportRaw) return out;
   let r;
-  try { r = decodeReport(raw); } catch (e) { st.innerHTML = `<span class="bad">${esc(e.message)}</span>`; view.hidden = true; return; }
-  st.innerHTML = `<span class="ok">Report checks out.</span>`;
-  const cnt = o => Object.entries(o || {}).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${esc(k)} ${v}`).join(", ") || "none";
+  try { r = decodeReport(reportRaw); } catch (e) { return out.concat(`<div class="l wrap r">${esc(e.message)}</div>`); }
+  const cnt = o => Object.entries(o || {}).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(", ") || "none";
   const title = `Diagnostics report: ${r.addon}` + (r.errorTotal ? `, ${r.errorTotal} error${r.errorTotal === 1 ? "" : "s"}` : "");
-  const body = summary(r) + "\n\n<!-- The report (decode at carraigo.github.io/iwt-stats/#report) -->\n```\n" + raw.trim() + "\n```\n";
+  const body = summary(r) + "\n\n<!-- The report (decode at carraigo.github.io/iwt-stats/#report) -->\n```\n" + reportRaw.trim() + "\n```\n";
   const url = `${REPO}/issues/new?labels=diagnostics&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
   const tooLong = url.length > 7800;
   const issueUrl = tooLong ? `${REPO}/issues/new?labels=diagnostics&title=${encodeURIComponent(title)}&body=${encodeURIComponent(summary(r) + "\n\nPaste the report below:\n\n")}` : url;
-  view.innerHTML = `<dl class="kv">
-      <dt>Addon</dt><dd>${esc(r.addon)}${r.client ? `, client ${esc(r.client.version)} (${esc(r.client.build)})` : ""}</dd>
-      <dt>Made</dt><dd>${when(r.time)}${r.character ? ` by ${esc(r.character)}` : ""}</dd>
-      <dt>Guild</dt><dd>${r.roster ? `${r.roster.members} members, ${r.roster.online} online, ` : ""}${r.addonUsersSeen ?? 0} others seen with the addon</dd>
-      <dt>Self-test</dt><dd>${r.selftest ? `${r.selftest.passed} passed, ${r.selftest.failed} failed` + (r.selftest.checks || []).filter(c => !c.ok).map(c => `<br><span class="bad">failed: ${esc(c.name)}</span>`).join("") : "not run this session"}</dd>
-      <dt>Shared data</dt><dd>${cnt(r.sync && r.sync.records)}</dd>
-      <dt>Pages opened</dt><dd>${cnt(r.usage && r.usage.pages)}</dd>
-      <dt>Commands</dt><dd>${cnt(r.usage && r.usage.commands)}</dd>
-      <dt>Profiler</dt><dd>${r.perf && r.perf.top && r.perf.top.length ? r.perf.top.slice(0, 5).map(p => `${esc(p.what)}: ${p.ms} ms over ${p.calls} calls`).join("<br>") : (r.perf && r.perf.on ? "nothing measured yet" : "off")}</dd>
-    </dl>
-    <h2 style="margin-top:6px">Errors <small>${r.errorTotal || 0}</small></h2>
-    ${(r.errors || []).length ? `<div class="table-wrap"><table><thead><tr><th>Times</th><th>Last</th><th>Version</th><th>Error</th></tr></thead><tbody>${r.errors.map(e => {
-      const old = e.version && e.version !== r.addon;
-      return `<tr${old ? ' style="opacity:.6"' : ""}><td class="n">${e.count}</td><td class="muted">${when(e.last)}</td><td class="muted">${esc(e.version || "?")}${old ? " (older)" : ""}</td><td style="white-space:normal">${esc(e.text)}</td></tr>`; }).join("")}</tbody></table></div>` : `<div class="empty">No errors. Nice.</div>`}
-    <div class="actions">
-      <a class="btn primary" href="${esc(issueUrl)}" target="_blank" rel="noopener">Send as a GitHub issue</a>
-      <button class="btn" type="button" id="copyDiscord">Copy for Discord</button>
-      <span id="copyStatus" class="muted"></span>
-    </div>
-    <p class="muted" style="font-size:.85rem;margin:0">${tooLong ? "This report is long, so it's copied for you when you press Send: paste it into the issue. " : ""}Sending needs a GitHub account. Without one, copy it and post it in the guild Discord.</p>`;
-  view.hidden = false;
-  const copy = async (text, msg) => { try { await navigator.clipboard.writeText(text); $("copyStatus").textContent = msg; }
-    catch { $("reportText").select(); $("copyStatus").textContent = "Press Ctrl+C to copy the selected report."; } };
-  $("copyDiscord").onclick = () => copy("**" + title + "**\n" + summary(r) + "\n```\n" + raw.trim() + "\n```", "Copied. Paste it in Discord.");
-  if (tooLong) view.querySelector("a.btn").addEventListener("click", () => copy(raw.trim(), "Report copied: paste it into the issue."));
+  const kv = (k, v, col = "w") => `<div class="l"><span class="c" style="width:11ch">${esc(k)}</span><span class="${col} grow wrap">${esc(v)}</span></div>`;
+  out.push(line(["REPORT CHECKS OUT", "g", "grow", "flash"]));
+  out.push(kv("Addon", r.addon + (r.client ? `, client ${r.client.version}` : "")), kv("Made", when(r.time) + (r.character ? ` by ${r.character}` : "")),
+    kv("Guild", (r.roster ? `${r.roster.members} members, ${r.roster.online} online, ` : "") + `${r.addonUsersSeen ?? 0} others with addon`),
+    kv("Self-test", r.selftest ? `${r.selftest.passed} passed, ${r.selftest.failed} failed` : "not run", r.selftest && r.selftest.failed ? "r" : "w"),
+    kv("Data", cnt(r.sync && r.sync.records)), kv("Pages", cnt(r.usage && r.usage.pages)), kv("Commands", cnt(r.usage && r.usage.commands)));
+  out.push(band(`ERRORS: ${r.errorTotal || 0}`, "w", "r"));
+  if (!(r.errors || []).length) out.push(line(["No errors. Nice.", "g", "grow"]));
+  (r.errors || []).forEach(e => {
+    const old = e.version && e.version !== r.addon;
+    out.push(`<div class="l"><span class="${old ? "m" : "y"}" style="width:6ch">x${e.count}</span><span class="${old ? "m" : "w"} grow wrap">${esc(e.text)}${old ? ` (older, ${esc(e.version)})` : ""}</span></div>`);
+  });
+  out.push(blank(), `<div class="l" style="gap:1ch;flex-wrap:wrap"><a class="btn bg-g" id="sendIssue" href="${esc(issueUrl)}" target="_blank" rel="noopener">SEND AS GITHUB ISSUE</a><button type="button" class="btn bg-c" id="copyDiscord">COPY FOR DISCORD</button></div>`);
+  out.push(`<div class="l wrap y" id="copyStatus">${esc(reportMsg)}</div>`);
+  out.push(`<div class="l wrap w">${tooLong ? "This report is long, so it is copied for you when you press Send: paste it into the issue. " : ""}Sending needs a GitHub account. Without one, copy it to the guild Discord.</div>`);
+  afterDraw = () => {
+    const copy = async (text, msg) => { try { await navigator.clipboard.writeText(text); reportMsg = msg; } catch { reportMsg = "Copy blocked: select the report above and press Ctrl+C."; } $("copyStatus").textContent = reportMsg; };
+    $("copyDiscord").onclick = () => copy("**" + title + "**\n" + summary(r) + "\n```\n" + reportRaw.trim() + "\n```", "Copied. Paste it in Discord.");
+    if (tooLong) $("sendIssue").addEventListener("click", () => copy(reportRaw.trim(), "Report copied: paste it into the issue."));
+  };
+  return out;
 }
-function openReport() { const sec = $("report"); sec.hidden = false; if (location.hash === "#report") sec.scrollIntoView({ block: "start" }); }
-$("decode").onclick = () => showReport($("reportText").value);
-$("reportText").addEventListener("paste", () => setTimeout(() => showReport($("reportText").value), 0));
-window.addEventListener("hashchange", () => { if (location.hash === "#report") openReport(); });
-if (location.hash === "#report") openReport();
 
+function notFound(p) {
+  return [mosaic("NOT FOUND", "r", "k"), line([`Page ${p} is not in this service.`, "w", "grow"]), blank(),
+    line(["Try ", "w", 4], ["100", "y", 3, "", "#p100"], [" for the index.", "w", "grow"])];
+}
+
+// ---- Drawing and navigation ------------------------------------------------------------
+function draw(shown = current) {
+  const p = current;
+  afterDraw = null;
+  if (p !== 600) { subs = 1; sub = 1; }
+  let body;
+  if (!data && p !== 888) body = [line(["Waiting for the guild data...", "y", "grow", "flash"])];
+  else body = ({ 100: page100, 200: page200, 300: page300, 400: page400, 500: page500, 600: page600, 888: page888 }[p] || (() => notFound(p)))(data);
+  $("page").innerHTML = header(shown) + body.join("") + fastFor(p);
+  const ta = $("reportText");
+  if (ta) {
+    $("decode").onclick = () => { reportRaw = ta.value; reportMsg = ""; draw(); };
+    ta.addEventListener("paste", () => setTimeout(() => { reportRaw = ta.value; reportMsg = ""; draw(); }, 0));
+  }
+  if (afterDraw) afterDraw();
+}
+function step(n) { if (current !== 600 || subs < 2) return; sub = ((sub - 1 + n + subs) % subs) + 1; draw(); }
+
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function go(p, fromHash) {
+  p = Number(p);
+  if (!fromHash) { const h = p === 888 ? "#report" : `#p${p}`; if (location.hash !== h) history.pushState(null, "", h); }
+  sub = 1;
+  clearInterval(searching);
+  if (reduced || p === current) { current = p; draw(); return; }
+  // The header counts through page numbers while the page is "found", as on a real set.
+  let n = current, steps = 0;
+  current = p;
+  searching = setInterval(() => {
+    n = n >= 899 ? 100 : n + 1 + Math.floor(Math.random() * 3);
+    const head = $("page").firstElementChild;
+    if (head) head.outerHTML = header(n);
+    if (++steps > 8) { clearInterval(searching); draw(); }
+  }, 45);
+}
+function fromHash() {
+  const h = location.hash;
+  if (h === "#report") return 888;
+  const m = h.match(/^#p(\d{3})$/);
+  return m ? Number(m[1]) : 100;
+}
+window.addEventListener("popstate", () => go(fromHash(), true));
+document.addEventListener("click", ev => {
+  const a = ev.target.closest("a[href^='#']");
+  if (!a || !$("page").contains(a)) return;
+  ev.preventDefault();
+  if (a.dataset.step) return step(Number(a.dataset.step));
+  const h = a.getAttribute("href");
+  go(h === "#report" ? 888 : h.slice(2));
+});
+
+// Typing a page number, as on the remote.
+function digit(dg) {
+  typed += dg;
+  const head = $("page").firstElementChild;
+  if (head && head.firstElementChild) head.firstElementChild.textContent = `P${typed.padEnd(3, "-")} `;
+  if (typed.length === 3) { const p = typed; typed = ""; go(p); }
+}
+document.addEventListener("keydown", ev => {
+  if (ev.target.closest("textarea, input") || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+  if (/^[0-9]$/.test(ev.key)) digit(ev.key);
+  else if (ev.key === "ArrowRight") step(1);
+  else if (ev.key === "ArrowLeft") step(-1);
+});
+document.querySelectorAll("[data-digit]").forEach(b => b.addEventListener("click", () => digit(b.dataset.digit)));
+$("nextSub").onclick = () => step(1);
+$("prevSub").onclick = () => step(-1);
+
+// The clock in the header ticks every second.
+setInterval(() => {
+  const head = $("page").firstElementChild;
+  if (typed || !head || !head.lastElementChild) return;
+  head.lastElementChild.textContent = new Date().toLocaleTimeString("en-GB", { hour12: false });
+}, 1000);
+
+// Measure the font so 40 characters fill the screen width.
+function measure() {
+  const probe = document.createElement("span");
+  probe.style.cssText = "position:absolute;visibility:hidden;font-size:100px;font-family:var(--tt);white-space:pre";
+  probe.textContent = "0".repeat(40);
+  document.body.appendChild(probe);
+  const ratio = probe.getBoundingClientRect().width / 4000;
+  probe.remove();
+  if (ratio > 0.2 && ratio < 1) document.documentElement.style.setProperty("--ratio", ratio.toFixed(4));
+}
+measure();
+if (document.fonts) document.fonts.ready.then(measure);
+
+current = fromHash();
+draw();
 (async () => {
   const inline = $("iwt-data").textContent.trim();
   try {
-    render(inline ? JSON.parse(inline) : await (await fetch("data.json", { cache: "no-store" })).json());
+    data = inline ? JSON.parse(inline) : await (await fetch("data.json", { cache: "no-store" })).json();
   } catch (err) {
-    $("stamp").textContent = "Couldn't load the guild data (data.json)";
+    $("page").innerHTML = header(current) + line(["Couldn't load the guild data.", "r", "grow"]) + line(["Try again later.", "w", "grow"]);
+    return;
   }
+  draw();
 })();
 </script>
+</body>
+</html>
