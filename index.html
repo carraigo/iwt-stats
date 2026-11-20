@@ -1,0 +1,240 @@
+<title>Issues with Tissues</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a soft "tissue box" column, a big kill-count opener, then two-up cards that stack on phones. */
+:root {
+  --bg: #eef3f8;          /* tissue blue-white */
+  --paper: #ffffff;
+  --ink: #23303f;
+  --muted: #6a7889;
+  --line: #d9e2ec;
+  --accent: #d9587a;      /* a sneeze-pink */
+  --accent-soft: #fbe3ea;
+  --gold: #b88a1e;        /* WoW gold for money and the Elite Soldier */
+  --bar: #e4ebf2;
+  --display: "Fredoka", "Nunito", ui-rounded, system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646;
+  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646;
+  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 20px; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.05; }
+h2 { font-size: 1.15rem; font-weight: 600; display: flex; align-items: baseline; gap: 8px; }
+h2 small { font-family: var(--body); font-size: .8rem; color: var(--muted); font-weight: 600; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
+header .tag { color: var(--muted); margin-top: 6px; }
+.stamp { font-size: .82rem; color: var(--muted); background: var(--paper); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 12px; }
+
+.hero { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 22px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px; }
+.stat .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+.stat .value { font-family: var(--display); font-size: 2rem; font-weight: 600; line-height: 1.1; }
+.stat.big .value { color: var(--accent); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 18px; display: grid; gap: 12px; min-width: 0; }
+
+.elite { display: flex; align-items: center; gap: 14px; background: var(--accent-soft); border-radius: 14px; padding: 12px 14px; }
+.badge { width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center;
+  background: var(--paper); border: 2px solid var(--gold); color: var(--gold); font-family: var(--display); font-weight: 700; }
+.elite .who { font-family: var(--display); font-weight: 600; font-size: 1.15rem; }
+
+.rows { display: grid; gap: 8px; }
+.row { display: grid; grid-template-columns: 1.4em minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.row .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.track { grid-column: 2 / -1; height: 6px; border-radius: 6px; background: var(--bar); overflow: hidden; }
+.fill { height: 100%; border-radius: 6px; background: var(--accent); }
+.rank { color: var(--muted); font-size: .8rem; text-align: right; }
+
+details.prof { border-top: 1px solid var(--line); padding-top: 8px; }
+details.prof:first-of-type { border-top: 0; padding-top: 0; }
+details.prof summary { cursor: pointer; display: flex; justify-content: space-between; gap: 8px; font-weight: 700; list-style: none; padding: 2px 0; }
+details.prof summary::-webkit-details-marker { display: none; }
+details.prof summary::before { content: "+"; font-family: var(--mono); color: var(--accent); width: 1em; }
+details.prof[open] summary::before { content: "–"; }
+details.prof summary span:first-of-type { flex: 1; }
+details.prof .rows { padding: 8px 0 4px 1.4em; }
+.skill { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; }
+.skill .track { grid-column: 1 / -1; }
+
+.goal .money { font-family: var(--display); font-size: 1.6rem; font-weight: 600; color: var(--gold); }
+.goal .track { height: 12px; }
+.goal .fill { background: var(--gold); }
+
+.poll { display: grid; gap: 8px; }
+.poll .q { font-weight: 700; }
+.pill { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.pill.closed { background: var(--bar); color: var(--muted); }
+
+.empty { color: var(--muted); font-size: .92rem; border: 1px dashed var(--line); border-radius: 12px; padding: 12px; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th { text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); }
+td { padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+footer { color: var(--muted); font-size: .82rem; text-align: center; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="guild">Issues with Tissues</h1>
+      <div class="tag">A guild on WoW: Forever. Bless you.</div>
+    </div>
+    <div class="stamp" id="stamp">Loading…</div>
+  </header>
+
+  <section class="hero" id="hero" aria-label="Guild totals"></section>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Honourable kills <small id="hkNote"></small></h2>
+      <div id="elite"></div>
+      <div class="rows" id="hk"></div>
+    </section>
+    <section class="card">
+      <h2>Crafters <small>open a profession</small></h2>
+      <div id="crafting"></div>
+    </section>
+  </div>
+
+  <div class="grid">
+    <section class="card goal" id="goal"><h2>Donation goal</h2></section>
+    <section class="card" id="polls"><h2>Polls</h2></section>
+  </div>
+
+  <section class="card" id="lootCard">
+    <h2>Loot notes</h2>
+    <div id="loot"></div>
+  </section>
+
+  <section class="card" id="rosterCard">
+    <h2>Roster <small id="rosterNote"></small></h2>
+    <div id="roster"></div>
+  </section>
+
+  <footer id="foot">Made from the Issues with Tissues addon's shared guild data.</footer>
+</div>
+
+<!-- Prototype data is placed here; the published site leaves it empty and loads data.json. -->
+<script id="iwt-data" type="application/json"></script>
+
+<script>
+const CLASS = { WARRIOR:"#c79c6e", PALADIN:"#f58cba", HUNTER:"#abd473", ROGUE:"#c9b23a", PRIEST:"#9aa3ad",
+  SHAMAN:"#0070de", MAGE:"#3fc7eb", WARLOCK:"#8788ee", DRUID:"#ff7d0a" };
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+const fmt = n => Number(n || 0).toLocaleString("en-GB");
+function money(c) {
+  c = Math.floor(c || 0); const g = Math.floor(c / 10000), s = Math.floor(c / 100) % 100, cc = c % 100;
+  const parts = []; if (g) parts.push(fmt(g) + "g"); if (s || (g && cc)) parts.push(s + "s"); if (!g && cc) parts.push(cc + "c");
+  return parts.join(" ") || "0c";
+}
+function ago(t) {
+  const s = Math.max(0, Date.now() / 1000 - t);
+  if (s < 90) return "just now"; if (s < 5400) return Math.round(s / 60) + " minutes ago";
+  if (s < 129600) return Math.round(s / 3600) + " hours ago"; return Math.round(s / 86400) + " days ago";
+}
+
+function render(d) {
+  const roster = d.roster || [], byName = Object.fromEntries(roster.map(m => [m.name, m]));
+  const color = n => (byName[n] && CLASS[byName[n].classFile]) || "";
+  const nameHtml = n => `<span class="name" style="${color(n) ? "color:" + color(n) : ""}">${esc(n)}</span>`;
+  const enemy = "Alliance";
+
+  $("guild").textContent = d.guild || "Issues with Tissues";
+  $("stamp").textContent = "Updated " + ago(d.snapshotAt || d.generated);
+
+  const stats = [];
+  if (roster.length) stats.push(["Members", fmt(roster.length), d.players ? fmt(d.players) + " players, alts counted once" : ""]);
+  stats.push(["Enemy kills", fmt(d.totals.mobs), "", true]);
+  stats.push([enemy + " kills", fmt(d.totals.hk), "", true]);
+  stats.push(["Using the addon", fmt(d.totals.chars), "characters sharing kills"]);
+  $("hero").innerHTML = stats.map(([l, v, sub, big]) =>
+    `<div class="stat${big ? " big" : ""}"><div class="label">${l}</div><div class="value num">${v}</div>${sub ? `<div class="muted" style="font-size:.82rem">${sub}</div>` : ""}</div>`).join("");
+
+  // Honourable kills
+  const e = d.eliteSoldier;
+  $("elite").innerHTML = e ? `<div class="elite"><div class="badge" aria-hidden="true">#1</div><div>
+      <div class="muted" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700">Elite Soldier</div>
+      <div class="who" style="${color(e.name) ? "color:" + color(e.name) : ""}">${esc(e.name)}</div>
+      <div class="muted"><span class="num">${fmt(e.hk)}</span> honourable kills</div></div></div>`
+    : `<div class="empty">No honourable kills yet. The first one makes you Elite Soldier.</div>`;
+  const top = Math.max(1, ...d.kills.map(k => k.hk));
+  $("hkNote").textContent = d.kills.length + " characters";
+  $("hk").innerHTML = d.kills.map((k, i) => `<div class="row"><span class="muted num">${i + 1}</span>${nameHtml(k.name)}
+      <span class="num">${fmt(k.hk)}</span><div class="track"><div class="fill" style="width:${(k.hk / top * 100).toFixed(1)}%"></div></div></div>`).join("");
+
+  // Crafters
+  $("crafting").innerHTML = d.crafting.length ? d.crafting.map(p => `<details class="prof">
+      <summary><span>${esc(p.profession)}</span><span class="muted">${p.crafters.length} ${p.crafters.length === 1 ? "crafter" : "crafters"}</span></summary>
+      <div class="rows">${p.crafters.map(c => `<div class="skill">${nameHtml(c.name)}
+        <span class="rank num">${c.rank != null ? c.rank + " / " + c.max : ""}${c.recipes ? ` · ${c.recipes} recipes` : ""}</span>
+        ${c.rank != null ? `<div class="track"><div class="fill" style="width:${(c.rank / Math.max(c.max, 1) * 100).toFixed(1)}%"></div></div>` : ""}</div>`).join("")}</div>
+    </details>`).join("") : `<div class="empty">No professions shared yet.</div>`;
+
+  // Donations
+  const g = d.donations;
+  $("goal").innerHTML = "<h2>Donation goal</h2>" + (g ? `
+    <div style="font-weight:700">${esc(g.title)}</div>
+    <div><span class="money">${money(g.total)}</span>${g.target ? ` <span class="muted">of ${money(g.target)}</span>` : ""}</div>
+    ${g.target ? `<div class="track"><div class="fill" style="width:${Math.min(100, g.total / g.target * 100).toFixed(1)}%"></div></div>` : ""}
+    <div class="muted" style="font-size:.88rem">${g.givers.length ? g.givers.length + " guildmates have given" : "Nobody has given yet. Gold put into the guild bank counts."}${g.owner ? ` · Set by ${esc(g.owner)}` : ""}</div>
+    ${g.givers.length ? `<div class="rows">${g.givers.slice(0, 5).map(x => `<div class="skill">${nameHtml(x.name)}<span class="rank num">${money(x.copper)}</span></div>`).join("")}</div>` : ""}`
+    : `<div class="empty">No donation goal set.</div>`);
+
+  // Polls
+  $("polls").innerHTML = "<h2>Polls</h2>" + (d.polls.length ? d.polls.map(p => {
+    const total = p.answers.reduce((a, b) => a + b.votes, 0) || 1;
+    return `<div class="poll"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+      <span class="q">${esc(p.question)}</span><span class="pill${p.open ? "" : " closed"}">${p.open ? "Open" : "Closed"}</span></div>
+      ${p.answers.map(a => `<div class="skill"><span>${esc(a.text)}</span><span class="rank num">${a.votes} ${a.votes === 1 ? "vote" : "votes"}</span>
+        <div class="track"><div class="fill" style="width:${(a.votes / total * 100).toFixed(1)}%"></div></div></div>`).join("")}</div>`;
+  }).join("") : `<div class="empty">No polls right now.</div>`);
+
+  // Loot notes
+  $("loot").innerHTML = d.loot.length ? `<div class="table-wrap"><table><thead><tr><th>Date</th><th>Given to</th><th>Item</th><th>Note</th></tr></thead><tbody>
+    ${d.loot.slice(0, 25).map(n => `<tr><td class="muted">${new Date(n.time * 1000).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</td>
+      <td>${nameHtml(n.player)}</td><td>${esc(n.item)}</td><td class="muted">${esc(n.note)}</td></tr>`).join("")}</tbody></table></div>`
+    : `<div class="empty">No loot handed out yet. Officers add notes in the addon under Guild life, Loot notes.</div>`;
+
+  // Roster
+  if (roster.length) {
+    $("rosterNote").textContent = roster.length + " characters";
+    const hk = Object.fromEntries(d.kills.map(k => [k.name, k.hk]));
+    $("roster").innerHTML = `<div class="table-wrap"><table><thead><tr><th>Name</th><th>Level</th><th>Class</th><th>Rank</th><th style="text-align:right">Honourable kills</th></tr></thead><tbody>
+      ${roster.map(m => `<tr><td>${nameHtml(m.name)}${m.main ? ` <span class="muted">(${esc(m.main)})</span>` : ""}</td><td class="n">${m.level ?? ""}</td>
+        <td>${esc(m.class || "")}</td><td>${esc(m.rank || "")}</td><td class="n">${hk[m.name] != null ? fmt(hk[m.name]) : "–"}</td></tr>`).join("")}</tbody></table></div>`;
+  } else {
+    $("roster").innerHTML = `<div class="empty">The roster (levels, classes and class colours) appears after the next /reload or logout with the addon's latest version.</div>`;
+  }
+  $("foot").textContent = "Made from the Issues with Tissues addon's shared guild data" + (d.addonVersion ? `, version ${d.addonVersion}.` : ".");
+}
+
+(async () => {
+  const inline = $("iwt-data").textContent.trim();
+  try {
+    render(inline ? JSON.parse(inline) : await (await fetch("data.json", { cache: "no-store" })).json());
+  } catch (err) {
+    $("stamp").textContent = "Couldn't load the guild data (data.json)";
+  }
+})();
+</script>
