@@ -25,6 +25,10 @@ It exports the data, commits `data.json` and pushes. The page updates about a mi
 
 To export by hand: `py -3 tools\export.py "<path to IssuesWithTissues.lua>" data.json`, with `--watch` to re-export every time the game saves.
 
+## Diagnostics reports
+
+Players can send a report about how the addon runs on their client: `/iwt report` in game, then paste it at [the page's report section](https://carraigo.github.io/iwt-stats/#report). The page checks and shows what's inside, then opens a pre-filled issue in the addon repo (label `diagnostics`), or copies it for Discord. `tools/decode_report.py` turns reports back into JSON.
+
 ## What's published
 
 Character names, levels, classes, ranks, honourable and creature kills, professions and recipe counts, poll results, the donation goal and loot notes. Officer notes are never saved or published.
