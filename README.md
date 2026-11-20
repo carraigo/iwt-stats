@@ -1,5 +1,11 @@
 # Issues with Tissues stats
 
+[![Site](https://img.shields.io/website?url=https%3A%2F%2Fcarraigo.github.io%2Fiwt-stats%2F&label=site&up_message=live&down_message=down)](https://carraigo.github.io/iwt-stats/)
+[![Pages](https://github.com/carraigo/iwt-stats/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/carraigo/iwt-stats/actions/workflows/pages/pages-build-deployment)
+[![Data updated](https://img.shields.io/github/last-commit/carraigo/iwt-stats/main?path=data.json&label=data%20updated)](https://github.com/carraigo/iwt-stats/commits/main/data.json)
+[![Addon](https://img.shields.io/github/v/release/carraigo/issues-with-tissues?label=addon)](https://github.com/carraigo/issues-with-tissues/releases/latest)
+![Python](https://img.shields.io/badge/python-3.8%2B-3776ab)
+
 A small public page for the Issues with Tissues guild on WoW: Forever: guild kill totals, the Elite Soldier, crafters by profession, the donation goal, polls and loot notes.
 
 **Live page:** https://carraigo.github.io/iwt-stats/
