@@ -1,10 +1,511 @@
 {
- "generated": 1795178682,
- "snapshotAt": null,
+ "generated": 1795180402,
+ "snapshotAt": 1795180393,
  "guild": "Issues with Tissues",
- "addonVersion": null,
- "roster": [],
- "players": null,
+ "addonVersion": "0.6.3",
+ "roster": [
+  {
+   "name": "Pork Likeorc",
+   "level": 37,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Officer",
+   "rankIndex": 1,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Vatic Cane",
+   "level": 39,
+   "class": "Priest",
+   "classFile": "PRIEST",
+   "rank": "Officer",
+   "rankIndex": 1,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Wongo Wongo",
+   "level": 47,
+   "class": "Warlock",
+   "classFile": "WARLOCK",
+   "rank": "Officer",
+   "rankIndex": 1,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Aders War",
+   "level": 45,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Veteran",
+   "rankIndex": 2,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Ahyon Totempåle",
+   "level": 45,
+   "class": "Shaman",
+   "classFile": "SHAMAN",
+   "rank": "Veteran",
+   "rankIndex": 2,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Kazo Pets",
+   "level": 45,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Veteran",
+   "rankIndex": 2,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Oil Winterborne",
+   "level": 30,
+   "class": "Shaman",
+   "classFile": "SHAMAN",
+   "rank": "Veteran",
+   "rankIndex": 2,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Scvotwo Treant",
+   "level": 34,
+   "class": "Druid",
+   "classFile": "DRUID",
+   "rank": "Veteran",
+   "rankIndex": 2,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Serenia Malcador",
+   "level": 45,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Veteran",
+   "rankIndex": 2,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Affe Avtändning",
+   "level": 45,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Ars Amandi",
+   "level": 60,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Ashano Julzara",
+   "level": 10,
+   "class": "Mage",
+   "classFile": "MAGE",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Big Baylife",
+   "level": 48,
+   "class": "Rogue",
+   "classFile": "ROGUE",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Bubble Error",
+   "level": 30,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Christ Superstar",
+   "level": 26,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Cigarette Coffee",
+   "level": 15,
+   "class": "Mage",
+   "classFile": "MAGE",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Elinarith Irongrave",
+   "level": 22,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 11,
+   "main": null
+  },
+  {
+   "name": "Farseer Tedd",
+   "level": 51,
+   "class": "Shaman",
+   "classFile": "SHAMAN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Free Melly",
+   "level": 47,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Helehuichiri Tenderfart",
+   "level": 7,
+   "class": "Druid",
+   "classFile": "DRUID",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": "Large Joseph"
+  },
+  {
+   "name": "Heliga Heman",
+   "level": 45,
+   "class": "Priest",
+   "classFile": "PRIEST",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Holygraphic Death",
+   "level": 27,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Hunter Heman",
+   "level": 34,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Lumaen Starweaver",
+   "level": 31,
+   "class": "Druid",
+   "classFile": "DRUID",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 3,
+   "main": null
+  },
+  {
+   "name": "Lunaeris Winterborne",
+   "level": 14,
+   "class": "Druid",
+   "classFile": "DRUID",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 11,
+   "main": null
+  },
+  {
+   "name": "Lunaeris Worldbreaker",
+   "level": 10,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 7,
+   "main": null
+  },
+  {
+   "name": "Lü Everblack",
+   "level": 49,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Messaround Andfindout",
+   "level": 17,
+   "class": "Druid",
+   "classFile": "DRUID",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 5,
+   "main": null
+  },
+  {
+   "name": "Nungulugudu Stonks",
+   "level": 15,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 12,
+   "main": null
+  },
+  {
+   "name": "Oily Starweaver",
+   "level": 32,
+   "class": "Shaman",
+   "classFile": "SHAMAN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 3,
+   "main": null
+  },
+  {
+   "name": "Pickled Unyen",
+   "level": 37,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Rockspetard Apocalypse",
+   "level": 33,
+   "class": "Priest",
+   "classFile": "PRIEST",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Sara Exe",
+   "level": 14,
+   "class": "Priest",
+   "classFile": "PRIEST",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 7,
+   "main": null
+  },
+  {
+   "name": "Sheep Sheepulfsen",
+   "level": 31,
+   "class": "Warlock",
+   "classFile": "WARLOCK",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Time Consumer",
+   "level": 39,
+   "class": "Shaman",
+   "classFile": "SHAMAN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Torsten Tourettes",
+   "level": 47,
+   "class": "Priest",
+   "classFile": "PRIEST",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Zervi Grimveil",
+   "level": 37,
+   "class": "Rogue",
+   "classFile": "ROGUE",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Big Oily",
+   "level": 26,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Clane Stocious",
+   "level": 12,
+   "class": "Priest",
+   "classFile": "PRIEST",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": "Large Joseph"
+  },
+  {
+   "name": "Drakir Felmaw",
+   "level": 40,
+   "class": "Warlock",
+   "classFile": "WARLOCK",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Hoofstomp Sunstrider",
+   "level": 4,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Jentaka Longtusk",
+   "level": 1,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Lawn Mooèr",
+   "level": 6,
+   "class": "Druid",
+   "classFile": "DRUID",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Magia Musculorum",
+   "level": 10,
+   "class": "Mage",
+   "classFile": "MAGE",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": "Large Joseph"
+  },
+  {
+   "name": "Nightcrowler Felfury",
+   "level": 1,
+   "class": "Warlock",
+   "classFile": "WARLOCK",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Ojiisan Lonewolf",
+   "level": 28,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 2,
+   "main": null
+  },
+  {
+   "name": "Poppy Woppy",
+   "level": 42,
+   "class": "Rogue",
+   "classFile": "ROGUE",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Rhozak Warbreaker",
+   "level": 28,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 2,
+   "main": null
+  },
+  {
+   "name": "Sorin Lupercal",
+   "level": 1,
+   "class": "Rogue",
+   "classFile": "ROGUE",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Large Joseph",
+   "level": 37,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Guild Master",
+   "rankIndex": 0,
+   "days": 0,
+   "main": null
+  }
+ ],
+ "players": 47,
  "kills": [
   {
    "name": "Pork Likeorc",
