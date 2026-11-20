@@ -263,7 +263,7 @@ function decodeReport(text) {
 const when = t => t ? new Date(t * 1000).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "?";
 function summary(r) {
   const lines = [`Addon ${r.addon}` + (r.client ? `, client ${r.client.version} (${r.client.build})` : ""),
-    `Errors: ${r.errorTotal || 0}` + (r.errors || []).slice(0, 3).map(e => `\n- x${e.count} ${e.text}`).join(""),
+    `Errors: ${r.errorTotal || 0}` + (r.errors || []).slice(0, 3).map(e => `\n- x${e.count} ${e.text}` + (e.version && e.version !== r.addon ? ` (last on ${e.version})` : "")).join(""),
     r.selftest ? `Self-test: ${r.selftest.passed} passed, ${r.selftest.failed} failed` : "Self-test: not run"];
   return lines.join("\n");
 }
@@ -289,8 +289,9 @@ function showReport(raw) {
       <dt>Profiler</dt><dd>${r.perf && r.perf.top && r.perf.top.length ? r.perf.top.slice(0, 5).map(p => `${esc(p.what)}: ${p.ms} ms over ${p.calls} calls`).join("<br>") : (r.perf && r.perf.on ? "nothing measured yet" : "off")}</dd>
     </dl>
     <h2 style="margin-top:6px">Errors <small>${r.errorTotal || 0}</small></h2>
-    ${(r.errors || []).length ? `<div class="table-wrap"><table><thead><tr><th>Times</th><th>Last</th><th>Error</th></tr></thead><tbody>${r.errors.map(e =>
-      `<tr><td class="n">${e.count}</td><td class="muted">${when(e.last)}</td><td style="white-space:normal">${esc(e.text)}</td></tr>`).join("")}</tbody></table></div>` : `<div class="empty">No errors. Nice.</div>`}
+    ${(r.errors || []).length ? `<div class="table-wrap"><table><thead><tr><th>Times</th><th>Last</th><th>Version</th><th>Error</th></tr></thead><tbody>${r.errors.map(e => {
+      const old = e.version && e.version !== r.addon;
+      return `<tr${old ? ' style="opacity:.6"' : ""}><td class="n">${e.count}</td><td class="muted">${when(e.last)}</td><td class="muted">${esc(e.version || "?")}${old ? " (older)" : ""}</td><td style="white-space:normal">${esc(e.text)}</td></tr>`; }).join("")}</tbody></table></div>` : `<div class="empty">No errors. Nice.</div>`}
     <div class="actions">
       <a class="btn primary" href="${esc(issueUrl)}" target="_blank" rel="noopener">Send as a GitHub issue</a>
       <button class="btn" type="button" id="copyDiscord">Copy for Discord</button>
