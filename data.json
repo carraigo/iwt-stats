@@ -1,0 +1,240 @@
+{
+ "generated": 1795178682,
+ "snapshotAt": null,
+ "guild": "Issues with Tissues",
+ "addonVersion": null,
+ "roster": [],
+ "players": null,
+ "kills": [
+  {
+   "name": "Pork Likeorc",
+   "hk": 236,
+   "mobs": 5521
+  },
+  {
+   "name": "Wongo Wongo",
+   "hk": 59,
+   "mobs": 8102
+  },
+  {
+   "name": "Large Joseph",
+   "hk": 12,
+   "mobs": 5323
+  },
+  {
+   "name": "Clane Stocious",
+   "hk": 1,
+   "mobs": 367
+  },
+  {
+   "name": "Helehuichiri Tenderfart",
+   "hk": 0,
+   "mobs": 93
+  },
+  {
+   "name": "Magia Musculorum",
+   "hk": 0,
+   "mobs": 243
+  }
+ ],
+ "totals": {
+  "hk": 308,
+  "mobs": 19649,
+  "chars": 6
+ },
+ "eliteSoldier": {
+  "name": "Pork Likeorc",
+  "hk": 236,
+  "mobs": 5521
+ },
+ "crafting": [
+  {
+   "profession": "Blacksmithing",
+   "crafters": [
+    {
+     "name": "Large Joseph",
+     "rank": 174,
+     "max": 225,
+     "recipes": 45
+    }
+   ]
+  },
+  {
+   "profession": "Cooking",
+   "crafters": [
+    {
+     "name": "Wongo Wongo",
+     "rank": 225,
+     "max": 225
+    },
+    {
+     "name": "Pork Likeorc",
+     "rank": 225,
+     "max": 225,
+     "recipes": 16
+    },
+    {
+     "name": "Large Joseph",
+     "rank": 157,
+     "max": 225,
+     "recipes": 20
+    },
+    {
+     "name": "Magia Musculorum",
+     "rank": 15,
+     "max": 75,
+     "recipes": 4
+    },
+    {
+     "name": "Clane Stocious",
+     "rank": 1,
+     "max": 75
+    }
+   ]
+  },
+  {
+   "profession": "Enchanting",
+   "crafters": [
+    {
+     "name": "Magia Musculorum",
+     "rank": 34,
+     "max": 75,
+     "recipes": 8
+    }
+   ]
+  },
+  {
+   "profession": "Engineering",
+   "crafters": [
+    {
+     "name": "Pork Likeorc",
+     "rank": 213,
+     "max": 300,
+     "recipes": 38
+    }
+   ]
+  },
+  {
+   "profession": "First Aid",
+   "crafters": [
+    {
+     "name": "Wongo Wongo",
+     "rank": 273,
+     "max": 300,
+     "recipes": 19
+    },
+    {
+     "name": "Pork Likeorc",
+     "rank": 210,
+     "max": 225,
+     "recipes": 14
+    },
+    {
+     "name": "Large Joseph",
+     "rank": 139,
+     "max": 150,
+     "recipes": 11
+    }
+   ]
+  },
+  {
+   "profession": "Fishing",
+   "crafters": [
+    {
+     "name": "Pork Likeorc",
+     "rank": 205,
+     "max": 225
+    },
+    {
+     "name": "Wongo Wongo",
+     "rank": 171,
+     "max": 225,
+     "recipes": 1
+    },
+    {
+     "name": "Large Joseph",
+     "rank": 128,
+     "max": 150,
+     "recipes": 1
+    }
+   ]
+  },
+  {
+   "profession": "Herbalism",
+   "crafters": [
+    {
+     "name": "Wongo Wongo",
+     "rank": 233,
+     "max": 300
+    },
+    {
+     "name": "Helehuichiri Tenderfart",
+     "rank": 21,
+     "max": 75
+    }
+   ]
+  },
+  {
+   "profession": "Mining",
+   "crafters": [
+    {
+     "name": "Pork Likeorc",
+     "rank": 226,
+     "max": 300
+    },
+    {
+     "name": "Wongo Wongo",
+     "rank": 205,
+     "max": 225
+    },
+    {
+     "name": "Large Joseph",
+     "rank": 197,
+     "max": 225,
+     "recipes": 9
+    },
+    {
+     "name": "Clane Stocious",
+     "rank": 14,
+     "max": 75
+    }
+   ]
+  },
+  {
+   "profession": "Tailoring",
+   "crafters": [
+    {
+     "name": "Magia Musculorum",
+     "rank": 68,
+     "max": 150,
+     "recipes": 24
+    }
+   ]
+  }
+ ],
+ "polls": [
+  {
+   "question": "Are you a gamer?",
+   "closes": 1795200290,
+   "open": true,
+   "answers": [
+    {
+     "text": "Yes",
+     "votes": 2
+    },
+    {
+     "text": "No",
+     "votes": 0
+    }
+   ]
+  }
+ ],
+ "donations": {
+  "title": "aint doing shit",
+  "target": 30000,
+  "owner": "Wongo Wongo",
+  "total": 0,
+  "givers": []
+ },
+ "loot": []
+}
