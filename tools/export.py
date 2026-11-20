@@ -6,7 +6,7 @@ The game writes the addon's data to
 when you log out or /reload. This reads that file and writes a tidy JSON file
 the page can show. No extra packages needed: Python 3.8+ only.
 
-  python export.py "C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\CRAIGRM\\SavedVariables\\IssuesWithTissues.lua" site\\data.json
+  python export.py "C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\<ACCOUNT>\\SavedVariables\\IssuesWithTissues.lua" site\\data.json
   python export.py <saved file> site\\data.json --watch    (re-export whenever the game saves)
   add --push to also commit data.json and push it with git after each export that changed
   something (run from inside the site repo; this is what tools\\autostart.bat sets up).

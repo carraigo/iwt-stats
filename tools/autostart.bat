@@ -5,7 +5,14 @@ rem   tools\autostart.bat          turn it on
 rem   tools\autostart.bat off      turn it off
 rem The watcher writes what it does to tools\watch.log.
 setlocal
-set SAVED=C:\Program Files (x86)\World of Warcraft\_forever_\WTF\Account\CRAIGRM\SavedVariables\IssuesWithTissues.lua
+set WOW=C:\Program Files (x86)\World of Warcraft\_forever_
+rem Find the saved data under whichever account folder the game uses on this PC.
+set SAVED=
+for /d %%A in ("%WOW%\WTF\Account\*") do if exist "%%A\SavedVariables\IssuesWithTissues.lua" set "SAVED=%%A\SavedVariables\IssuesWithTissues.lua"
+if defined SAVED goto :found
+echo Could not find IssuesWithTissues.lua in the game's WTF\Account folders. Log in with the addon once, then try again.
+goto :eof
+:found
 set REPO=%~dp0..
 for %%I in ("%REPO%") do set REPO=%%~fI
 set VBS=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\iwt-stats-watcher.vbs
