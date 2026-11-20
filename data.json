@@ -1,6 +1,6 @@
 {
- "generated": 1795182629,
- "snapshotAt": 1795182622,
+ "generated": 1795182902,
+ "snapshotAt": 1795182894,
  "guild": "Issues with Tissues",
  "addonVersion": "0.7.0",
  "roster": [
@@ -530,7 +530,7 @@
   {
    "name": "Vatic Cane",
    "hk": 13,
-   "mobs": 5321
+   "mobs": 5329
   },
   {
    "name": "Large Joseph",
@@ -555,7 +555,7 @@
  ],
  "totals": {
   "hk": 321,
-  "mobs": 24970,
+  "mobs": 24978,
   "chars": 7
  },
  "eliteSoldier": {
@@ -745,23 +745,7 @@
    ]
   }
  ],
- "polls": [
-  {
-   "question": "Are you a gamer?",
-   "closes": 1795200290,
-   "open": true,
-   "answers": [
-    {
-     "text": "Yes",
-     "votes": 2
-    },
-    {
-     "text": "No",
-     "votes": 0
-    }
-   ]
-  }
- ],
+ "polls": [],
  "donations": {
   "title": "aint doing shit",
   "target": 30000,
