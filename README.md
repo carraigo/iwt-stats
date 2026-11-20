@@ -21,6 +21,8 @@ tools\publish.bat
 
 It exports the data, commits `data.json` and pushes. The page updates about a minute later.
 
+**Automatic:** run `tools\autostart.bat` once. It starts a hidden watcher, now and at every Windows login, that exports and pushes whenever the game saves (logout or `/reload`). It only pushes when the guild data actually changed. `tools\autostart.bat off` turns it off, and `tools\watch.log` shows what it did.
+
 To export by hand: `py -3 tools\export.py "<path to IssuesWithTissues.lua>" data.json`, with `--watch` to re-export every time the game saves.
 
 ## What's published
