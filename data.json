@@ -1,8 +1,8 @@
 {
- "generated": 1795183028,
- "snapshotAt": 1795183021,
+ "generated": 1795189782,
+ "snapshotAt": 1795189774,
  "guild": "Issues with Tissues",
- "addonVersion": "0.7.0",
+ "addonVersion": "0.7.2",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -95,6 +95,16 @@
    "main": null
   },
   {
+   "name": "Torsten Tourettes",
+   "level": 47,
+   "class": "Priest",
+   "classFile": "PRIEST",
+   "rank": "Veteran",
+   "rankIndex": 2,
+   "days": 0,
+   "main": null
+  },
+  {
    "name": "Affe Avtändning",
    "level": 45,
    "class": "Warrior",
@@ -171,7 +181,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 11,
+   "days": 12,
    "main": null
   },
   {
@@ -226,7 +236,7 @@
   },
   {
    "name": "Hunter Heman",
-   "level": 34,
+   "level": 35,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -291,7 +301,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 12,
+   "days": 13,
    "main": null
   },
   {
@@ -336,7 +346,7 @@
   },
   {
    "name": "Sheep Sheepulfsen",
-   "level": 31,
+   "level": 32,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Member",
@@ -355,22 +365,22 @@
    "main": null
   },
   {
-   "name": "Torsten Tourettes",
-   "level": 47,
-   "class": "Priest",
-   "classFile": "PRIEST",
-   "rank": "Member",
-   "rankIndex": 3,
-   "days": 0,
-   "main": null
-  },
-  {
    "name": "Zervi Grimveil",
    "level": 37,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
    "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Aders Droid",
+   "level": 4,
+   "class": "Druid",
+   "classFile": "DRUID",
+   "rank": "Initiate",
+   "rankIndex": 4,
    "days": 0,
    "main": null
   },
@@ -505,6 +515,16 @@
    "main": null
   },
   {
+   "name": "Tommy Tourettes",
+   "level": 10,
+   "class": "Mage",
+   "classFile": "MAGE",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
    "name": "Large Joseph",
    "level": 37,
    "class": "Warrior",
@@ -515,7 +535,7 @@
    "main": null
   }
  ],
- "players": 48,
+ "players": 50,
  "kills": [
   {
    "name": "Pork Likeorc",
@@ -530,7 +550,7 @@
   {
    "name": "Vatic Cane",
    "hk": 13,
-   "mobs": 5333
+   "mobs": 5472
   },
   {
    "name": "Large Joseph",
@@ -555,7 +575,7 @@
  ],
  "totals": {
   "hk": 321,
-  "mobs": 24982,
+  "mobs": 25121,
   "chars": 7
  },
  "eliteSoldier": {
