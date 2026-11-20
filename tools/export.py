@@ -8,7 +8,10 @@ the page can show. No extra packages needed: Python 3.8+ only.
 
   python export.py "C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\CRAIGRM\\SavedVariables\\IssuesWithTissues.lua" site\\data.json
   python export.py <saved file> site\\data.json --watch    (re-export whenever the game saves)
+  add --push to also commit data.json and push it with git after each export that changed
+  something (run from inside the site repo; this is what tools\\autostart.bat sets up).
 """
+import subprocess
 import json
 import os
 import re
@@ -239,25 +242,61 @@ def build(db):
 
 
 def export(src, dst):
+    """Write dst; returns False when nothing but the export time would change."""
     data = build(read_saved(src).get("IwTDB") or {})
+    try:
+        old = json.load(open(dst, encoding="utf-8"))
+        same = {k: v for k, v in old.items() if k != "generated"} == {k: v for k, v in data.items() if k != "generated"}
+    except (OSError, ValueError):
+        same = False
+    if same:
+        print("%s  no changes" % time.strftime("%H:%M:%S"))
+        return False
     os.makedirs(os.path.dirname(os.path.abspath(dst)), exist_ok=True)
     with open(dst, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
     print("%s  wrote %s (%d members, %d with kills)" % (time.strftime("%H:%M:%S"), dst, len(data["roster"]), len(data["kills"])))
+    return True
+
+
+def push(dst):
+    """Commit dst and push it. Errors are printed, never raised, so a watcher keeps running."""
+    folder = os.path.dirname(os.path.abspath(dst))
+    run = lambda *a: subprocess.run(["git", *a], cwd=folder, capture_output=True, text=True)
+    try:
+        run("add", os.path.basename(dst))
+        if run("diff", "--cached", "--quiet").returncode == 0:
+            return
+        r = run("commit", "-m", "Update guild data")
+        r = r if r.returncode else run("push")
+        print("%s  %s" % (time.strftime("%H:%M:%S"), "pushed" if r.returncode == 0 else "git failed: " + (r.stderr or r.stdout).strip()))
+    except OSError as e:
+        print("%s  git not found: %s" % (time.strftime("%H:%M:%S"), e))
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     src, dst = sys.argv[1], sys.argv[2]
-    export(src, dst)
+    pushing = "--push" in sys.argv
+    if export(src, dst) and pushing:
+        push(dst)
     if "--watch" in sys.argv:
+        sys.stdout.flush()
         last = os.path.getmtime(src)
         print("Watching for the game to save (Ctrl+C to stop)...")
         while True:
             time.sleep(5)
-            now = os.path.getmtime(src)
+            try:
+                now = os.path.getmtime(src)
+            except OSError:
+                continue
             if now != last:
                 last = now
-                time.sleep(2)  # let the game finish writing
-                export(src, dst)
+                time.sleep(3)  # let the game finish writing
+                try:
+                    if export(src, dst) and pushing:
+                        push(dst)
+                except Exception as e:  # a half-written file: try again on the next save
+                    print("%s  export failed: %s" % (time.strftime("%H:%M:%S"), e))
+                sys.stdout.flush()
