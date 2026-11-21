@@ -1,6 +1,6 @@
 {
- "generated": 1795262987,
- "snapshotAt": 1795262979,
+ "generated": 1795267299,
+ "snapshotAt": 1795267292,
  "guild": "Issues with Tissues",
  "addonVersion": "0.8.2",
  "roster": [
@@ -271,7 +271,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 7,
+   "days": 8,
    "main": null
   },
   {
@@ -401,7 +401,7 @@
    "classFile": "PRIEST",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": "Large Joseph"
   },
   {
@@ -476,12 +476,12 @@
   },
   {
    "name": "Ojiisan Lonewolf",
-   "level": 28,
+   "level": 29,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 0,
    "main": null
   },
   {
@@ -496,12 +496,12 @@
   },
   {
    "name": "Rhozak Warbreaker",
-   "level": 28,
+   "level": 29,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 0,
    "main": null
   },
   {
@@ -550,7 +550,7 @@
   {
    "name": "Pork Likeorc",
    "hk": 243,
-   "mobs": 5889
+   "mobs": 5890
   },
   {
    "name": "Wongo Wongo",
@@ -565,7 +565,7 @@
   {
    "name": "Large Joseph",
    "hk": 12,
-   "mobs": 5382
+   "mobs": 5487
   },
   {
    "name": "Clane Stocious",
@@ -585,13 +585,13 @@
  ],
  "totals": {
   "hk": 328,
-  "mobs": 25764,
+  "mobs": 25870,
   "chars": 7
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
   "hk": 243,
-  "mobs": 5889
+  "mobs": 5890
  },
  "crafting": [
   {
