@@ -1,8 +1,8 @@
 {
- "generated": 1795240988,
- "snapshotAt": 1795240981,
+ "generated": 1795249651,
+ "snapshotAt": 1795249032,
  "guild": "Issues with Tissues",
- "addonVersion": "0.7.2",
+ "addonVersion": "0.8.0-beta.1",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -56,7 +56,7 @@
   },
   {
    "name": "Kazo Pets",
-   "level": 45,
+   "level": 46,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Veteran",
@@ -526,7 +526,7 @@
   },
   {
    "name": "Who Ha",
-   "level": 6,
+   "level": 8,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
