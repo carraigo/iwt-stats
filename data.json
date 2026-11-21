@@ -1,6 +1,6 @@
 {
- "generated": 1795273674,
- "snapshotAt": 1795273669,
+ "generated": 1795274259,
+ "snapshotAt": 1795274251,
  "guild": "Issues with Tissues",
  "addonVersion": "0.8.2",
  "roster": [
@@ -550,7 +550,7 @@
   {
    "name": "Pork Likeorc",
    "hk": 243,
-   "mobs": 5900
+   "mobs": 5901
   },
   {
    "name": "Wongo Wongo",
@@ -585,13 +585,13 @@
  ],
  "totals": {
   "hk": 330,
-  "mobs": 26048,
+  "mobs": 26049,
   "chars": 7
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
   "hk": 243,
-  "mobs": 5900
+  "mobs": 5901
  },
  "crafting": [
   {
