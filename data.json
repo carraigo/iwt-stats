@@ -1,8 +1,8 @@
 {
- "generated": 1795255219,
- "snapshotAt": 1795255212,
+ "generated": 1795261825,
+ "snapshotAt": 1795261820,
  "guild": "Issues with Tissues",
- "addonVersion": "0.8.0-beta.3",
+ "addonVersion": "0.8.1",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -196,7 +196,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 49,
+   "level": 50,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -236,7 +236,7 @@
   },
   {
    "name": "Hunter Heman",
-   "level": 35,
+   "level": 36,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -361,7 +361,7 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -421,7 +421,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -431,12 +431,12 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Lagertha Bowsmaiden",
-   "level": 36,
+   "level": 37,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -461,7 +461,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": "Large Joseph"
   },
   {
@@ -471,7 +471,7 @@
    "classFile": "WARLOCK",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -486,7 +486,7 @@
   },
   {
    "name": "Poppy Woppy",
-   "level": 43,
+   "level": 44,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Initiate",
@@ -511,7 +511,7 @@
    "classFile": "ROGUE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
