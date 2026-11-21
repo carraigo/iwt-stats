@@ -1,12 +1,12 @@
 {
- "generated": 1795189782,
- "snapshotAt": 1795189774,
+ "generated": 1795233693,
+ "snapshotAt": 1795233630,
  "guild": "Issues with Tissues",
  "addonVersion": "0.7.2",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 37,
+   "level": 38,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -16,7 +16,7 @@
   },
   {
    "name": "Vatic Cane",
-   "level": 39,
+   "level": 40,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Officer",
@@ -26,7 +26,7 @@
   },
   {
    "name": "Wongo Wongo",
-   "level": 47,
+   "level": 49,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Officer",
@@ -36,7 +36,7 @@
   },
   {
    "name": "Aders War",
-   "level": 45,
+   "level": 47,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Veteran",
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 45,
+   "level": 47,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -71,7 +71,7 @@
    "classFile": "SHAMAN",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 45,
+   "level": 46,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Torsten Tourettes",
-   "level": 47,
+   "level": 48,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Veteran",
@@ -106,7 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 45,
+   "level": 47,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -136,7 +136,7 @@
   },
   {
    "name": "Big Baylife",
-   "level": 48,
+   "level": 50,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -146,7 +146,7 @@
   },
   {
    "name": "Bubble Error",
-   "level": 30,
+   "level": 32,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -186,7 +186,7 @@
   },
   {
    "name": "Farseer Tedd",
-   "level": 51,
+   "level": 52,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
@@ -196,7 +196,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 47,
+   "level": 49,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -221,12 +221,12 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Holygraphic Death",
-   "level": 27,
+   "level": 28,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -246,12 +246,12 @@
   },
   {
    "name": "Lumaen Starweaver",
-   "level": 31,
+   "level": 33,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 3,
+   "days": 0,
    "main": null
   },
   {
@@ -261,7 +261,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 11,
+   "days": 12,
    "main": null
   },
   {
@@ -276,7 +276,7 @@
   },
   {
    "name": "Lü Everblack",
-   "level": 49,
+   "level": 50,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -286,12 +286,12 @@
   },
   {
    "name": "Messaround Andfindout",
-   "level": 17,
+   "level": 18,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 5,
+   "days": 0,
    "main": null
   },
   {
@@ -306,12 +306,12 @@
   },
   {
    "name": "Oily Starweaver",
-   "level": 32,
+   "level": 34,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 3,
+   "days": 0,
    "main": null
   },
   {
@@ -326,7 +326,7 @@
   },
   {
    "name": "Rockspetard Apocalypse",
-   "level": 33,
+   "level": 34,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Member",
@@ -341,7 +341,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 7,
+   "days": 8,
    "main": null
   },
   {
@@ -376,7 +376,7 @@
   },
   {
    "name": "Aders Droid",
-   "level": 4,
+   "level": 10,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Initiate",
@@ -406,7 +406,7 @@
   },
   {
    "name": "Drakir Felmaw",
-   "level": 40,
+   "level": 41,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Initiate",
@@ -436,7 +436,7 @@
   },
   {
    "name": "Lagertha Bowsmaiden",
-   "level": 35,
+   "level": 36,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -446,7 +446,7 @@
   },
   {
    "name": "Lawn Mooèr",
-   "level": 6,
+   "level": 7,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Initiate",
@@ -481,12 +481,12 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
    "name": "Poppy Woppy",
-   "level": 42,
+   "level": 43,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Initiate",
@@ -501,7 +501,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -525,6 +525,16 @@
    "main": null
   },
   {
+   "name": "Who Ha",
+   "level": 5,
+   "class": "Hunter",
+   "classFile": "HUNTER",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
    "name": "Large Joseph",
    "level": 37,
    "class": "Warrior",
@@ -535,12 +545,12 @@
    "main": null
   }
  ],
- "players": 50,
+ "players": 51,
  "kills": [
   {
    "name": "Pork Likeorc",
-   "hk": 236,
-   "mobs": 5521
+   "hk": 243,
+   "mobs": 5889
   },
   {
    "name": "Wongo Wongo",
@@ -550,7 +560,7 @@
   {
    "name": "Vatic Cane",
    "hk": 13,
-   "mobs": 5472
+   "mobs": 5673
   },
   {
    "name": "Large Joseph",
@@ -574,14 +584,14 @@
   }
  ],
  "totals": {
-  "hk": 321,
-  "mobs": 25121,
+  "hk": 328,
+  "mobs": 25690,
   "chars": 7
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
-  "hk": 236,
-  "mobs": 5521
+  "hk": 243,
+  "mobs": 5889
  },
  "crafting": [
   {
@@ -599,15 +609,15 @@
    "profession": "Cooking",
    "crafters": [
     {
+     "name": "Pork Likeorc",
+     "rank": 241,
+     "max": 300,
+     "recipes": 17
+    },
+    {
      "name": "Wongo Wongo",
      "rank": 225,
      "max": 225
-    },
-    {
-     "name": "Pork Likeorc",
-     "rank": 225,
-     "max": 225,
-     "recipes": 16
     },
     {
      "name": "Large Joseph",
@@ -650,9 +660,9 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 213,
+     "rank": 241,
      "max": 300,
-     "recipes": 38
+     "recipes": 42
     }
    ]
   },
@@ -684,7 +694,7 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 205,
+     "rank": 225,
      "max": 225
     },
     {
@@ -721,7 +731,7 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 226,
+     "rank": 229,
      "max": 300
     },
     {
