@@ -1,8 +1,8 @@
 {
- "generated": 1795249651,
- "snapshotAt": 1795249032,
+ "generated": 1795250024,
+ "snapshotAt": 1795250017,
  "guild": "Issues with Tissues",
- "addonVersion": "0.8.0-beta.1",
+ "addonVersion": "0.8.0-beta.2",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -161,7 +161,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
