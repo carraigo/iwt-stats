@@ -1,6 +1,6 @@
 {
- "generated": 1795270759,
- "snapshotAt": 1795270755,
+ "generated": 1795273674,
+ "snapshotAt": 1795273669,
  "guild": "Issues with Tissues",
  "addonVersion": "0.8.2",
  "roster": [
@@ -246,7 +246,7 @@
   },
   {
    "name": "Lumaen Starweaver",
-   "level": 33,
+   "level": 34,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Member",
@@ -346,7 +346,7 @@
   },
   {
    "name": "Sheep Sheepulfsen",
-   "level": 32,
+   "level": 33,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Member",
@@ -526,7 +526,7 @@
   },
   {
    "name": "Who Ha",
-   "level": 9,
+   "level": 10,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -550,7 +550,7 @@
   {
    "name": "Pork Likeorc",
    "hk": 243,
-   "mobs": 5893
+   "mobs": 5900
   },
   {
    "name": "Wongo Wongo",
@@ -559,13 +559,13 @@
   },
   {
    "name": "Vatic Cane",
-   "hk": 13,
-   "mobs": 5726
+   "hk": 15,
+   "mobs": 5742
   },
   {
    "name": "Large Joseph",
    "hk": 12,
-   "mobs": 5549
+   "mobs": 5601
   },
   {
    "name": "Clane Stocious",
@@ -584,14 +584,14 @@
   }
  ],
  "totals": {
-  "hk": 328,
-  "mobs": 25973,
+  "hk": 330,
+  "mobs": 26048,
   "chars": 7
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
   "hk": 243,
-  "mobs": 5893
+  "mobs": 5900
  },
  "crafting": [
   {
@@ -751,7 +751,7 @@
     },
     {
      "name": "Large Joseph",
-     "rank": 202,
+     "rank": 204,
      "max": 225,
      "recipes": 9
     },
