@@ -1,8 +1,8 @@
 {
- "generated": 1795250024,
- "snapshotAt": 1795250017,
+ "generated": 1795251991,
+ "snapshotAt": 1795251987,
  "guild": "Issues with Tissues",
- "addonVersion": "0.8.0-beta.2",
+ "addonVersion": "0.8.0-beta.3",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -526,7 +526,7 @@
   },
   {
    "name": "Who Ha",
-   "level": 8,
+   "level": 9,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -560,7 +560,7 @@
   {
    "name": "Vatic Cane",
    "hk": 13,
-   "mobs": 5673
+   "mobs": 5688
   },
   {
    "name": "Large Joseph",
@@ -585,7 +585,7 @@
  ],
  "totals": {
   "hk": 328,
-  "mobs": 25749,
+  "mobs": 25764,
   "chars": 7
  },
  "eliteSoldier": {
@@ -624,6 +624,11 @@
      "rank": 157,
      "max": 225,
      "recipes": 20
+    },
+    {
+     "name": "Cigarette Coffee",
+     "rank": 72,
+     "max": 150
     },
     {
      "name": "Magia Musculorum",
@@ -686,6 +691,11 @@
      "rank": 139,
      "max": 150,
      "recipes": 11
+    },
+    {
+     "name": "Cigarette Coffee",
+     "rank": 72,
+     "max": 150
     }
    ]
   },
@@ -756,6 +766,11 @@
    "profession": "Skinning",
    "crafters": [
     {
+     "name": "Cigarette Coffee",
+     "rank": 106,
+     "max": 150
+    },
+    {
      "name": "Vatic Cane",
      "rank": null,
      "max": null,
@@ -766,6 +781,11 @@
   {
    "profession": "Tailoring",
    "crafters": [
+    {
+     "name": "Cigarette Coffee",
+     "rank": 128,
+     "max": 150
+    },
     {
      "name": "Magia Musculorum",
      "rank": 68,
