@@ -1,6 +1,6 @@
 {
- "generated": 1795261825,
- "snapshotAt": 1795261820,
+ "generated": 1795262861,
+ "snapshotAt": 1795262856,
  "guild": "Issues with Tissues",
  "addonVersion": "0.8.1",
  "roster": [
@@ -715,7 +715,7 @@
     },
     {
      "name": "Large Joseph",
-     "rank": 128,
+     "rank": 133,
      "max": 150,
      "recipes": 1
     }
