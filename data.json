@@ -1,6 +1,6 @@
 {
- "generated": 1795267299,
- "snapshotAt": 1795267292,
+ "generated": 1795270759,
+ "snapshotAt": 1795270755,
  "guild": "Issues with Tissues",
  "addonVersion": "0.8.2",
  "roster": [
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 47,
+   "level": 48,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 46,
+   "level": 47,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -136,7 +136,7 @@
   },
   {
    "name": "Big Baylife",
-   "level": 50,
+   "level": 51,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -236,7 +236,7 @@
   },
   {
    "name": "Hunter Heman",
-   "level": 36,
+   "level": 37,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -301,7 +301,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 13,
+   "days": 14,
    "main": null
   },
   {
@@ -550,7 +550,7 @@
   {
    "name": "Pork Likeorc",
    "hk": 243,
-   "mobs": 5890
+   "mobs": 5893
   },
   {
    "name": "Wongo Wongo",
@@ -560,12 +560,12 @@
   {
    "name": "Vatic Cane",
    "hk": 13,
-   "mobs": 5688
+   "mobs": 5726
   },
   {
    "name": "Large Joseph",
    "hk": 12,
-   "mobs": 5487
+   "mobs": 5549
   },
   {
    "name": "Clane Stocious",
@@ -585,13 +585,13 @@
  ],
  "totals": {
   "hk": 328,
-  "mobs": 25870,
+  "mobs": 25973,
   "chars": 7
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
   "hk": 243,
-  "mobs": 5890
+  "mobs": 5893
  },
  "crafting": [
   {
@@ -623,7 +623,7 @@
      "name": "Large Joseph",
      "rank": 157,
      "max": 225,
-     "recipes": 20
+     "recipes": 21
     },
     {
      "name": "Cigarette Coffee",
@@ -665,7 +665,7 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 241,
+     "rank": 250,
      "max": 300,
      "recipes": 42
     }
