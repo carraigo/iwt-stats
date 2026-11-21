@@ -1,6 +1,6 @@
 {
- "generated": 1795233841,
- "snapshotAt": 1795233836,
+ "generated": 1795240988,
+ "snapshotAt": 1795240981,
  "guild": "Issues with Tissues",
  "addonVersion": "0.7.2",
  "roster": [
@@ -186,7 +186,7 @@
   },
   {
    "name": "Farseer Tedd",
-   "level": 52,
+   "level": 53,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
@@ -321,7 +321,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -526,7 +526,7 @@
   },
   {
    "name": "Who Ha",
-   "level": 5,
+   "level": 6,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -565,7 +565,7 @@
   {
    "name": "Large Joseph",
    "hk": 12,
-   "mobs": 5323
+   "mobs": 5382
   },
   {
    "name": "Clane Stocious",
@@ -585,7 +585,7 @@
  ],
  "totals": {
   "hk": 328,
-  "mobs": 25690,
+  "mobs": 25749,
   "chars": 7
  },
  "eliteSoldier": {
@@ -741,7 +741,7 @@
     },
     {
      "name": "Large Joseph",
-     "rank": 197,
+     "rank": 202,
      "max": 225,
      "recipes": 9
     },
