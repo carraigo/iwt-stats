@@ -1,6 +1,6 @@
 {
- "generated": 1795274259,
- "snapshotAt": 1795274251,
+ "generated": 1795277248,
+ "snapshotAt": 1795277240,
  "guild": "Issues with Tissues",
  "addonVersion": "0.8.2",
  "roster": [
@@ -106,7 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 47,
+   "level": 48,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -181,7 +181,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 12,
+   "days": 13,
    "main": null
   },
   {
@@ -306,7 +306,7 @@
   },
   {
    "name": "Oily Starweaver",
-   "level": 34,
+   "level": 35,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
@@ -549,8 +549,8 @@
  "kills": [
   {
    "name": "Pork Likeorc",
-   "hk": 243,
-   "mobs": 5901
+   "hk": 244,
+   "mobs": 5916
   },
   {
    "name": "Wongo Wongo",
@@ -565,7 +565,7 @@
   {
    "name": "Large Joseph",
    "hk": 12,
-   "mobs": 5601
+   "mobs": 5691
   },
   {
    "name": "Clane Stocious",
@@ -584,14 +584,14 @@
   }
  ],
  "totals": {
-  "hk": 330,
-  "mobs": 26049,
+  "hk": 331,
+  "mobs": 26154,
   "chars": 7
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
-  "hk": 243,
-  "mobs": 5901
+  "hk": 244,
+  "mobs": 5916
  },
  "crafting": [
   {
@@ -745,15 +745,15 @@
      "max": 300
     },
     {
+     "name": "Large Joseph",
+     "rank": 207,
+     "max": 225,
+     "recipes": 9
+    },
+    {
      "name": "Wongo Wongo",
      "rank": 205,
      "max": 225
-    },
-    {
-     "name": "Large Joseph",
-     "rank": 204,
-     "max": 225,
-     "recipes": 9
     },
     {
      "name": "Clane Stocious",
