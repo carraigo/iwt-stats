@@ -1,6 +1,6 @@
 {
- "generated": 1795254627,
- "snapshotAt": 1795254625,
+ "generated": 1795255219,
+ "snapshotAt": 1795255212,
  "guild": "Issues with Tissues",
  "addonVersion": "0.8.0-beta.3",
  "roster": [
@@ -211,7 +211,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": "Large Joseph"
   },
   {
@@ -276,7 +276,7 @@
   },
   {
    "name": "Lü Everblack",
-   "level": 50,
+   "level": 51,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
