@@ -1,12 +1,12 @@
 {
- "generated": 1795277248,
- "snapshotAt": 1795277240,
+ "generated": 1795452447,
+ "snapshotAt": 1795444404,
  "guild": "Issues with Tissues",
- "addonVersion": "0.8.2",
+ "addonVersion": "1.2.0",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 38,
+   "level": 42,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -16,7 +16,7 @@
   },
   {
    "name": "Vatic Cane",
-   "level": 40,
+   "level": 42,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Officer",
@@ -26,7 +26,7 @@
   },
   {
    "name": "Wongo Wongo",
-   "level": 49,
+   "level": 52,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Officer",
@@ -36,7 +36,7 @@
   },
   {
    "name": "Aders War",
-   "level": 47,
+   "level": 49,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Veteran",
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 48,
+   "level": 51,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -56,7 +56,7 @@
   },
   {
    "name": "Kazo Pets",
-   "level": 46,
+   "level": 51,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Veteran",
@@ -71,12 +71,12 @@
    "classFile": "SHAMAN",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 1,
+   "days": 3,
    "main": null
   },
   {
    "name": "Scvotwo Treant",
-   "level": 34,
+   "level": 37,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Veteran",
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 47,
+   "level": 49,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Torsten Tourettes",
-   "level": 48,
+   "level": 50,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Veteran",
@@ -106,7 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 48,
+   "level": 52,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -136,7 +136,7 @@
   },
   {
    "name": "Big Baylife",
-   "level": 51,
+   "level": 54,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -146,7 +146,7 @@
   },
   {
    "name": "Bubble Error",
-   "level": 32,
+   "level": 33,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -161,7 +161,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 3,
    "main": null
   },
   {
@@ -175,18 +175,28 @@
    "main": null
   },
   {
+   "name": "Drakir Felmaw",
+   "level": 44,
+   "class": "Warlock",
+   "classFile": "WARLOCK",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
    "name": "Elinarith Irongrave",
    "level": 22,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 13,
+   "days": 14,
    "main": null
   },
   {
    "name": "Farseer Tedd",
-   "level": 53,
+   "level": 56,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
@@ -196,7 +206,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 50,
+   "level": 53,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -211,7 +221,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 3,
    "main": "Large Joseph"
   },
   {
@@ -221,7 +231,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -231,12 +241,12 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Hunter Heman",
-   "level": 37,
+   "level": 45,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -246,7 +256,7 @@
   },
   {
    "name": "Lumaen Starweaver",
-   "level": 34,
+   "level": 36,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Member",
@@ -261,7 +271,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 12,
+   "days": 14,
    "main": null
   },
   {
@@ -271,12 +281,12 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 8,
+   "days": 10,
    "main": null
   },
   {
    "name": "Lü Everblack",
-   "level": 51,
+   "level": 55,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -291,7 +301,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -301,12 +311,12 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 14,
+   "days": 16,
    "main": null
   },
   {
    "name": "Oily Starweaver",
-   "level": 35,
+   "level": 36,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
@@ -321,12 +331,32 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 3,
+   "main": null
+  },
+  {
+   "name": "Poppy Woppy",
+   "level": 48,
+   "class": "Rogue",
+   "classFile": "ROGUE",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Rhozak Warbreaker",
+   "level": 31,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
    "main": null
   },
   {
    "name": "Rockspetard Apocalypse",
-   "level": 34,
+   "level": 35,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Member",
@@ -341,7 +371,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 8,
+   "days": 10,
    "main": null
   },
   {
@@ -366,7 +396,7 @@
   },
   {
    "name": "Zervi Grimveil",
-   "level": 37,
+   "level": 40,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -376,7 +406,7 @@
   },
   {
    "name": "Aders Droid",
-   "level": 10,
+   "level": 13,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Initiate",
@@ -386,7 +416,17 @@
   },
   {
    "name": "Big Oily",
-   "level": 26,
+   "level": 29,
+   "class": "Warrior",
+   "classFile": "WARRIOR",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
+   "name": "Citrate Overload",
+   "level": 8,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
@@ -401,27 +441,17 @@
    "classFile": "PRIEST",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": "Large Joseph"
   },
   {
-   "name": "Drakir Felmaw",
-   "level": 41,
-   "class": "Warlock",
-   "classFile": "WARLOCK",
-   "rank": "Initiate",
-   "rankIndex": 4,
-   "days": 0,
-   "main": null
-  },
-  {
    "name": "Hoofstomp Sunstrider",
-   "level": 4,
+   "level": 11,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -431,12 +461,12 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
    "name": "Lagertha Bowsmaiden",
-   "level": 37,
+   "level": 38,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -451,7 +481,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -461,7 +491,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 3,
    "main": "Large Joseph"
   },
   {
@@ -471,37 +501,17 @@
    "classFile": "WARLOCK",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
    "name": "Ojiisan Lonewolf",
-   "level": 29,
+   "level": 30,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
-   "main": null
-  },
-  {
-   "name": "Poppy Woppy",
-   "level": 44,
-   "class": "Rogue",
-   "classFile": "ROGUE",
-   "rank": "Initiate",
-   "rankIndex": 4,
-   "days": 0,
-   "main": null
-  },
-  {
-   "name": "Rhozak Warbreaker",
-   "level": 29,
-   "class": "Warrior",
-   "classFile": "WARRIOR",
-   "rank": "Initiate",
-   "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -511,7 +521,7 @@
    "classFile": "ROGUE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -526,7 +536,7 @@
   },
   {
    "name": "Who Ha",
-   "level": 10,
+   "level": 15,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -536,7 +546,7 @@
   },
   {
    "name": "Large Joseph",
-   "level": 37,
+   "level": 41,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Guild Master",
@@ -545,12 +555,12 @@
    "main": null
   }
  ],
- "players": 51,
+ "players": 52,
  "kills": [
   {
    "name": "Pork Likeorc",
-   "hk": 244,
-   "mobs": 5916
+   "hk": 297,
+   "mobs": 7024
   },
   {
    "name": "Wongo Wongo",
@@ -558,24 +568,29 @@
    "mobs": 8102
   },
   {
-   "name": "Vatic Cane",
-   "hk": 15,
-   "mobs": 5742
+   "name": "Large Joseph",
+   "hk": 16,
+   "mobs": 6428
   },
   {
-   "name": "Large Joseph",
-   "hk": 12,
-   "mobs": 5691
+   "name": "Vatic Cane",
+   "hk": 15,
+   "mobs": 6340
   },
   {
    "name": "Clane Stocious",
    "hk": 1,
-   "mobs": 367
+   "mobs": 385
   },
   {
    "name": "Helehuichiri Tenderfart",
    "hk": 0,
    "mobs": 93
+  },
+  {
+   "name": "Lawn Mooèr",
+   "hk": 0,
+   "mobs": 130
   },
   {
    "name": "Magia Musculorum",
@@ -584,14 +599,14 @@
   }
  ],
  "totals": {
-  "hk": 331,
-  "mobs": 26154,
-  "chars": 7
+  "hk": 388,
+  "mobs": 28745,
+  "chars": 8
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
-  "hk": 244,
-  "mobs": 5916
+  "hk": 297,
+  "mobs": 7024
  },
  "crafting": [
   {
@@ -599,9 +614,9 @@
    "crafters": [
     {
      "name": "Large Joseph",
-     "rank": 174,
+     "rank": 185,
      "max": 225,
-     "recipes": 46
+     "recipes": 48
     }
    ]
   },
@@ -610,9 +625,9 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 241,
+     "rank": 281,
      "max": 300,
-     "recipes": 17
+     "recipes": 21
     },
     {
      "name": "Wongo Wongo",
@@ -621,7 +636,13 @@
     },
     {
      "name": "Large Joseph",
-     "rank": 157,
+     "rank": 225,
+     "max": 225,
+     "recipes": 28
+    },
+    {
+     "name": "Vatic Cane",
+     "rank": 213,
      "max": 225,
      "recipes": 21
     },
@@ -639,19 +660,24 @@
     {
      "name": "Clane Stocious",
      "rank": 1,
-     "max": 75
+     "max": 75,
+     "recipes": 4
     },
     {
-     "name": "Vatic Cane",
-     "rank": null,
-     "max": null,
-     "recipes": 20
+     "name": "Lawn Mooèr",
+     "rank": 1,
+     "max": 75
     }
    ]
   },
   {
    "profession": "Enchanting",
    "crafters": [
+    {
+     "name": "Vatic Cane",
+     "rank": 211,
+     "max": 225
+    },
     {
      "name": "Magia Musculorum",
      "rank": 34,
@@ -667,7 +693,7 @@
      "name": "Pork Likeorc",
      "rank": 250,
      "max": 300,
-     "recipes": 42
+     "recipes": 46
     }
    ]
   },
@@ -682,20 +708,25 @@
     },
     {
      "name": "Pork Likeorc",
-     "rank": 210,
-     "max": 225,
+     "rank": 225,
+     "max": 300,
      "recipes": 14
-    },
-    {
-     "name": "Large Joseph",
-     "rank": 139,
-     "max": 150,
-     "recipes": 11
     },
     {
      "name": "Cigarette Coffee",
      "rank": 72,
      "max": 150
+    },
+    {
+     "name": "Lawn Mooèr",
+     "rank": 1,
+     "max": 75
+    },
+    {
+     "name": "Large Joseph",
+     "rank": null,
+     "max": null,
+     "recipes": 11
     }
    ]
   },
@@ -705,7 +736,7 @@
     {
      "name": "Pork Likeorc",
      "rank": 225,
-     "max": 225
+     "max": 300
     },
     {
      "name": "Wongo Wongo",
@@ -714,9 +745,14 @@
      "recipes": 1
     },
     {
+     "name": "Vatic Cane",
+     "rank": 12,
+     "max": 75
+    },
+    {
      "name": "Large Joseph",
-     "rank": 133,
-     "max": 150,
+     "rank": null,
+     "max": null,
      "recipes": 1
     }
    ]
@@ -730,6 +766,11 @@
      "max": 300
     },
     {
+     "name": "Lawn Mooèr",
+     "rank": 24,
+     "max": 75
+    },
+    {
      "name": "Helehuichiri Tenderfart",
      "rank": 21,
      "max": 75
@@ -741,14 +782,9 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 229,
-     "max": 300
-    },
-    {
-     "name": "Large Joseph",
-     "rank": 207,
-     "max": 225,
-     "recipes": 9
+     "rank": 250,
+     "max": 300,
+     "recipes": 11
     },
     {
      "name": "Wongo Wongo",
@@ -756,9 +792,15 @@
      "max": 225
     },
     {
-     "name": "Clane Stocious",
-     "rank": 14,
+     "name": "Lawn Mooèr",
+     "rank": 26,
      "max": 75
+    },
+    {
+     "name": "Large Joseph",
+     "rank": null,
+     "max": null,
+     "recipes": 9
     }
    ]
   },
@@ -766,15 +808,15 @@
    "profession": "Skinning",
    "crafters": [
     {
+     "name": "Vatic Cane",
+     "rank": 233,
+     "max": 300,
+     "recipes": 1
+    },
+    {
      "name": "Cigarette Coffee",
      "rank": 106,
      "max": 150
-    },
-    {
-     "name": "Vatic Cane",
-     "rank": null,
-     "max": null,
-     "recipes": 1
     }
    ]
   },
@@ -795,11 +837,27 @@
    ]
   }
  ],
- "polls": [],
+ "polls": [
+  {
+   "question": "Are you a master baiter?",
+   "closes": 1796022539,
+   "open": true,
+   "answers": [
+    {
+     "text": "Yes",
+     "votes": 1
+    },
+    {
+     "text": "No",
+     "votes": 1
+    }
+   ]
+  }
+ ],
  "donations": {
-  "title": "aint doing shit",
-  "target": 30000,
-  "owner": "Wongo Wongo",
+  "title": "Guild Bank",
+  "target": 1000000,
+  "owner": "Large Joseph",
   "total": 0,
   "givers": []
  },
