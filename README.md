@@ -6,7 +6,7 @@
 [![Addon](https://img.shields.io/github/v/release/carraigo/issues-with-tissues?label=addon)](https://github.com/carraigo/issues-with-tissues/releases/latest)
 ![Python](https://img.shields.io/badge/python-3.8%2B-3776ab)
 
-A small public page for the Issues with Tissues guild on WoW: Forever: guild kill totals, the Elite Soldier, crafters by profession, the donation goal, polls and loot notes.
+A small public page for the Issues with Tissues guild on WoW: Forever: guild kill totals, the Elite Soldier, crafters by crafting profession, the donation goal, polls and loot notes.
 
 **Live page:** https://carraigo.github.io/iwt-stats/
 
@@ -37,6 +37,6 @@ Players can send a report about how the addon runs on their client: `/iwt report
 
 ## What's published
 
-Character names, levels, classes, ranks, honourable and creature kills, professions and recipe counts, poll results, the donation goal and loot notes. Officer notes are never saved or published.
+Character names, levels, classes, ranks, honourable and creature kills, crafting professions (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking, Tailoring and Cooking) and recipe counts, poll results, the donation goal and loot notes. Gathering skills aren't tracked by the addon and are left out even if an older version shared them. Guild notes, officer notes, guild chat and guild news stay in the game and are never published.
 
 © 2026 Issues with Tissues. All rights reserved.
