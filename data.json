@@ -1,8 +1,8 @@
 {
- "generated": 1795454478,
- "snapshotAt": 1795454473,
+ "generated": 1795461750,
+ "snapshotAt": 1795461745,
  "guild": "Issues with Tissues",
- "addonVersion": "1.2.1",
+ "addonVersion": "1.3.0-beta.1",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -36,7 +36,7 @@
   },
   {
    "name": "Aders War",
-   "level": 49,
+   "level": 50,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Veteran",
@@ -56,7 +56,7 @@
   },
   {
    "name": "Kazo Pets",
-   "level": 51,
+   "level": 52,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Veteran",
@@ -71,7 +71,7 @@
    "classFile": "SHAMAN",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -336,7 +336,7 @@
   },
   {
    "name": "Poppy Woppy",
-   "level": 48,
+   "level": 49,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -381,7 +381,7 @@
    "classFile": "WARLOCK",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -416,7 +416,7 @@
   },
   {
    "name": "Big Oily",
-   "level": 29,
+   "level": 30,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
@@ -516,7 +516,7 @@
   },
   {
    "name": "Sorin Lupercal",
-   "level": 1,
+   "level": 6,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Initiate",
@@ -560,12 +560,17 @@
   {
    "name": "Pork Likeorc",
    "hk": 297,
-   "mobs": 7024
+   "mobs": 7033
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 189,
-   "mobs": 11280
+   "hk": 191,
+   "mobs": 11421
+  },
+  {
+   "name": "Zervi Grimveil",
+   "hk": 167,
+   "mobs": 6037
   },
   {
    "name": "Wongo Wongo",
@@ -609,14 +614,14 @@
   }
  ],
  "totals": {
-  "hk": 628,
-  "mobs": 46861,
-  "chars": 10
+  "hk": 797,
+  "mobs": 53048,
+  "chars": 11
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
   "hk": 297,
-  "mobs": 7024
+  "mobs": 7033
  },
  "crafting": [
   {
@@ -626,7 +631,7 @@
      "name": "Large Joseph",
      "rank": 185,
      "max": 225,
-     "recipes": 48
+     "recipes": 0
     }
    ]
   },
@@ -642,7 +647,7 @@
      "name": "Pork Likeorc",
      "rank": 281,
      "max": 300,
-     "recipes": 21
+     "recipes": 0
     },
     {
      "name": "Wongo Wongo",
@@ -653,13 +658,13 @@
      "name": "Large Joseph",
      "rank": 225,
      "max": 225,
-     "recipes": 28
+     "recipes": 0
     },
     {
      "name": "Vatic Cane",
      "rank": 213,
      "max": 225,
-     "recipes": 21
+     "recipes": 0
     },
     {
      "name": "Cigarette Coffee",
@@ -670,7 +675,7 @@
      "name": "Magia Musculorum",
      "rank": 15,
      "max": 75,
-     "recipes": 4
+     "recipes": 0
     },
     {
      "name": "Kazo Pets",
@@ -681,7 +686,7 @@
      "name": "Clane Stocious",
      "rank": 1,
      "max": 75,
-     "recipes": 4
+     "recipes": 0
     },
     {
      "name": "Lawn Mooèr",
@@ -702,7 +707,7 @@
      "name": "Magia Musculorum",
      "rank": 34,
      "max": 75,
-     "recipes": 8
+     "recipes": 0
     }
    ]
   },
@@ -713,7 +718,7 @@
      "name": "Pork Likeorc",
      "rank": 250,
      "max": 300,
-     "recipes": 46
+     "recipes": 0
     }
    ]
   },
@@ -724,13 +729,13 @@
      "name": "Wongo Wongo",
      "rank": 273,
      "max": 300,
-     "recipes": 19
+     "recipes": 0
     },
     {
      "name": "Pork Likeorc",
      "rank": 225,
      "max": 300,
-     "recipes": 14
+     "recipes": 0
     },
     {
      "name": "Cigarette Coffee",
@@ -746,7 +751,7 @@
      "name": "Large Joseph",
      "rank": null,
      "max": null,
-     "recipes": 11
+     "recipes": 0
     }
    ]
   },
@@ -762,7 +767,7 @@
      "name": "Wongo Wongo",
      "rank": 171,
      "max": 225,
-     "recipes": 1
+     "recipes": 0
     },
     {
      "name": "Vatic Cane",
@@ -773,7 +778,7 @@
      "name": "Large Joseph",
      "rank": null,
      "max": null,
-     "recipes": 1
+     "recipes": 0
     }
    ]
   },
@@ -808,7 +813,8 @@
     {
      "name": "Kazo Pets",
      "rank": 225,
-     "max": 300
+     "max": 300,
+     "recipes": 0
     }
    ]
   },
@@ -819,7 +825,7 @@
      "name": "Pork Likeorc",
      "rank": 250,
      "max": 300,
-     "recipes": 11
+     "recipes": 0
     },
     {
      "name": "Wongo Wongo",
@@ -835,7 +841,7 @@
      "name": "Large Joseph",
      "rank": null,
      "max": null,
-     "recipes": 9
+     "recipes": 0
     }
    ]
   },
@@ -846,7 +852,7 @@
      "name": "Vatic Cane",
      "rank": 233,
      "max": 300,
-     "recipes": 1
+     "recipes": 0
     },
     {
      "name": "Cigarette Coffee",
@@ -867,7 +873,7 @@
      "name": "Magia Musculorum",
      "rank": 68,
      "max": 150,
-     "recipes": 24
+     "recipes": 0
     }
    ]
   }
