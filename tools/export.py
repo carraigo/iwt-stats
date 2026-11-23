@@ -127,6 +127,10 @@ def read_saved(path):
 # ---------------------------------------------------------------------------
 # The page's data
 # ---------------------------------------------------------------------------
+# The addon tracks crafting professions only (since 0.9.0). Older clients may still have shared
+# gathering skills, First Aid or Fishing, so anything else is left out here too.
+CRAFTING = {"Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Leatherworking", "Tailoring", "Cooking"}
+
 def live(db, name):
     recs = ((db.get("sync") or {}).get(name) or {}).get("records") or {}
     return {str(k): r for k, r in recs.items() if isinstance(r, dict) and not r.get("deleted")}
@@ -155,12 +159,12 @@ def build(db):
             continue
         for part in (r.get("data") or "").split(","):
             p = part.split(":")
-            if len(p) == 3 and p[1].isdigit():
+            if len(p) == 3 and p[1].isdigit() and p[0] in CRAFTING:
                 profs.setdefault(p[0], []).append({"name": who, "rank": int(p[1]), "max": int(p[2])})
     recipes = {}
     for key, r in live(db, "recipes").items():
         who, _, prof = key.partition("#")
-        if prof and in_guild(who):
+        if prof in CRAFTING and in_guild(who):
             recipes[(who, prof)] = [x.split(":", 1)[1] for x in (r.get("data") or "").split(";") if ":" in x]
     crafting = []
     for prof in sorted(set(profs) | {p for _, p in recipes}):

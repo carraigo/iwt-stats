@@ -1,3 +1,7 @@
+<!doctype html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Issues with Tissues</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +29,7 @@
   --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646;
   --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242; color-scheme: dark }
 
+[hidden] { display: none !important; } /* .card's display:grid would otherwise show hidden sections */
 body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
 .wrap { max-width: 1040px; margin: 0 auto; padding-block: 28px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
@@ -70,6 +75,7 @@ details.prof summary::before { content: "+"; font-family: var(--mono); color: va
 details.prof[open] summary::before { content: "–"; }
 details.prof summary span:first-of-type { flex: 1; }
 details.prof .rows { padding: 8px 0 4px 1.4em; }
+#rosterBox summary span:first-of-type { font-family: var(--display); font-size: 1.15rem; font-weight: 600; }
 .skill { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; }
 .skill .track { grid-column: 1 / -1; }
 
@@ -109,7 +115,7 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
       <h1 id="guild">Issues with Tissues</h1>
       <div class="tag">A guild on WoW: Forever. Bless you.</div>
     </div>
-    <div class="stamp" id="stamp">Loading…</div>
+    <div class="actions"><a class="stamp" href="#report" style="text-decoration:none;color:var(--accent)">Send a diagnostics report</a><div class="stamp" id="stamp">Loading…</div></div>
   </header>
 
   <section class="hero" id="hero" aria-label="Guild totals"></section>
@@ -121,7 +127,7 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
       <div class="rows" id="hk"></div>
     </section>
     <section class="card">
-      <h2>Crafters <small>open a profession</small></h2>
+      <h2>Crafters <small>crafting professions · open one</small></h2>
       <div id="crafting"></div>
     </section>
   </div>
@@ -137,8 +143,10 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
   </section>
 
   <section class="card" id="rosterCard">
-    <h2>Roster <small id="rosterNote"></small></h2>
-    <div id="roster"></div>
+    <details class="prof" id="rosterBox">
+      <summary><span>Roster</span><span class="muted" id="rosterNote">show</span></summary>
+      <div id="roster" style="padding-top:8px"></div>
+    </details>
   </section>
 
   <section class="card" id="report" hidden>
@@ -160,6 +168,7 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
 <script>
 const CLASS = { WARRIOR:"#c79c6e", PALADIN:"#f58cba", HUNTER:"#abd473", ROGUE:"#c9b23a", PRIEST:"#9aa3ad",
   SHAMAN:"#0070de", MAGE:"#3fc7eb", WARLOCK:"#8788ee", DRUID:"#ff7d0a" };
+const CRAFTING = ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Leatherworking", "Tailoring", "Cooking"];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
 const fmt = n => Number(n || 0).toLocaleString("en-GB");
@@ -203,13 +212,14 @@ function render(d) {
   $("hk").innerHTML = d.kills.map((k, i) => `<div class="row"><span class="muted num">${i + 1}</span>${nameHtml(k.name)}
       <span class="num">${fmt(k.hk)}</span><div class="track"><div class="fill" style="width:${(k.hk / top * 100).toFixed(1)}%"></div></div></div>`).join("");
 
-  // Crafters
-  $("crafting").innerHTML = d.crafting.length ? d.crafting.map(p => `<details class="prof">
+  // Crafters: crafting professions only (an older data.json may still list gathering skills)
+  const crafting = (d.crafting || []).filter(p => CRAFTING.includes(p.profession));
+  $("crafting").innerHTML = crafting.length ? crafting.map(p => `<details class="prof">
       <summary><span>${esc(p.profession)}</span><span class="muted">${p.crafters.length} ${p.crafters.length === 1 ? "crafter" : "crafters"}</span></summary>
       <div class="rows">${p.crafters.map(c => `<div class="skill">${nameHtml(c.name)}
         <span class="rank num">${c.rank != null ? c.rank + " / " + c.max : ""}${c.recipes ? ` · ${c.recipes} recipes` : ""}</span>
         ${c.rank != null ? `<div class="track"><div class="fill" style="width:${(c.rank / Math.max(c.max, 1) * 100).toFixed(1)}%"></div></div>` : ""}</div>`).join("")}</div>
-    </details>`).join("") : `<div class="empty">No professions shared yet.</div>`;
+    </details>`).join("") : `<div class="empty">No crafting professions shared yet. In game, open your profession window and click each tab, or press Scan my recipes on Home.</div>`;
 
   // Donations
   const g = d.donations;
