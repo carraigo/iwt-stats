@@ -8,8 +8,11 @@ the page can show. No extra packages needed: Python 3.8+ only.
 
   python export.py "C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\<ACCOUNT>\\SavedVariables\\IssuesWithTissues.lua" site\\data.json
   python export.py <saved file> site\\data.json --watch    (re-export whenever the game saves)
-  add --push to also commit data.json and push it with git after each export that changed
-  something (run from inside the site repo; this is what tools\\autostart.bat sets up).
+  add --push to also commit data.json and push it with git (run from inside the site repo; this
+  is what tools\\autostart.bat sets up). With --watch --push the site is pushed at most once per
+  refresh window (PUSH_WINDOWS below, this PC's local time): the first save in a window pushes at
+  once; later saves update data.json here and go out when the next window starts.
+  tools\\publish.bat always pushes straight away.
 """
 import subprocess
 import json
@@ -17,6 +20,40 @@ import os
 import re
 import sys
 import time
+
+# Refresh windows, as start hours in local time: 00:00-08:00, 08:00-16:00 and 16:00-00:00.
+PUSH_WINDOWS = [0, 8, 16]
+# The window last pushed in, kept next to this file so a restart of the watcher remembers it.
+STATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".last_push")
+
+
+def window_of(t=None):
+    """(date, start hour) of the refresh window holding time t (local time)."""
+    lt = time.localtime(t)
+    start = max(h for h in PUSH_WINDOWS if h <= lt.tm_hour)
+    return "%04d-%02d-%02d %02d:00" % (lt.tm_year, lt.tm_mon, lt.tm_mday, start)
+
+
+def next_window_text(t=None):
+    """"16:00" (or "00:00" for midnight): when the next window starts."""
+    lt = time.localtime(t)
+    later = [h for h in PUSH_WINDOWS if h > lt.tm_hour]
+    return "%02d:00" % (later[0] if later else PUSH_WINDOWS[0])
+
+
+def last_window():
+    try:
+        return open(STATE, encoding="utf-8").read().strip()
+    except OSError:
+        return ""
+
+
+def remember_window(w):
+    try:
+        with open(STATE, "w", encoding="utf-8") as f:
+            f.write(w)
+    except OSError:
+        pass
 
 
 # ---------------------------------------------------------------------------
@@ -129,7 +166,27 @@ def read_saved(path):
 # ---------------------------------------------------------------------------
 # The addon tracks crafting professions only (since 0.9.0). Older clients may still have shared
 # gathering skills, First Aid or Fishing, so anything else is left out here too.
-CRAFTING = {"Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Leatherworking", "Tailoring", "Cooking"}
+# Cooking was dropped in 1.3.0 (nearly everyone has it).
+CRAFTING = {"Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Leatherworking", "Tailoring"}
+
+def recipe_count(r):
+    """How many recipes a record lists, in any of the addon's formats:
+    1 "id:Name;..."  2 "12345;s7421;nName"  3 "i2b8.1.4;s5q2;nName" (base 36 gaps)."""
+    data = r.get("data") or ""
+    v = r.get("v") or 1
+    tokens = [t for t in data.split(";") if t]
+    if v == 1:
+        return sum(1 for t in tokens if ":" in t)
+    if v == 2:
+        return len(tokens)
+    n = 0
+    for t in tokens:
+        if t[0] in "is":
+            n += len([g for g in t[1:].split(".") if g])
+        elif t[0] == "n":
+            n += 1
+    return n
+
 
 def live(db, name):
     recs = ((db.get("sync") or {}).get(name) or {}).get("records") or {}
@@ -165,13 +222,13 @@ def build(db):
     for key, r in live(db, "recipes").items():
         who, _, prof = key.partition("#")
         if prof in CRAFTING and in_guild(who):
-            recipes[(who, prof)] = [x.split(":", 1)[1] for x in (r.get("data") or "").split(";") if ":" in x]
+            recipes[(who, prof)] = recipe_count(r)
     crafting = []
     for prof in sorted(set(profs) | {p for _, p in recipes}):
         people = {c["name"]: dict(c) for c in profs.get(prof, [])}
         for (who, p), names in recipes.items():
             if p == prof:
-                people.setdefault(who, {"name": who, "rank": None, "max": None})["recipes"] = len(names)
+                people.setdefault(who, {"name": who, "rank": None, "max": None})["recipes"] = names
         crafting.append({"profession": prof, "crafters": sorted(people.values(), key=lambda c: -(c.get("rank") or 0))})
 
     # Polls (one vote per player: the main's newest)
@@ -264,18 +321,55 @@ def export(src, dst):
 
 
 def push(dst):
-    """Commit dst and push it. Errors are printed, never raised, so a watcher keeps running."""
+    """Commit dst and push it; True when something was pushed. Errors are printed, never raised,
+    so a watcher keeps running."""
     folder = os.path.dirname(os.path.abspath(dst))
     run = lambda *a: subprocess.run(["git", *a], cwd=folder, capture_output=True, text=True)
     try:
         run("add", os.path.basename(dst))
         if run("diff", "--cached", "--quiet").returncode == 0:
-            return
+            return False
         r = run("commit", "-m", "Update guild data")
         r = r if r.returncode else run("push")
         print("%s  %s" % (time.strftime("%H:%M:%S"), "pushed" if r.returncode == 0 else "git failed: " + (r.stderr or r.stdout).strip()))
+        return r.returncode == 0
     except OSError as e:
         print("%s  git not found: %s" % (time.strftime("%H:%M:%S"), e))
+        return False
+
+
+def publish(src, dst, pushing, watching):
+    """Export, and push when allowed: always without --watch; with it, once per refresh window."""
+    changed = export(src, dst)
+    if not pushing:
+        return
+    if not watching:
+        if changed:
+            push(dst)
+        return
+    if pending_or(changed):
+        try_push(dst)
+
+
+waiting = False  # data.json changed here but isn't pushed yet
+
+
+def pending_or(changed):
+    global waiting
+    waiting = waiting or changed
+    return waiting
+
+
+def try_push(dst):
+    """Push if this window hasn't had its push yet; else say when it will go out."""
+    global waiting
+    w = window_of()
+    if last_window() == w:
+        print("%s  held until %s (one push per window)" % (time.strftime("%H:%M:%S"), next_window_text()))
+        return
+    if push(dst):
+        remember_window(w)
+    waiting = False  # pushed, or nothing new to push
 
 
 if __name__ == "__main__":
@@ -283,14 +377,20 @@ if __name__ == "__main__":
         sys.exit(__doc__)
     src, dst = sys.argv[1], sys.argv[2]
     pushing = "--push" in sys.argv
-    if export(src, dst) and pushing:
-        push(dst)
-    if "--watch" in sys.argv:
+    watching = "--watch" in sys.argv
+    # data.json may hold changes a previous watcher held back: check at the first chance.
+    waiting = pushing and watching
+    publish(src, dst, pushing, watching)
+    if watching:
         sys.stdout.flush()
         last = os.path.getmtime(src)
         print("Watching for the game to save (Ctrl+C to stop)...")
         while True:
             time.sleep(5)
+            # A new window started with data still waiting: send it now.
+            if pushing and waiting and last_window() != window_of():
+                try_push(dst)
+                sys.stdout.flush()
             try:
                 now = os.path.getmtime(src)
             except OSError:
@@ -299,8 +399,7 @@ if __name__ == "__main__":
                 last = now
                 time.sleep(3)  # let the game finish writing
                 try:
-                    if export(src, dst) and pushing:
-                        push(dst)
+                    publish(src, dst, pushing, watching)
                 except Exception as e:  # a half-written file: try again on the next save
                     print("%s  export failed: %s" % (time.strftime("%H:%M:%S"), e))
                 sys.stdout.flush()

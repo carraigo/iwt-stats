@@ -27,7 +27,7 @@ tools\publish.bat
 
 It exports the data, commits `data.json` and pushes. The page updates about a minute later.
 
-**Automatic:** run `tools\autostart.bat` once. It starts a hidden watcher, now and at every Windows login, that exports and pushes whenever the game saves (logout or `/reload`). It only pushes when the guild data actually changed. `tools\autostart.bat off` turns it off, and `tools\watch.log` shows what it did.
+**Automatic:** run `tools\autostart.bat` once. It starts a hidden watcher, now and at every Windows login, that exports and pushes whenever the game saves (logout or `/reload`). It only pushes when the guild data actually changed, and at most once per refresh window (00:00 to 08:00, 08:00 to 16:00 and 16:00 to 00:00, your PC's time): the first save in a window pushes at once, and later saves wait for the next window. `tools\publish.bat` always pushes straight away. The windows are set at the top of `tools\export.py`. `tools\autostart.bat off` turns it off, and `tools\watch.log` shows what it did.
 
 To export by hand: `py -3 tools\export.py "<path to IssuesWithTissues.lua>" data.json`, with `--watch` to re-export every time the game saves.
 
@@ -37,6 +37,6 @@ Players can send a report about how the addon runs on their client: `/iwt report
 
 ## What's published
 
-Character names, levels, classes, ranks, honourable and creature kills, crafting professions (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking, Tailoring and Cooking) and recipe counts, poll results, the donation goal and loot notes. Gathering skills aren't tracked by the addon and are left out even if an older version shared them. Guild notes, officer notes, guild chat and guild news stay in the game and are never published.
+Character names, levels, classes, ranks, honourable and creature kills, crafting professions (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking and Tailoring; Cooking was dropped in addon 1.3.0) and recipe counts, poll results, the donation goal and loot notes. Gathering skills aren't tracked by the addon and are left out even if an older version shared them. Guild notes, officer notes, guild chat and guild news stay in the game and are never published.
 
 © 2026 Issues with Tissues. All rights reserved.
