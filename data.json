@@ -1,8 +1,8 @@
 {
- "generated": 1795452447,
- "snapshotAt": 1795444404,
+ "generated": 1795452646,
+ "snapshotAt": 1795452640,
  "guild": "Issues with Tissues",
- "addonVersion": "1.2.0",
+ "addonVersion": "1.1.0",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -16,7 +16,7 @@
   },
   {
    "name": "Vatic Cane",
-   "level": 42,
+   "level": 43,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Officer",
@@ -171,7 +171,7 @@
    "classFile": "MAGE",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -191,7 +191,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 14,
+   "days": 15,
    "main": null
   },
   {
@@ -351,7 +351,7 @@
    "classFile": "WARRIOR",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -411,7 +411,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -431,7 +431,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
