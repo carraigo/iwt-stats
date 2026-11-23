@@ -1,6 +1,6 @@
 {
- "generated": 1795454154,
- "snapshotAt": 1795454150,
+ "generated": 1795454331,
+ "snapshotAt": 1795454322,
  "guild": "Issues with Tissues",
  "addonVersion": "1.2.1",
  "roster": [
@@ -565,7 +565,7 @@
   {
    "name": "Ahyon Totempåle",
    "hk": 189,
-   "mobs": 11272
+   "mobs": 11275
   },
   {
    "name": "Wongo Wongo",
@@ -610,7 +610,7 @@
  ],
  "totals": {
   "hk": 628,
-  "mobs": 46853,
+  "mobs": 46856,
   "chars": 10
  },
  "eliteSoldier": {
