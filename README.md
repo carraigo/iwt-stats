@@ -35,6 +35,10 @@ To export by hand: `py -3 tools\export.py "<path to IssuesWithTissues.lua>" data
 
 Players can send a report about how the addon runs on their client: `/iwt report` in game, then paste it at [the page's report section](https://carraigo.github.io/iwt-stats/#report). The page checks and shows what's inside, then opens a pre-filled issue in the addon repo (label `diagnostics`), or copies it for Discord. `tools/decode_report.py` turns reports back into JSON.
 
+## Performance page
+
+`perf.html` (not linked from the main page, and hidden from search engines, but public like the rest of the site) charts how the addon ran on the exporting PC, one point per play session: a health score out of 100, memory, start-up time, time to catch up, traffic, records held, problems and the busiest send queue, plus saved size per set. The addon (1.3.0-beta.4 and later) saves these numbers at logout and /reload; the exporter adds each new session to `perf.json` (the last 300) and pushes it with `data.json`. It holds numbers only: no names or chat.
+
 ## What's published
 
 Character names, levels, classes, ranks, honourable and creature kills, crafting professions (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking and Tailoring; Cooking was dropped in addon 1.3.0) and recipe counts, poll results, the donation goal and loot notes. Gathering skills aren't tracked by the addon and are left out even if an older version shared them. Guild notes, officer notes, guild chat and guild news stay in the game and are never published.

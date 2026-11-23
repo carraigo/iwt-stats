@@ -13,6 +13,10 @@ the page can show. No extra packages needed: Python 3.8+ only.
   refresh window (PUSH_WINDOWS below, this PC's local time): the first save in a window pushes at
   once; later saves update data.json here and go out when the next window starts.
   tools\\publish.bat always pushes straight away.
+
+It also keeps perf.json next to data.json: one entry per play session (the addon's session stats,
+saved at logout and /reload: memory, catch-up, traffic, errors, sizes; numbers only), the last
+PERF_KEEP of them, for the performance page (perf.html).
 """
 import subprocess
 import json
@@ -23,6 +27,8 @@ import time
 
 # Refresh windows, as start hours in local time: 00:00-08:00, 08:00-16:00 and 16:00-00:00.
 PUSH_WINDOWS = [0, 8, 16]
+# Sessions kept in perf.json (about 1 KB each).
+PERF_KEEP = 300
 # The window last pushed in, kept next to this file so a restart of the watcher remembers it.
 STATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".last_push")
 
@@ -302,9 +308,37 @@ def build(db):
     }
 
 
+def perf_path(dst):
+    return os.path.join(os.path.dirname(os.path.abspath(dst)), "perf.json")
+
+
+def export_perf(db, dst):
+    """Add this session's stats to perf.json when they're new; True when the file changed."""
+    stats = db.get("stats")
+    if not isinstance(stats, dict) or not isinstance(stats.get("at"), (int, float)):
+        return False
+    path = perf_path(dst)
+    try:
+        hist = json.load(open(path, encoding="utf-8"))
+        sessions = hist.get("sessions") or []
+    except (OSError, ValueError, AttributeError):
+        sessions = []
+    if any(x.get("at") == stats["at"] for x in sessions):
+        return False
+    sessions.append(stats)
+    sessions.sort(key=lambda x: x.get("at") or 0)
+    sessions = sessions[-PERF_KEEP:]
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"updated": int(time.time()), "sessions": sessions}, f, ensure_ascii=False, separators=(",", ":"))
+    print("%s  added a session to %s (%d kept)" % (time.strftime("%H:%M:%S"), path, len(sessions)))
+    return True
+
+
 def export(src, dst):
-    """Write dst; returns False when nothing but the export time would change."""
-    data = build(read_saved(src).get("IwTDB") or {})
+    """Write dst (and perf.json); returns False when nothing but the export time would change."""
+    db = read_saved(src).get("IwTDB") or {}
+    perf_changed = export_perf(db, dst)
+    data = build(db)
     try:
         old = json.load(open(dst, encoding="utf-8"))
         same = {k: v for k, v in old.items() if k != "generated"} == {k: v for k, v in data.items() if k != "generated"}
@@ -312,7 +346,7 @@ def export(src, dst):
         same = False
     if same:
         print("%s  no changes" % time.strftime("%H:%M:%S"))
-        return False
+        return perf_changed
     os.makedirs(os.path.dirname(os.path.abspath(dst)), exist_ok=True)
     with open(dst, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
@@ -321,12 +355,14 @@ def export(src, dst):
 
 
 def push(dst):
-    """Commit dst and push it; True when something was pushed. Errors are printed, never raised,
+    """Commit dst (and perf.json) and push it; True when something was pushed. Errors are printed, never raised,
     so a watcher keeps running."""
     folder = os.path.dirname(os.path.abspath(dst))
     run = lambda *a: subprocess.run(["git", *a], cwd=folder, capture_output=True, text=True)
     try:
         run("add", os.path.basename(dst))
+        if os.path.exists(perf_path(dst)):
+            run("add", "perf.json")
         if run("diff", "--cached", "--quiet").returncode == 0:
             return False
         r = run("commit", "-m", "Update guild data")
