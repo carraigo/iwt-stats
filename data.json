@@ -1,6 +1,6 @@
 {
- "generated": 1795452837,
- "snapshotAt": 1795452829,
+ "generated": 1795454478,
+ "snapshotAt": 1795454473,
  "guild": "Issues with Tissues",
  "addonVersion": "1.2.1",
  "roster": [
@@ -206,7 +206,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 53,
+   "level": 54,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -563,9 +563,19 @@
    "mobs": 7024
   },
   {
+   "name": "Ahyon Totempåle",
+   "hk": 189,
+   "mobs": 11280
+  },
+  {
    "name": "Wongo Wongo",
    "hk": 59,
    "mobs": 8102
+  },
+  {
+   "name": "Kazo Pets",
+   "hk": 51,
+   "mobs": 6836
   },
   {
    "name": "Large Joseph",
@@ -599,9 +609,9 @@
   }
  ],
  "totals": {
-  "hk": 388,
-  "mobs": 28745,
-  "chars": 8
+  "hk": 628,
+  "mobs": 46861,
+  "chars": 10
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
@@ -623,6 +633,11 @@
   {
    "profession": "Cooking",
    "crafters": [
+    {
+     "name": "Ahyon Totempåle",
+     "rank": 298,
+     "max": 300
+    },
     {
      "name": "Pork Likeorc",
      "rank": 281,
@@ -656,6 +671,11 @@
      "rank": 15,
      "max": 75,
      "recipes": 4
+    },
+    {
+     "name": "Kazo Pets",
+     "rank": 3,
+     "max": 75
     },
     {
      "name": "Clane Stocious",
@@ -774,6 +794,21 @@
      "name": "Helehuichiri Tenderfart",
      "rank": 21,
      "max": 75
+    }
+   ]
+  },
+  {
+   "profession": "Leatherworking",
+   "crafters": [
+    {
+     "name": "Ahyon Totempåle",
+     "rank": 235,
+     "max": 300
+    },
+    {
+     "name": "Kazo Pets",
+     "rank": 225,
+     "max": 300
     }
    ]
   },
