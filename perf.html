@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>IwT performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* The addon's performance, one point per play session, from perf.json (tools/export.py).
+   Not linked from the main page. Same look as index.html. */
+:root {
+  --bg: #eef3f8; --paper: #ffffff; --ink: #23303f; --muted: #6a7889; --line: #d9e2ec;
+  --accent: #d9587a; --accent-soft: #fbe3ea; --gold: #b88a1e; --bar: #e4ebf2; --grid: #edf1f5;
+  --good: #2f9e5b; --warn: #b7791f; --bad: #c53b55;
+  --display: "Fredoka", "Nunito", ui-rounded, system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646; --grid: #232d3a;
+  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242;
+  --good: #5cc98a; --warn: #e2b54a; --bad: #f0788f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646; --grid: #232d3a;
+  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242;
+  --good: #5cc98a; --warn: #e2b54a; --bad: #f0788f; color-scheme: dark }
+
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 20px; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; line-height: 1.05; }
+h2 { font-size: 1.1rem; font-weight: 600; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+h2 small { font-family: var(--body); font-size: .8rem; color: var(--muted); font-weight: 600; }
+.muted { color: var(--muted); }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
+header .tag { color: var(--muted); margin-top: 6px; }
+.stamp { font-size: .82rem; color: var(--muted); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; text-decoration: none; }
+a.stamp { color: var(--accent); }
+
+.hero { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 22px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px; }
+.stat .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+.stat .value { font-family: var(--display); font-size: 2rem; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat .value small { font-size: .95rem; color: var(--muted); font-weight: 500; margin-left: 2px; }
+.stat .note { font-size: .82rem; color: var(--muted); }
+.stat.score .value { color: var(--accent); font-size: 2.6rem; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; border: 1px solid currentColor; }
+.pill.good { color: var(--good); } .pill.warn { color: var(--warn); } .pill.bad { color: var(--bad); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.filters button { font: 700 .85rem var(--body); border-radius: 999px; padding: 5px 12px; border: 1px solid var(--line);
+  background: var(--paper); color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; align-items: start; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 18px; display: grid; gap: 10px; min-width: 0; }
+.card .big { font-family: var(--display); font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.card .big small { font-size: .85rem; color: var(--muted); font-weight: 500; }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: 150px; overflow: visible; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); border-radius: 8px; padding: 6px 9px;
+  font-size: .78rem; line-height: 1.35; white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); z-index: 2; }
+.tip b { font-family: var(--mono); }
+
+.rows { display: grid; gap: 7px; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; font-size: .9rem; }
+.row .name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .val { font-family: var(--mono); font-size: .8rem; color: var(--muted); }
+.track { grid-column: 1 / -1; height: 6px; border-radius: 6px; background: var(--bar); overflow: hidden; }
+.fill { height: 100%; border-radius: 0 4px 4px 0; background: var(--accent); }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+th { text-align: left; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.n, th.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); font-size: .92rem; border: 1px dashed var(--line); border-radius: 12px; padding: 14px; }
+details summary { cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 1.1rem; }
+footer { color: var(--muted); font-size: .82rem; text-align: center; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Addon performance</h1>
+      <div class="tag">How Issues with Tissues ran, one point per play session (saved when you log out or /reload).</div>
+    </div>
+    <div class="filters" role="group" aria-label="Sessions shown" id="range"></div>
+  </header>
+
+  <div id="none" class="empty" hidden></div>
+
+  <div id="main" hidden>
+    <section class="hero" id="hero" aria-label="Latest session"></section>
+  </div>
+
+  <div class="grid" id="charts"></div>
+
+  <div class="grid" id="lower">
+    <section class="card" id="setsCard" hidden>
+      <h2>Saved data by set <small id="setsNote"></small></h2>
+      <div class="rows" id="sets"></div>
+    </section>
+    <section class="card" id="slowCard" hidden>
+      <h2>Busiest code <small>latest session with the profiler on</small></h2>
+      <div class="table-wrap"><table><thead><tr><th>Where</th><th class="n">Calls</th><th class="n">Total ms</th><th class="n">Worst ms</th></tr></thead><tbody id="slow"></tbody></table></div>
+    </section>
+  </div>
+
+  <section class="card" id="tableCard" hidden>
+    <details>
+      <summary>Every session as a table</summary>
+      <div class="table-wrap" style="margin-top:10px"><table>
+        <thead><tr><th>Logged out</th><th>Version</th><th class="n">Played</th><th class="n">Health</th><th class="n">Memory</th><th class="n">Start-up</th><th class="n">Caught up</th><th class="n">Records in</th><th class="n">Sent</th><th class="n">Heard</th><th class="n">Refused</th><th class="n">Errors</th></tr></thead>
+        <tbody id="table"></tbody>
+      </table></div>
+    </details>
+  </section>
+
+  <footer><a class="stamp" href="./">Back to the guild page</a> <span id="stamp" class="stamp">Loading…</span></footer>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const fmt = (n, d = 0) => (n == null || isNaN(n)) ? "–" : Number(n).toLocaleString("en-GB", { maximumFractionDigits: d, minimumFractionDigits: d });
+const when = t => new Date(t * 1000).toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+const day = t => new Date(t * 1000).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+const dur = s => { s = Math.max(0, Math.round(s || 0)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60);
+  return h ? `${h}h ${m}m` : m ? `${m}m ${s % 60}s` : `${s}s`; };
+const kb = b => (b || 0) / 1024;
+const median = a => { const s = a.filter(x => x != null).sort((x, y) => x - y); if (!s.length) return null;
+  const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+
+// Health, 0-100: start at 100 and take points off for each thing that went less well.
+// Each part has a cap, so one bad number can't sink the whole score.
+const PENALTIES = [
+  { what: "Catch-up", max: 25, of: s => s.sync && s.sync.caughtUpAfter != null ? (s.sync.caughtUpAfter - 60) / (300 - 60) : 0 },
+  { what: "Refused or dropped packets", max: 20, of: s => ((s.comm?.refused || 0) + (s.comm?.dropped || 0)) / 20 },
+  { what: "Errors", max: 30, of: s => (s.errors || 0) / 3 },
+  { what: "Memory", max: 15, of: s => ((s.memoryKB || 0) - 2000) / 4000 },
+  { what: "Start-up time", max: 10, of: s => ((s.startupMs || 0) - 100) / 400 },
+];
+function health(s) {
+  let score = 100; const lost = [];
+  for (const p of PENALTIES) {
+    const off = Math.round(Math.min(1, Math.max(0, p.of(s))) * p.max);
+    if (off > 0) { score -= off; lost.push(`${p.what} −${off}`); }
+  }
+  return { score, lost };
+}
+const grade = n => n >= 90 ? ["good", "✓ Great"] : n >= 75 ? ["good", "✓ Good"] : n >= 50 ? ["warn", "! Okay"] : ["bad", "✕ Needs a look"];
+
+// Each chart: one measure across sessions.
+const CHARTS = [
+  { key: "health", title: "Health score", unit: "", note: "out of 100", get: s => s._health.score, min: 0, max: 100 },
+  { key: "mem", title: "Memory", unit: " KB", note: "at logout", get: s => s.memoryKB },
+  { key: "catch", title: "Time to catch up", unit: " s", note: "login to synced", get: s => s.sync?.caughtUpAfter },
+  { key: "start", title: "Start-up time", unit: " ms", note: "load and login work", get: s => s.startupMs, d: 1 },
+  { key: "traffic", title: "Addon traffic", unit: " KB", note: "sent + heard per hour played", d: 1,
+    get: s => s.session > 60 ? (kb(s.comm?.sentBytes) + kb(s.comm?.heardBytes)) / (s.session / 3600) : null,
+    extra: s => `sent ${fmt(kb(s.comm?.sentBytes), 1)} KB, heard ${fmt(kb(s.comm?.heardBytes), 1)} KB` },
+  { key: "records", title: "Records held", unit: "", note: "all shared sets", get: s => Object.values(s.records || {}).reduce((a, b) => a + b, 0) },
+  { key: "problems", title: "Problems", unit: "", note: "errors + refused + dropped", bars: true,
+    get: s => (s.errors || 0) + (s.comm?.refused || 0) + (s.comm?.dropped || 0),
+    extra: s => `${s.errors || 0} errors, ${s.comm?.refused || 0} refused, ${s.comm?.dropped || 0} dropped` },
+  { key: "queue", title: "Busiest send queue", unit: " packets", note: "peak waiting at once", get: s => s.comm?.peakQueue },
+];
+
+const RANGES = [["20", "Last 20"], ["50", "Last 50"], ["all", "All"]];
+let range = "50", all = [];
+try { range = localStorage.getItem("iwtPerfRange") || range; } catch (e) {}
+
+function drawRange() {
+  $("range").innerHTML = RANGES.map(([k, l]) => `<button type="button" data-k="${k}" aria-pressed="${k === range}">${l}</button>`).join("");
+  $("range").querySelectorAll("button").forEach(b => b.onclick = () => {
+    range = b.dataset.k; try { localStorage.setItem("iwtPerfRange", range); } catch (e) {}
+    drawRange(); drawCharts();
+  });
+}
+
+const NS = "http://www.w3.org/2000/svg";
+function chart(box, c, rows) {
+  const pts = rows.map((s, i) => ({ i, s, v: c.get(s) })).filter(p => p.v != null && !isNaN(p.v));
+  if (pts.length === 0) { box.innerHTML = `<div class="empty">Nothing recorded yet.</div>`; return; }
+  const W = 320, H = 150, L = 34, R = 6, T = 8, B = 18;
+  const vals = pts.map(p => p.v);
+  let lo = c.min ?? 0, hi = c.max ?? Math.max(...vals);
+  if (c.max == null) { const step = niceStep(hi - lo); hi = Math.ceil((hi || 1) / step) * step; }
+  const n = rows.length;
+  const x = i => L + (n <= 1 ? (W - L - R) / 2 : i * (W - L - R) / (n - 1));
+  const y = v => T + (H - T - B) * (1 - (v - lo) / ((hi - lo) || 1));
+  let svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${esc(c.title)} across ${pts.length} sessions">`;
+  for (let k = 0; k <= 2; k++) {
+    const v = lo + (hi - lo) * k / 2, yy = y(v);
+    svg += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="var(--grid)" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
+  }
+  if (c.bars) {
+    const bw = Math.max(2, Math.min(14, (W - L - R) / n - 2));
+    for (const p of pts) if (p.v > 0) {
+      const top = y(p.v), base = y(0), r = Math.min(4, bw / 2, base - top);
+      svg += `<path d="M${x(p.i) - bw / 2},${base} V${top + r} q0,-${r} ${r},-${r} H${x(p.i) + bw / 2 - r} q${r},0 ${r},${r} V${base} Z" fill="var(--accent)"/>`;
+    }
+  } else {
+    const d = pts.map((p, k) => `${k ? "L" : "M"}${x(p.i)},${y(p.v)}`).join(" ");
+    svg += `<path d="${d} L${x(pts[pts.length - 1].i)},${y(lo)} L${x(pts[0].i)},${y(lo)} Z" fill="var(--accent-soft)" opacity=".7"/>`;
+    svg += `<path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>`;
+  }
+  svg += `<line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="var(--muted)" stroke-width="1" vector-effect="non-scaling-stroke" visibility="hidden"/></svg>`;
+  box.innerHTML = svg;
+  // Axis labels as HTML so they don't stretch with the chart.
+  const lab = (txt, css) => { const d = document.createElement("div"); d.className = "axis-l";
+    d.style.cssText = `position:absolute;font:500 10px var(--mono);color:var(--muted);${css}`; d.textContent = txt; box.appendChild(d); };
+  lab(fmt(hi, c.d && hi < 10 ? c.d : 0), `left:0;top:${T / H * 100}%;transform:translateY(-50%)`);
+  lab(fmt(lo), `left:0;top:${(H - B) / H * 100}%;transform:translateY(-50%)`);
+  lab(day(rows[0].at), "left:" + (L / W * 100) + "%;bottom:0");
+  if (n > 1) lab(day(rows[n - 1].at), "right:0;bottom:0");
+  // Hover: nearest session, crosshair and tooltip.
+  const tip = document.createElement("div"); tip.className = "tip"; tip.hidden = true; box.appendChild(tip);
+  const el = box.querySelector("svg"), cross = el.querySelector(".cross");
+  const show = ev => {
+    const r = el.getBoundingClientRect(), px = (ev.clientX - r.left) / r.width * W;
+    let best = pts[0]; for (const p of pts) if (Math.abs(x(p.i) - px) < Math.abs(x(best.i) - px)) best = p;
+    cross.setAttribute("x1", x(best.i)); cross.setAttribute("x2", x(best.i)); cross.setAttribute("visibility", "visible");
+    tip.hidden = false;
+    tip.innerHTML = `<b>${fmt(best.v, c.d || 0)}${esc(c.unit)}</b> · ${esc(when(best.s.at))}<br>${esc(c.extra ? c.extra(best.s) : "version " + best.s.version)}`;
+    const left = x(best.i) / W * r.width;
+    tip.style.left = Math.min(Math.max(left, 90), r.width - 90) + "px";
+    tip.style.top = (y(best.v) / H * r.height) + "px";
+  };
+  el.addEventListener("pointermove", show);
+  el.addEventListener("pointerdown", show);
+  el.addEventListener("pointerleave", () => { tip.hidden = true; cross.setAttribute("visibility", "hidden"); });
+}
+function niceStep(span) {
+  if (!(span > 0)) return 1;
+  const p = Math.pow(10, Math.floor(Math.log10(span / 2))), f = span / 2 / p;
+  return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p;
+}
+
+function shown() { return range === "all" ? all : all.slice(-Number(range)); }
+
+function drawCharts() {
+  const rows = shown();
+  $("charts").innerHTML = "";
+  for (const c of CHARTS) {
+    const vals = rows.map(c.get).filter(v => v != null && !isNaN(v));
+    const last = vals[vals.length - 1];
+    const card = document.createElement("section"); card.className = "card";
+    card.innerHTML = `<h2>${esc(c.title)} <small>${esc(c.note)}</small></h2>
+      <div class="big">${fmt(last, c.d || 0)}<small>${esc(c.unit)} latest · median ${fmt(median(vals), c.d || 0)}</small></div>
+      <div class="chart"></div>`;
+    $("charts").appendChild(card);
+    chart(card.querySelector(".chart"), c, rows);
+  }
+  $("table").innerHTML = rows.slice().reverse().map(s => `<tr><td>${esc(when(s.at))}</td><td>${esc(s.version)}</td>
+    <td class="n">${dur(s.session)}</td><td class="n">${s._health.score}</td><td class="n">${fmt(s.memoryKB)} KB</td>
+    <td class="n">${fmt(s.startupMs, 1)} ms</td><td class="n">${s.sync?.caughtUpAfter != null ? dur(s.sync.caughtUpAfter) : "–"}</td>
+    <td class="n">${fmt(s.sync?.new)}</td><td class="n">${fmt(kb(s.comm?.sentBytes), 1)} KB</td><td class="n">${fmt(kb(s.comm?.heardBytes), 1)} KB</td>
+    <td class="n">${fmt((s.comm?.refused || 0) + (s.comm?.dropped || 0))}</td><td class="n">${fmt(s.errors)}</td></tr>`).join("");
+}
+
+function drawHero(s) {
+  const recent = all.slice(-10), h = s._health, [cls, label] = grade(h.score);
+  const avg = median(recent.map(x => x._health.score));
+  const stat = (lab, val, note, extra = "") => `<div class="stat ${extra}"><div class="label">${lab}</div><div class="value">${val}</div><div class="note">${note}</div></div>`;
+  $("hero").innerHTML =
+    stat("Health", `${h.score}<small>/100</small>`, `<span class="pill ${cls}">${label}</span> ${h.lost.length ? esc(h.lost.join(", ")) : "nothing taken off"}`, "score") +
+    stat("Last 10 sessions", `${fmt(avg)}<small>median</small>`, `${recent.filter(x => x._health.score < 75).length} below 75`) +
+    stat("Memory", `${fmt(s.memoryKB)}<small>KB</small>`, `at logout, version ${esc(s.version)}`) +
+    stat("Caught up", s.sync?.caughtUpAfter != null ? dur(s.sync.caughtUpAfter) : "–",
+      `${fmt(s.sync?.new)} new of ${fmt(s.sync?.got)} records heard, ${fmt(s.sync?.rounds)} round${s.sync?.rounds === 1 ? "" : "s"}`) +
+    stat("Answered", fmt(s.sync?.answered), `catch-ups for others, ${fmt(s.sync?.answeredRecords)} records sent`) +
+    stat("Guild", `${fmt(s.addonUsers)}<small>with addon</small>`, `seen this week, of ${fmt(s.members)} members`);
+}
+
+function drawSets(s) {
+  const sizes = Object.entries(s.sizes || {}).sort((a, b) => b[1] - a[1]);
+  if (!sizes.length) return;
+  const top = sizes[0][1] || 1, total = sizes.reduce((a, [, b]) => a + b, 0);
+  $("setsNote").textContent = `${fmt(kb(total), 1)} KB saved in all, latest session`;
+  $("sets").innerHTML = sizes.map(([name, b]) => `<div class="row"><span class="name">${esc(name)}</span>
+    <span class="val">${fmt(kb(b), 1)} KB${s.records && s.records[name] != null ? ` · ${fmt(s.records[name])} records` : ""}</span>
+    <div class="track"><div class="fill" style="width:${Math.max(1, b / top * 100)}%"></div></div></div>`).join("");
+  $("setsCard").hidden = false;
+}
+
+function drawSlow() {
+  const s = [...all].reverse().find(x => x.perf && x.perf.length);
+  if (!s) return;
+  $("slow").innerHTML = s.perf.map(p => `<tr><td>${esc(p.label)}</td><td class="n">${fmt(p.calls)}</td><td class="n">${fmt(p.total, 2)}</td><td class="n">${fmt(p.max, 2)}</td></tr>`).join("");
+  $("slowCard").hidden = false;
+}
+
+(async () => {
+  let data;
+  try { data = await (await fetch("perf.json", { cache: "no-store" })).json(); } catch (e) { data = null; }
+  all = (data && Array.isArray(data.sessions) ? data.sessions : []).filter(s => s && s.at).sort((a, b) => a.at - b.at);
+  if (!all.length) {
+    $("none").hidden = false;
+    $("none").textContent = "No sessions recorded yet. They arrive once you log out or /reload with addon 1.3.0-beta.4 or later and the exporter runs.";
+    $("stamp").textContent = "No data";
+    return;
+  }
+  for (const s of all) s._health = health(s);
+  const latest = all[all.length - 1];
+  $("main").hidden = false; $("tableCard").hidden = false;
+  $("stamp").textContent = `${all.length} session${all.length === 1 ? "" : "s"} · latest ${when(latest.at)}`;
+  drawRange(); drawHero(latest); drawCharts(); drawSets(latest); drawSlow();
+})();
+</script>

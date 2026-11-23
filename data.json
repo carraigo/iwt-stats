@@ -1,12 +1,12 @@
 {
- "generated": 1795470541,
- "snapshotAt": 1795468011,
+ "generated": 1795473393,
+ "snapshotAt": 1795473387,
  "guild": "Issues with Tissues",
- "addonVersion": "1.3.0-beta.3",
+ "addonVersion": "1.3.0-beta.4",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 42,
+   "level": 43,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 51,
+   "level": 52,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -261,7 +261,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -391,7 +391,7 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -416,7 +416,7 @@
   },
   {
    "name": "Big Oily",
-   "level": 30,
+   "level": 31,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
@@ -516,7 +516,7 @@
   },
   {
    "name": "Sorin Lupercal",
-   "level": 9,
+   "level": 10,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Initiate",
@@ -531,7 +531,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -560,12 +560,12 @@
   {
    "name": "Pork Likeorc",
    "hk": 299,
-   "mobs": 7207
+   "mobs": 7316
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 194,
-   "mobs": 11435
+   "hk": 196,
+   "mobs": 11544
   },
   {
    "name": "Zervi Grimveil",
@@ -579,8 +579,8 @@
   },
   {
    "name": "Farseer Tedd",
-   "hk": 54,
-   "mobs": 9643
+   "hk": 56,
+   "mobs": 9679
   },
   {
    "name": "Kazo Pets",
@@ -590,17 +590,17 @@
   {
    "name": "Serenia Malcador",
    "hk": 37,
-   "mobs": 8062
+   "mobs": 8088
   },
   {
    "name": "Large Joseph",
    "hk": 16,
-   "mobs": 6460
+   "mobs": 6625
   },
   {
    "name": "Vatic Cane",
    "hk": 15,
-   "mobs": 6340
+   "mobs": 6502
   },
   {
    "name": "Clane Stocious",
@@ -623,6 +623,16 @@
    "mobs": 93
   },
   {
+   "name": "Hoofstomp Sunstrider",
+   "hk": 0,
+   "mobs": 294
+  },
+  {
+   "name": "Jentaka Longtusk",
+   "hk": 0,
+   "mobs": 0
+  },
+  {
    "name": "Lawn Mooèr",
    "hk": 0,
    "mobs": 130
@@ -633,29 +643,45 @@
    "mobs": 243
   },
   {
+   "name": "Nightcrowler Felfury",
+   "hk": 0,
+   "mobs": 0
+  },
+  {
    "name": "Sorin Lupercal",
    "hk": 0,
-   "mobs": 248
+   "mobs": 291
   }
  ],
  "totals": {
-  "hk": 893,
-  "mobs": 72498,
-  "chars": 16
+  "hk": 897,
+  "mobs": 73442,
+  "chars": 19
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
   "hk": 299,
-  "mobs": 7207
+  "mobs": 7316
  },
  "crafting": [
+  {
+   "profession": "Alchemy",
+   "crafters": [
+    {
+     "name": "Hoofstomp Sunstrider",
+     "rank": 150,
+     "max": 150
+    }
+   ]
+  },
   {
    "profession": "Blacksmithing",
    "crafters": [
     {
      "name": "Serenia Malcador",
      "rank": 214,
-     "max": 300
+     "max": 300,
+     "recipes": 85
     },
     {
      "name": "Large Joseph",
@@ -697,9 +723,9 @@
     },
     {
      "name": "Sorin Lupercal",
-     "rank": 75,
-     "max": 75,
-     "recipes": 11
+     "rank": 150,
+     "max": 150,
+     "recipes": 17
     }
    ]
   },
