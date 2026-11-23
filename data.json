@@ -1,8 +1,8 @@
 {
- "generated": 1795461829,
- "snapshotAt": 1795461821,
+ "generated": 1795470541,
+ "snapshotAt": 1795468011,
  "guild": "Issues with Tissues",
- "addonVersion": "1.3.0-beta.1",
+ "addonVersion": "1.3.0-beta.3",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -172,11 +172,11 @@
    "rank": "Member",
    "rankIndex": 3,
    "days": 1,
-   "main": null
+   "main": "Vatic Cane"
   },
   {
    "name": "Drakir Felmaw",
-   "level": 44,
+   "level": 45,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Member",
@@ -246,7 +246,7 @@
   },
   {
    "name": "Hunter Heman",
-   "level": 45,
+   "level": 46,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -271,7 +271,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 14,
+   "days": 15,
    "main": null
   },
   {
@@ -371,7 +371,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 10,
+   "days": 11,
    "main": null
   },
   {
@@ -466,7 +466,7 @@
   },
   {
    "name": "Lagertha Bowsmaiden",
-   "level": 38,
+   "level": 39,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -516,7 +516,7 @@
   },
   {
    "name": "Sorin Lupercal",
-   "level": 6,
+   "level": 9,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Initiate",
@@ -555,17 +555,17 @@
    "main": null
   }
  ],
- "players": 52,
+ "players": 51,
  "kills": [
   {
    "name": "Pork Likeorc",
-   "hk": 297,
-   "mobs": 7033
+   "hk": 299,
+   "mobs": 7207
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 191,
-   "mobs": 11424
+   "hk": 194,
+   "mobs": 11435
   },
   {
    "name": "Zervi Grimveil",
@@ -575,17 +575,27 @@
   {
    "name": "Wongo Wongo",
    "hk": 59,
-   "mobs": 8102
+   "mobs": 8472
+  },
+  {
+   "name": "Farseer Tedd",
+   "hk": 54,
+   "mobs": 9643
   },
   {
    "name": "Kazo Pets",
    "hk": 51,
-   "mobs": 6836
+   "mobs": 6939
+  },
+  {
+   "name": "Serenia Malcador",
+   "hk": 37,
+   "mobs": 8062
   },
   {
    "name": "Large Joseph",
    "hk": 16,
-   "mobs": 6428
+   "mobs": 6460
   },
   {
    "name": "Vatic Cane",
@@ -596,6 +606,16 @@
    "name": "Clane Stocious",
    "hk": 1,
    "mobs": 385
+  },
+  {
+   "name": "Ashano Julzara",
+   "hk": 0,
+   "mobs": 210
+  },
+  {
+   "name": "Cigarette Coffee",
+   "hk": 0,
+   "mobs": 594
   },
   {
    "name": "Helehuichiri Tenderfart",
@@ -611,87 +631,37 @@
    "name": "Magia Musculorum",
    "hk": 0,
    "mobs": 243
+  },
+  {
+   "name": "Sorin Lupercal",
+   "hk": 0,
+   "mobs": 248
   }
  ],
  "totals": {
-  "hk": 797,
-  "mobs": 53051,
-  "chars": 11
+  "hk": 893,
+  "mobs": 72498,
+  "chars": 16
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
-  "hk": 297,
-  "mobs": 7033
+  "hk": 299,
+  "mobs": 7207
  },
  "crafting": [
   {
    "profession": "Blacksmithing",
    "crafters": [
     {
-     "name": "Large Joseph",
-     "rank": 185,
-     "max": 225,
-     "recipes": 0
-    }
-   ]
-  },
-  {
-   "profession": "Cooking",
-   "crafters": [
-    {
-     "name": "Ahyon Totempåle",
-     "rank": 298,
+     "name": "Serenia Malcador",
+     "rank": 214,
      "max": 300
     },
     {
-     "name": "Pork Likeorc",
-     "rank": 281,
-     "max": 300,
-     "recipes": 0
-    },
-    {
-     "name": "Wongo Wongo",
-     "rank": 225,
-     "max": 225
-    },
-    {
      "name": "Large Joseph",
-     "rank": 225,
+     "rank": 185,
      "max": 225,
-     "recipes": 0
-    },
-    {
-     "name": "Vatic Cane",
-     "rank": 213,
-     "max": 225,
-     "recipes": 0
-    },
-    {
-     "name": "Cigarette Coffee",
-     "rank": 72,
-     "max": 150
-    },
-    {
-     "name": "Magia Musculorum",
-     "rank": 15,
-     "max": 75,
-     "recipes": 0
-    },
-    {
-     "name": "Kazo Pets",
-     "rank": 3,
-     "max": 75
-    },
-    {
-     "name": "Clane Stocious",
-     "rank": 1,
-     "max": 75,
-     "recipes": 0
-    },
-    {
-     "name": "Lawn Mooèr",
-     "rank": 1,
-     "max": 75
+     "recipes": 48
     }
    ]
   },
@@ -704,10 +674,15 @@
      "max": 225
     },
     {
+     "name": "Ashano Julzara",
+     "rank": 150,
+     "max": 150
+    },
+    {
      "name": "Magia Musculorum",
      "rank": 34,
      "max": 75,
-     "recipes": 0
+     "recipes": 8
     }
    ]
   },
@@ -718,87 +693,13 @@
      "name": "Pork Likeorc",
      "rank": 250,
      "max": 300,
-     "recipes": 0
-    }
-   ]
-  },
-  {
-   "profession": "First Aid",
-   "crafters": [
-    {
-     "name": "Wongo Wongo",
-     "rank": 273,
-     "max": 300,
-     "recipes": 0
+     "recipes": 46
     },
     {
-     "name": "Pork Likeorc",
-     "rank": 225,
-     "max": 300,
-     "recipes": 0
-    },
-    {
-     "name": "Cigarette Coffee",
-     "rank": 72,
-     "max": 150
-    },
-    {
-     "name": "Lawn Mooèr",
-     "rank": 1,
-     "max": 75
-    },
-    {
-     "name": "Large Joseph",
-     "rank": null,
-     "max": null,
-     "recipes": 0
-    }
-   ]
-  },
-  {
-   "profession": "Fishing",
-   "crafters": [
-    {
-     "name": "Pork Likeorc",
-     "rank": 225,
-     "max": 300
-    },
-    {
-     "name": "Wongo Wongo",
-     "rank": 171,
-     "max": 225,
-     "recipes": 0
-    },
-    {
-     "name": "Vatic Cane",
-     "rank": 12,
-     "max": 75
-    },
-    {
-     "name": "Large Joseph",
-     "rank": null,
-     "max": null,
-     "recipes": 0
-    }
-   ]
-  },
-  {
-   "profession": "Herbalism",
-   "crafters": [
-    {
-     "name": "Wongo Wongo",
-     "rank": 233,
-     "max": 300
-    },
-    {
-     "name": "Lawn Mooèr",
-     "rank": 24,
-     "max": 75
-    },
-    {
-     "name": "Helehuichiri Tenderfart",
-     "rank": 21,
-     "max": 75
+     "name": "Sorin Lupercal",
+     "rank": 75,
+     "max": 75,
+     "recipes": 11
     }
    ]
   },
@@ -814,50 +715,13 @@
      "name": "Kazo Pets",
      "rank": 225,
      "max": 300,
-     "recipes": 0
-    }
-   ]
-  },
-  {
-   "profession": "Mining",
-   "crafters": [
-    {
-     "name": "Pork Likeorc",
-     "rank": 250,
-     "max": 300,
-     "recipes": 0
+     "recipes": 80
     },
     {
-     "name": "Wongo Wongo",
-     "rank": 205,
-     "max": 225
-    },
-    {
-     "name": "Lawn Mooèr",
-     "rank": 26,
-     "max": 75
-    },
-    {
-     "name": "Large Joseph",
-     "rank": null,
-     "max": null,
-     "recipes": 0
-    }
-   ]
-  },
-  {
-   "profession": "Skinning",
-   "crafters": [
-    {
-     "name": "Vatic Cane",
-     "rank": 233,
-     "max": 300,
-     "recipes": 0
-    },
-    {
-     "name": "Cigarette Coffee",
-     "rank": 106,
-     "max": 150
+     "name": "Farseer Tedd",
+     "rank": 40,
+     "max": 75,
+     "recipes": 6
     }
    ]
   },
@@ -865,15 +729,21 @@
    "profession": "Tailoring",
    "crafters": [
     {
+     "name": "Ashano Julzara",
+     "rank": 150,
+     "max": 150
+    },
+    {
      "name": "Cigarette Coffee",
      "rank": 128,
-     "max": 150
+     "max": 150,
+     "recipes": 33
     },
     {
      "name": "Magia Musculorum",
      "rank": 68,
      "max": 150,
-     "recipes": 0
+     "recipes": 24
     }
    ]
   }
@@ -886,11 +756,11 @@
    "answers": [
     {
      "text": "Yes",
-     "votes": 1
+     "votes": 3
     },
     {
      "text": "No",
-     "votes": 1
+     "votes": 2
     }
    ]
   }
