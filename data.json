@@ -1,8 +1,8 @@
 {
- "generated": 1795474025,
- "snapshotAt": 1795474021,
+ "generated": 1795476436,
+ "snapshotAt": 1795476431,
  "guild": "Issues with Tissues",
- "addonVersion": "1.3.0-beta.4",
+ "addonVersion": "1.3.0",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -106,7 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 52,
+   "level": 53,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -436,7 +436,7 @@
   },
   {
    "name": "Clane Stocious",
-   "level": 12,
+   "level": 13,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Initiate",
@@ -525,6 +525,16 @@
    "main": null
   },
   {
+   "name": "Stratholm Syndrome",
+   "level": 2,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": null
+  },
+  {
    "name": "Tommy Tourettes",
    "level": 10,
    "class": "Mage",
@@ -555,7 +565,7 @@
    "main": null
   }
  ],
- "players": 51,
+ "players": 52,
  "kills": [
   {
    "name": "Pork Likeorc",
@@ -565,7 +575,7 @@
   {
    "name": "Ahyon Totempåle",
    "hk": 196,
-   "mobs": 11544
+   "mobs": 11618
   },
   {
    "name": "Zervi Grimveil",
@@ -590,7 +600,7 @@
   {
    "name": "Serenia Malcador",
    "hk": 37,
-   "mobs": 8103
+   "mobs": 8114
   },
   {
    "name": "Large Joseph",
@@ -600,12 +610,12 @@
   {
    "name": "Vatic Cane",
    "hk": 15,
-   "mobs": 6502
+   "mobs": 6507
   },
   {
    "name": "Clane Stocious",
    "hk": 1,
-   "mobs": 385
+   "mobs": 430
   },
   {
    "name": "Ashano Julzara",
@@ -655,7 +665,7 @@
  ],
  "totals": {
   "hk": 897,
-  "mobs": 73457,
+  "mobs": 73592,
   "chars": 19
  },
  "eliteSoldier": {
@@ -679,9 +689,9 @@
    "crafters": [
     {
      "name": "Serenia Malcador",
-     "rank": 214,
+     "rank": 216,
      "max": 300,
-     "recipes": 85
+     "recipes": 86
     },
     {
      "name": "Large Joseph",
