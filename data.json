@@ -1,12 +1,12 @@
 {
- "generated": 1795548129,
- "snapshotAt": 1795548124,
+ "generated": 1795561766,
+ "snapshotAt": 1795561763,
  "guild": "Issues with Tissues",
- "addonVersion": "1.3.1",
+ "addonVersion": "1.3.3",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 43,
+   "level": 44,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -36,7 +36,7 @@
   },
   {
    "name": "Aders War",
-   "level": 51,
+   "level": 52,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Veteran",
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 53,
+   "level": 54,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -76,7 +76,7 @@
   },
   {
    "name": "Scvotwo Treant",
-   "level": 37,
+   "level": 38,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Veteran",
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 50,
+   "level": 51,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Torsten Tourettes",
-   "level": 52,
+   "level": 53,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Veteran",
@@ -146,7 +146,7 @@
   },
   {
    "name": "Bubble Error",
-   "level": 33,
+   "level": 34,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -166,7 +166,7 @@
   },
   {
    "name": "Cigarette Coffee",
-   "level": 18,
+   "level": 19,
    "class": "Mage",
    "classFile": "MAGE",
    "rank": "Member",
@@ -176,7 +176,7 @@
   },
   {
    "name": "Drakir Felmaw",
-   "level": 45,
+   "level": 46,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Member",
@@ -236,7 +236,7 @@
   },
   {
    "name": "Holygraphic Death",
-   "level": 28,
+   "level": 29,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -246,7 +246,7 @@
   },
   {
    "name": "Hunter Heman",
-   "level": 47,
+   "level": 48,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -261,7 +261,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -271,7 +271,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 15,
+   "days": 16,
    "main": null
   },
   {
@@ -326,7 +326,7 @@
   },
   {
    "name": "Pickled Unyen",
-   "level": 38,
+   "level": 40,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -336,7 +336,7 @@
   },
   {
    "name": "Poppy Woppy",
-   "level": 49,
+   "level": 50,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -356,7 +356,7 @@
   },
   {
    "name": "Rockspetard Apocalypse",
-   "level": 36,
+   "level": 37,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Member",
@@ -371,7 +371,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 11,
+   "days": 12,
    "main": null
   },
   {
@@ -391,7 +391,7 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -451,7 +451,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -461,12 +461,12 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Lagertha Bowsmaiden",
-   "level": 39,
+   "level": 40,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -501,7 +501,7 @@
    "classFile": "WARLOCK",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -541,7 +541,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -570,12 +570,12 @@
   {
    "name": "Pork Likeorc",
    "hk": 299,
-   "mobs": 7316
+   "mobs": 7628
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 212,
-   "mobs": 12208
+   "hk": 231,
+   "mobs": 12355
   },
   {
    "name": "Zervi Grimveil",
@@ -589,8 +589,8 @@
   },
   {
    "name": "Farseer Tedd",
-   "hk": 57,
-   "mobs": 9753
+   "hk": 58,
+   "mobs": 9802
   },
   {
    "name": "Kazo Pets",
@@ -600,17 +600,17 @@
   {
    "name": "Serenia Malcador",
    "hk": 37,
-   "mobs": 8367
+   "mobs": 8581
   },
   {
    "name": "Large Joseph",
-   "hk": 16,
-   "mobs": 7434
+   "hk": 18,
+   "mobs": 7764
   },
   {
    "name": "Vatic Cane",
    "hk": 15,
-   "mobs": 6507
+   "mobs": 6730
   },
   {
    "name": "Clane Stocious",
@@ -625,7 +625,7 @@
   {
    "name": "Cigarette Coffee",
    "hk": 0,
-   "mobs": 977
+   "mobs": 1081
   },
   {
    "name": "Helehuichiri Tenderfart",
@@ -669,14 +669,14 @@
   }
  ],
  "totals": {
-  "hk": 914,
-  "mobs": 76024,
+  "hk": 936,
+  "mobs": 77403,
   "chars": 20
  },
  "eliteSoldier": {
   "name": "Pork Likeorc",
   "hk": 299,
-  "mobs": 7316
+  "mobs": 7628
  },
  "crafting": [
   {
@@ -694,9 +694,9 @@
    "crafters": [
     {
      "name": "Serenia Malcador",
-     "rank": 216,
+     "rank": 218,
      "max": 300,
-     "recipes": 86
+     "recipes": 87
     },
     {
      "name": "Large Joseph",
@@ -722,9 +722,9 @@
     },
     {
      "name": "Magia Musculorum",
-     "rank": 131,
+     "rank": 134,
      "max": 150,
-     "recipes": 11
+     "recipes": 12
     }
    ]
   },
