@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Issues with Tissues Addon</title>
+<meta name="description" content="What the Issues with Tissues guild addon does, with in-game mock-ups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=Cinzel:wght@600&family=PT+Sans:wght@400;700&display=swap">
+<style>
+/* Layout: the site's "tissue box" column. Each feature is a card: words on one side, an
+   in-game mock-up on the other (stacked on phones). The mock-ups use the addon's own Default
+   theme colours (UI.COLORS) and always stay dark, as they are in the game. */
+:root {
+  --bg: #eef3f8; --paper: #ffffff; --ink: #23303f; --muted: #6a7889; --line: #d9e2ec;
+  --accent: #d9587a; --accent-soft: #fbe3ea; --gold: #b88a1e; --bar: #e4ebf2;
+  --display: "Fredoka", "Nunito", ui-rounded, system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* In-game colours (never themed) */
+  --g-screen: #12100c; --g-bg: rgba(18, 15, 11, .97); --g-bar: #1d1812; --g-card: rgba(36, 31, 23, .9);
+  --g-edge: #8a6e3b; --g-dim: #4a3d26; --g-button: #2a2319; --g-primary: #6e1c12; --g-gold: #f5d17a;
+  --g-text: #ebe6d9; --g-sub: #b8b0a1; --g-stamp: #8a8270; --g-green: #40ff40; --g-online: #3fd16b;
+  --g-kill: #ff9050; --g-yellow: #ffd200; --g-tip: rgba(6, 6, 18, .95); --g-tipedge: #6b6b78;
+  --g-display: "Cinzel", "Times New Roman", serif; --g-body: "PT Sans", "Trebuchet MS", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646;
+  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141a22; --paper: #1c2430; --ink: #e8eef5; --muted: #93a1b2; --line: #2b3646;
+  --accent: #f07d9b; --accent-soft: #3a2230; --gold: #e2b54a; --bar: #273242; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 20px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.05; }
+h2 { font-size: 1.35rem; font-weight: 600; }
+p { margin: 0; max-width: 62ch; }
+a { color: var(--accent); }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
+header .tag { color: var(--muted); margin-top: 6px; max-width: 60ch; }
+.stamp { font-size: .82rem; color: var(--accent); background: var(--paper); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 12px; text-decoration: none; font-weight: 700; }
+
+.intro { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 22px; display: grid; gap: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: .8rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+kbd { font: 700 .85em var(--body); background: var(--bar); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; padding: 1px 6px; }
+
+.feature { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 18px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px; align-items: center; }
+.feature .words { display: grid; gap: 10px; align-content: start; }
+.feature ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.feature .kicker { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; color: var(--accent); }
+@media (max-width: 760px) { .feature { grid-template-columns: minmax(0, 1fr); } }
+
+/* The game screen behind each mock-up */
+.stage { background: radial-gradient(ellipse at 30% 20%, #2c2b22 0%, var(--g-screen) 75%); border-radius: 12px;
+  padding: 16px; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; justify-content: center;
+  color: var(--g-text); font: 13px/1.45 var(--g-body); min-width: 0; overflow: hidden; }
+.win { background: var(--g-bg); border: 1px solid var(--g-edge); width: 100%; max-width: 520px; min-width: 0; }
+.win .title { background: var(--g-bar); border-bottom: 1px solid var(--g-dim); padding: 6px 10px; display: flex; justify-content: space-between; gap: 8px; }
+.win .title b { font-family: var(--g-display); color: var(--g-gold); font-size: 14px; letter-spacing: .03em; }
+.win .title span { color: var(--g-stamp); font-size: 12px; }
+.win .body { padding: 8px; display: grid; gap: 8px; }
+.win .tabs { display: flex; flex-wrap: wrap; border-top: 1px solid var(--g-dim); background: var(--g-bar); }
+.win .tabs span { padding: 5px 10px; color: var(--g-sub); font-size: 12px; border-right: 1px solid var(--g-dim); }
+.win .tabs span.on { color: var(--g-gold); background: #3a2e1a; }
+.sub { display: flex; gap: 14px; padding: 0 2px 4px; border-bottom: 1px solid var(--g-dim); font-size: 12px; color: var(--g-sub); }
+.sub .on { color: var(--g-gold); border-bottom: 2px solid var(--g-gold); padding-bottom: 2px; }
+.gcard { background: var(--g-card); border: 1px solid var(--g-dim); padding: 8px 10px; min-width: 0; }
+.gcard h4 { margin: 0 0 4px; color: var(--g-gold); font: 700 13px var(--g-body); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 460px) { .two { grid-template-columns: 1fr; } }
+.k { color: var(--g-kill); } .y { color: var(--g-yellow); } .gr { color: var(--g-green); } .on { color: var(--g-online); }
+.s { color: var(--g-stamp); } .w { color: #fff; }
+.gbtn { display: inline-block; background: var(--g-button); border: 1px solid var(--g-dim); color: var(--g-text); font-size: 12px; padding: 2px 8px; }
+.gbtn.p { background: var(--g-primary); border-color: #8f2a1c; }
+.glist { width: 100%; border-collapse: collapse; font-size: 12px; }
+.glist th { text-align: left; color: var(--g-yellow); font-weight: 400; padding: 3px 4px; border-bottom: 1px solid var(--g-dim); }
+.glist td { padding: 3px 4px; color: var(--g-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.glist .alt td:first-child { padding-left: 16px; color: var(--g-sub); }
+.filters { display: flex; flex-wrap: wrap; gap: 4px; }
+.filters span { background: var(--g-button); border: 1px solid var(--g-dim); font-size: 11px; padding: 2px 8px; color: var(--g-text); }
+.filters span.on { border-color: var(--g-edge); color: var(--g-gold); }
+
+.tip { background: var(--g-tip); border: 1px solid var(--g-tipedge); border-radius: 4px; padding: 7px 9px; width: 250px; max-width: 100%;
+  box-shadow: 0 4px 14px rgba(0,0,0,.6); min-width: 0; }
+.tip .t { color: #a335ee; font-size: 14px; } .tip .t.blue { color: #0070dd; } .tip .t.q { color: #fff; }
+.tip hr { border: 0; border-top: 1px solid #333344; margin: 5px 0; }
+.qlog { width: 230px; max-width: 100%; background: #2b2216; border: 2px solid #5a4a30; padding: 8px 10px; min-width: 0; }
+.qlog .hd { color: var(--g-yellow); font-weight: 700; font-size: 12px; margin: 4px 0 1px; }
+.qlog .q { color: #d0b060; padding: 1px 0 1px 12px; display: flex; justify-content: space-between; gap: 6px; }
+.qlog .q.sel { background: rgba(255,210,0,.15); color: #fff; }
+.qlog .q em { font-style: normal; color: var(--g-green); font-size: 11px; white-space: nowrap; }
+.bar { height: 8px; background: #2a2319; border: 1px solid var(--g-dim); }
+.bar i { display: block; height: 100%; background: #c9962a; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; width: 100%; }
+.sw { border-radius: 6px; padding: 8px; font-size: 12px; border: 1px solid; }
+.sw b { display: block; font-size: 13px; }
+
+.cta { background: var(--accent-soft); border-radius: 18px; padding: 20px; display: grid; gap: 10px; }
+footer { color: var(--muted); font-size: .82rem; text-align: center; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>The addon</h1>
+      <div class="tag">Issues with Tissues is our own guild addon for WoW: Forever. It replaces the default guild panel and adds the things a guild actually needs. Bless you.</div>
+    </div>
+    <a class="stamp" href="./">← Guild stats</a>
+  </header>
+
+  <section class="intro" aria-label="In short">
+    <p>Press your guild key (<kbd>J</kbd> by default) and the addon opens instead of Blizzard's guild and communities window. Everything below works by the addon quietly sharing small bits of data with guildmates who also have it, so the more of us run it, the better it gets.</p>
+    <div class="chips"><span class="chip">PvP kill tracker</span><span class="chip">Guild craftable tooltips</span><span class="chip">Wishlists</span><span class="chip">Quest buddies</span><span class="chip">Alts grouped</span><span class="chip">Guild news</span><span class="chip">Polls and donations</span><span class="chip">Themes</span></div>
+    <p class="muted" style="font-size:.85rem">The pictures are mock-ups drawn for this page, with made-up names. The real thing looks very close.</p>
+  </section>
+
+  <!-- 1. Home + kills -->
+  <section class="feature">
+    <div class="words">
+      <span class="kicker">Home and PvP</span>
+      <h2>Who will be the king issuer of tissues?</h2>
+      <p>Home shows the guild at a glance: who's online, players counted once however many alts they have, and our kill counts added up from everyone using the addon.</p>
+      <ul>
+        <li><b>Elite Soldier</b>: the most honourable kills, ever.</li>
+        <li><b>Tissue Issuer of the Week</b>: the most since the weekly reset. The winner goes in the guild news.</li>
+        <li>Your character, your main, and your professions at a glance.</li>
+      </ul>
+    </div>
+    <div class="stage" role="img" aria-label="Mock-up of the addon's Home tab">
+      <div class="win">
+        <div class="title"><b>Issues with Tissues</b><span>Home</span></div>
+        <div class="body">
+          <div class="sub"><span class="on">Home</span><span>Guild news</span></div>
+          <div class="two">
+            <div class="gcard">
+              <h4>Issues with Tissues</h4>
+              <div>212 characters, 97 players</div>
+              <div class="on">31 online now</div>
+              <div class="k">Enemy Kills: 1,284,551</div>
+              <div class="k">Horde Kills: 18,402</div>
+              <div class="y">Elite Soldier: Bo Finch <span class="s">(2,311)</span></div>
+              <div class="y">Tissue Issuer of the Week: Ada Quill <span class="s">(212)</span></div>
+            </div>
+            <div class="gcard">
+              <h4>This character</h4>
+              <div>Mem Jones <span class="s">Veteran</span></div>
+              <div style="color:#7fd4ff">This is your main.</div>
+              <div class="s">Alts: Mem Tailor, Mem Bank</div>
+              <h4 style="margin-top:8px">Your professions</h4>
+              <div>Tailoring 300 · Enchanting 285</div>
+            </div>
+          </div>
+          <div class="gcard">
+            <h4>What's on</h4>
+            <div class="two" style="font-size:12px">
+              <div><span class="s">Open polls</span><br>Raid night: Fri or Sat?</div>
+              <div><span class="s">Guild news</span><br>Tam Reed hit 60<br>Ada Quill won the week with 212 kills</div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs"><span class="on">Home</span><span>Chat</span><span>Members</span><span>Crafting</span><span>Quests</span><span>Guild life</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Crafting + tooltips -->
+  <section class="feature">
+    <div class="words">
+      <span class="kicker">Crafting</span>
+      <h2>Know who can make it</h2>
+      <p>Every item tooltip says <b style="color:#2f9e5b">Guild craftable</b> when someone in the guild can make it. The Crafting tab finds who, by item or by profession, with their skill level and whether they're online.</p>
+      <ul>
+        <li>Crafting professions only: Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking and Tailoring.</li>
+        <li>Scan your recipes once from Home, and it keeps itself up to date.</li>
+      </ul>
+    </div>
+    <div class="stage" role="img" aria-label="Mock-up of an item tooltip with Guild craftable and wishlist lines">
+      <div class="tip">
+        <div class="t">Robe of the Archmage</div>
+        <div class="w">Binds when equipped</div>
+        <div class="w">Chest <span style="float:right">Cloth</span></div>
+        <div class="w">84 Armor</div>
+        <div class="w">+12 Intellect</div>
+        <div class="w">Requires Level 57</div>
+        <hr>
+        <div class="gr">Guild craftable</div>
+        <div class="y">Wanted by 2 guildmates: Lys Hart, Tam Reed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Wishlists -->
+  <section class="feature">
+    <div class="words">
+      <span class="kicker">Wishlists</span>
+      <h2>Alt-click it, wish for it</h2>
+      <p>Alt-click any item, in your bags, a chat link or loot, to put it on your wishlist. Crafters see who wants what on the Wishlists page and on item tooltips.</p>
+      <ul>
+        <li>When the item lands in your bags it ticks itself off, and the guild news says so.</li>
+        <li>Up to 30 items each. Alt-click again to take one off.</li>
+      </ul>
+    </div>
+    <div class="stage" role="img" aria-label="Mock-up of the Crafting, Wishlists page">
+      <div class="win">
+        <div class="title"><b>Issues with Tissues</b><span>Crafting</span></div>
+        <div class="body">
+          <div class="sub"><span>Crafters</span><span class="on">Wishlists</span></div>
+          <div class="filters"><span class="on">All</span><span>Mine</span><span>Craftable</span></div>
+          <table class="glist">
+            <thead><tr><th>Item</th><th>Wanted by</th><th>Can make it</th></tr></thead>
+            <tbody>
+              <tr><td class="w">Robe of the Archmage</td><td><span class="on">Lys Hart</span>, Tam Reed</td><td><span class="on">Mem Tailor</span></td></tr>
+              <tr><td class="w">Lionheart Helm</td><td>You, <span class="on">Bo Finch</span></td><td>Vet Smith</td></tr>
+              <tr><td class="w">Flask of the Titans</td><td>Ada Quill</td><td><span class="on">Sara Exe</span></td></tr>
+              <tr><td class="w">Hand of Ragnaros</td><td>Bo Finch</td><td class="s">nobody yet</td></tr>
+            </tbody>
+          </table>
+          <div class="s" style="font-size:11px">Guild news: Lys Hart got Flask of the Titans!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Quest buddies -->
+  <section class="feature">
+    <div class="words">
+      <span class="kicker">Quests</span>
+      <h2>Quest buddies</h2>
+      <p>On an elite or dungeon quest? A small green count in your quest log shows how many guildmates have it too, and its tooltip says who. The Quests tab lists them, online first, with one click to whisper or invite.</p>
+      <ul>
+        <li>"By place" shows which dungeons the guild has quests for right now.</li>
+        <li>Only group quests are shared. You can turn it off in Settings.</li>
+      </ul>
+    </div>
+    <div class="stage" role="img" aria-label="Mock-up of the quest log with guild counts and a quest tooltip">
+      <div class="qlog">
+        <div class="hd">Duskwood</div>
+        <div class="q sel"><span>[35] Mor'Ladim</span><em>2 guild</em></div>
+        <div class="q"><span>[30] The Night Watch</span></div>
+        <div class="hd">Razorfen Downs</div>
+        <div class="q"><span>[40] Bring the End</span><em>3 guild</em></div>
+        <div class="hd">Scarlet Monastery</div>
+        <div class="q"><span>[40] In the Name of the Light</span><em>1 guild</em></div>
+      </div>
+      <div class="tip">
+        <div class="t q">Mor'Ladim</div>
+        <div class="y">Elite · Duskwood · Level 35</div>
+        <hr>
+        <div class="gr">Guildmates on this quest:</div>
+        <div style="color:#b4f0b4">&nbsp; Vet Smith (34) · Duskwood</div>
+        <div style="color:#b4f0b4">&nbsp; Mem Jones (36) · Darkshire</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Members -->
+  <section class="feature">
+    <div class="words">
+      <span class="kicker">Members</span>
+      <h2>A roster that knows your alts</h2>
+      <p>The whole guild with level, class, honourable kills, rank and when they were last on. Set your main once and your alts group under it, so a player is one line, not five.</p>
+      <ul>
+        <li>Search by name, filter by online or away 7, 14 or 30 days.</li>
+        <li>Hover for their guild note. Right-click to whisper or invite.</li>
+      </ul>
+    </div>
+    <div class="stage" role="img" aria-label="Mock-up of the Members roster with alts grouped">
+      <div class="win">
+        <div class="title"><b>Issues with Tissues</b><span>Members</span></div>
+        <div class="body">
+          <div class="filters"><span class="on">All</span><span>Online</span><span>7 days</span><span>14 days</span><span>30 days</span></div>
+          <table class="glist">
+            <thead><tr><th>Name</th><th>Level</th><th>Kills</th><th>Rank</th><th>Last on</th></tr></thead>
+            <tbody>
+              <tr><td style="color:#f58cba">Bo Finch</td><td>60</td><td>2,311</td><td>Officer</td><td class="on">Online</td></tr>
+              <tr class="alt"><td>Bo Bank</td><td>12</td><td>0</td><td>Member</td><td class="s">3 days</td></tr>
+              <tr><td style="color:#3fc7eb">Ada Quill</td><td>58</td><td>1,104</td><td>Veteran</td><td class="on">Online</td></tr>
+              <tr><td style="color:#ff7d0a">Tam Reed</td><td>60</td><td>862</td><td>Member</td><td class="s">Yesterday</td></tr>
+              <tr class="alt"><td>Tam Herbs</td><td>34</td><td>4</td><td>Initiate</td><td class="s">5 days</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Guild life -->
+  <section class="feature">
+    <div class="words">
+      <span class="kicker">Guild life</span>
+      <h2>Polls, donations and guild news</h2>
+      <p>Vote on raid nights and the like, one vote per player. Watch the guild bank goal fill up, with thanks to who chipped in. Keep loot notes in one place.</p>
+      <ul>
+        <li><b>Guild news</b>: joins, level 60s, promotions, the week's top issuer and wishes that came true, for the last month.</li>
+      </ul>
+    </div>
+    <div class="stage" role="img" aria-label="Mock-up of a poll and the donation goal">
+      <div class="win">
+        <div class="title"><b>Issues with Tissues</b><span>Guild life</span></div>
+        <div class="body">
+          <div class="sub"><span class="on">Polls</span><span>Donations</span><span>Loot notes</span></div>
+          <div class="gcard">
+            <h4>Raid night: Fri or Sat?</h4>
+            <div style="display:grid;grid-template-columns:70px 1fr 30px;gap:4px 8px;align-items:center">
+              <span>Friday</span><div class="bar"><i style="width:64%"></i></div><span>14</span>
+              <span>Saturday</span><div class="bar"><i style="width:36%"></i></div><span>8</span>
+            </div>
+            <div style="margin-top:6px"><span class="gbtn p">Vote</span> <span class="s" style="font-size:11px">22 players voted</span></div>
+          </div>
+          <div class="gcard">
+            <h4>Donation goal: Guild bank tab</h4>
+            <div class="bar" style="height:10px"><i style="width:72%"></i></div>
+            <div style="margin-top:4px"><span style="color:var(--g-gold)">720g</span> <span class="s">of 1,000g · thanks Bo, Ada and 9 more</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Themes -->
+  <section class="feature">
+    <div class="words">
+      <span class="kicker">Make it yours</span>
+      <h2>Themes, size and keybinds</h2>
+      <p>Pick a theme, scale the window, and choose whether it opens on Home or where you left it. It hides in combat if you like, and gets out of your way.</p>
+    </div>
+    <div class="stage" role="img" aria-label="The addon's theme colours">
+      <div class="swatches">
+        <div class="sw" style="background:#120f0b;border-color:#8a6e3b;color:#ebe6d9"><b style="color:#f5d17a">Default</b>Dark and gold</div>
+        <div class="sw" style="background:#2a1830;border-color:#e58fc0;color:#f7e6f2"><b style="color:#ffb3dc">Kawaii Night</b>Pink after dark</div>
+        <div class="sw" style="background:#fff3f8;border-color:#e58fc0;color:#5a2f47"><b style="color:#c2477f">Kawaii Day</b>Soft and light</div>
+        <div class="sw" style="background:#0e1420;border-color:#4b6a9b;color:#dfe7f3"><b style="color:#9cc3ff">Midnight</b>Cool blues</div>
+        <div class="sw" style="background:#000;border-color:#fff;color:#fff"><b style="color:#ffd200">Contrast</b>Easy to read</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Get it</h2>
+    <p>Download <b>Issues with Tissues</b> from CurseForge (or the CurseForge app), then log in and press <kbd>J</kbd>. A short welcome card offers to bind your guild key to the addon. It's made for our guild, so it works best when you're in it.</p>
+    <p class="muted" style="font-size:.9rem">Something wrong? Type <code>/iwt report</code> in game and paste it on the <a href="./#report">guild stats page</a>.</p>
+  </section>
+
+  <footer>Issues with Tissues, a guild on WoW: Forever. <a href="./">Guild stats</a></footer>
+</div>
