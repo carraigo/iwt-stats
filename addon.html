@@ -116,7 +116,7 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
 
   <section class="intro" aria-label="In short">
     <p>Press your guild key (<kbd>J</kbd> by default) and the addon opens instead of Blizzard's guild and communities window. Everything below works by the addon quietly sharing small bits of data with guildmates who also have it, so the more of us run it, the better it gets.</p>
-    <div class="chips"><span class="chip">PvP kill tracker</span><span class="chip">Guild craftable tooltips</span><span class="chip">Wishlists</span><span class="chip">Quest buddies</span><span class="chip">Alts grouped</span><span class="chip">Guild news</span><span class="chip">Polls and donations</span><span class="chip">Themes</span></div>
+    <div class="chips"><span class="chip">PvP kill tracker</span><span class="chip">Guild craftable tooltips</span><span class="chip">Wishlists</span><span class="chip">Quest buddies</span><span class="chip">Alts grouped</span><span class="chip">Guild news</span><span class="chip">Polls and donations</span><span class="chip">Themes</span><span class="chip">Diagnostics reports</span></div>
     <p class="muted" style="font-size:.85rem">The pictures are mock-ups drawn for this page, with made-up names. The real thing looks very close.</p>
   </section>
 
@@ -341,10 +341,34 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
     </div>
   </section>
 
+  <!-- 8. Diagnostics report -->
+  <section class="feature" id="report">
+    <div class="words">
+      <span class="kicker">Something wrong?</span>
+      <h2>Send a diagnostics report</h2>
+      <ol style="margin:0;padding-left:1.2em;display:grid;gap:6px">
+        <li>In game, type <code>/iwt report</code>, or open Settings (the cog at the top of the window) and press <b>Diagnostics report</b>.</li>
+        <li>A box opens with the report already selected. Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to copy it.</li>
+        <li>Go to the <a href="./#report">guild stats page</a>, paste it into <b>Send a diagnostics report</b> and press <b>Check report</b>.</li>
+        <li>The page unpacks it and shows you everything inside. Then press <b>Send as a GitHub issue</b> (needs a GitHub account), or <b>Copy for Discord</b> and post it in the guild Discord.</li>
+      </ol>
+      <p class="muted" style="font-size:.9rem">The report is one line of text starting <code>IWT1.</code>. It isn't encrypted, just packed so it copies cleanly, with a check that it arrived whole. It holds the addon and game version, recent errors, how long things took, the last self-test, how well data is syncing, and your settings. No chat, no logs and no other players' names. Your own character's name only goes in if you type <code>/iwt report name</code>.</p>
+    </div>
+    <div class="stage" role="img" aria-label="Mock-up of the report copy box in game">
+      <div class="win" style="max-width:420px">
+        <div class="title"><b>Diagnostics report</b><span>x</span></div>
+        <div class="body">
+          <div class="s" style="font-size:12px">Press Ctrl+C, then paste it at carraigo.github.io/iwt-stats/#report</div>
+          <div style="background:#0b0a08;border:1px solid var(--g-dim);padding:6px 8px;font:11px/1.4 Consolas,monospace;color:var(--g-text);word-break:break-all"><span style="background:#2a4a7a">IWT1.eyJ2IjoiMS40LjEiLCJjbGllbnQiOiIxLjYwLjEiLCJlcnJvcnMiOltdLCJwZXJmIjpbeyJsYWJlbCI6IlJPU1RFUl9VUERBVEUi…a3f09c21</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta">
     <h2>Get it</h2>
     <p>Download <b>Issues with Tissues</b> from CurseForge (or the CurseForge app), then log in and press <kbd>J</kbd>. A short welcome card offers to bind your guild key to the addon. It's made for our guild, so it works best when you're in it.</p>
-    <p class="muted" style="font-size:.9rem">Something wrong? Type <code>/iwt report</code> in game and paste it on the <a href="./#report">guild stats page</a>.</p>
+    <p class="muted" style="font-size:.9rem">Something wrong? <a href="#report">Send a diagnostics report</a>.</p>
   </section>
 
   <footer>Issues with Tissues, a guild on WoW: Forever. <a href="./">Guild stats</a></footer>
