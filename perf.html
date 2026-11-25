@@ -61,6 +61,7 @@ a.stamp { color: var(--accent); }
 .card .big { font-family: var(--display); font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .card .big small { font-size: .85rem; color: var(--muted); font-weight: 500; }
 .chart { position: relative; }
+.chart { margin-top: 14px; }
 .chart svg { display: block; width: 100%; height: 150px; overflow: visible; }
 .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); border-radius: 8px; padding: 6px 9px;
   font-size: .78rem; line-height: 1.35; white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); z-index: 2; }
@@ -108,7 +109,7 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; }
     </section>
     <section class="card" id="slowCard" hidden>
       <h2>Busiest code <small>latest session with the profiler on</small></h2>
-      <div class="table-wrap"><table><thead><tr><th>Where</th><th class="n">Calls</th><th class="n">Total ms</th><th class="n">Worst ms</th></tr></thead><tbody id="slow"></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Event or job</th><th class="n">Calls</th><th class="n">Total ms</th><th class="n">Worst</th></tr></thead><tbody id="slow"></tbody></table></div>
     </section>
   </div>
 
@@ -212,6 +213,12 @@ function chart(box, c, rows) {
     svg += `<path d="${d} L${x(pts[pts.length - 1].i)},${y(lo)} L${x(pts[0].i)},${y(lo)} Z" fill="var(--accent-soft)" opacity=".7"/>`;
     svg += `<path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>`;
   }
+  // Where a new addon version starts: a dashed line, named at the top.
+  const marks = [];
+  for (let i = 1; i < n; i++) if (rows[i].version !== rows[i - 1].version) {
+    svg += `<line x1="${x(i)}" x2="${x(i)}" y1="${T}" y2="${H - B}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>`;
+    marks.push(i);
+  }
   svg += `<line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="var(--muted)" stroke-width="1" vector-effect="non-scaling-stroke" visibility="hidden"/></svg>`;
   box.innerHTML = svg;
   // Axis labels as HTML so they don't stretch with the chart.
@@ -221,6 +228,7 @@ function chart(box, c, rows) {
   lab(fmt(lo), `left:0;top:${(H - B) / H * 100}%;transform:translateY(-50%)`);
   lab(day(rows[0].at), "left:" + (L / W * 100) + "%;bottom:0");
   if (n > 1) lab(day(rows[n - 1].at), "right:0;bottom:0");
+  for (const i of marks) lab(rows[i].version, `left:${x(i) / W * 100}%;top:-14px;transform:translateX(-50%);white-space:nowrap`);
   // Hover: nearest session, crosshair and tooltip.
   const tip = document.createElement("div"); tip.className = "tip"; tip.hidden = true; box.appendChild(tip);
   const el = box.querySelector("svg"), cross = el.querySelector(".cross");
@@ -294,7 +302,7 @@ function drawSets(s) {
 function drawSlow() {
   const s = [...all].reverse().find(x => x.perf && x.perf.length);
   if (!s) return;
-  $("slow").innerHTML = s.perf.map(p => `<tr><td>${esc(p.label)}</td><td class="n">${fmt(p.calls)}</td><td class="n">${fmt(p.total, 2)}</td><td class="n">${fmt(p.max, 2)}</td></tr>`).join("");
+  $("slow").innerHTML = s.perf.map(p => `<tr><td>${esc(String(p.label).replace(/^event /, ""))}</td><td class="n">${fmt(p.calls)}</td><td class="n">${fmt(p.total, 2)}</td><td class="n">${fmt(p.max, 2)}</td></tr>`).join("");
   $("slowCard").hidden = false;
 }
 
@@ -302,6 +310,10 @@ function drawSlow() {
   let data;
   try { data = await (await fetch("perf.json", { cache: "no-store" })).json(); } catch (e) { data = null; }
   all = (data && Array.isArray(data.sessions) ? data.sessions : []).filter(s => s && s.at).sort((a, b) => a.at - b.at);
+  // Sessions on a character outside the guild have nothing to sync: leave them out.
+  // (By member count: 1.3.1 test builds marked inGuild false at logout by mistake.)
+  const outside = all.filter(s => !s.members).length;
+  all = all.filter(s => s.members);
   if (!all.length) {
     $("none").hidden = false;
     $("none").textContent = "No sessions recorded yet. They arrive once you log out or /reload with addon 1.3.0-beta.4 or later and the exporter runs.";
@@ -311,7 +323,8 @@ function drawSlow() {
   for (const s of all) s._health = health(s);
   const latest = all[all.length - 1];
   $("main").hidden = false; $("tableCard").hidden = false;
-  $("stamp").textContent = `${all.length} session${all.length === 1 ? "" : "s"} · latest ${when(latest.at)}`;
+  $("stamp").textContent = `${all.length} session${all.length === 1 ? "" : "s"} · latest ${when(latest.at)}` +
+    (outside ? ` · ${outside} outside the guild left out` : "");
   drawRange(); drawHero(latest); drawCharts(); drawSets(latest); drawSlow();
 })();
 </script>

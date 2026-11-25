@@ -207,9 +207,11 @@ function render(d) {
       <div class="who" style="${color(e.name) ? "color:" + color(e.name) : ""}">${esc(e.name)}</div>
       <div class="muted"><span class="num">${fmt(e.hk)}</span> honourable kills</div></div></div>`
     : `<div class="empty">No honourable kills yet. The first one makes you Elite Soldier.</div>`;
-  const top = Math.max(1, ...d.kills.map(k => k.hk));
-  $("hkNote").textContent = d.kills.length + " characters";
-  $("hk").innerHTML = d.kills.map((k, i) => `<div class="row"><span class="muted num">${i + 1}</span>${nameHtml(k.name)}
+  // The top 10 only (the roster table below still has everyone's).
+  const best = [...d.kills].sort((a, b) => b.hk - a.hk).slice(0, 10);
+  const top = Math.max(1, ...best.map(k => k.hk));
+  $("hkNote").textContent = d.kills.length > 10 ? "top 10 of " + d.kills.length + " characters" : d.kills.length + " characters";
+  $("hk").innerHTML = best.map((k, i) => `<div class="row"><span class="muted num">${i + 1}</span>${nameHtml(k.name)}
       <span class="num">${fmt(k.hk)}</span><div class="track"><div class="fill" style="width:${(k.hk / top * 100).toFixed(1)}%"></div></div></div>`).join("");
 
   // Crafters: crafting professions only (an older data.json may still list gathering skills)

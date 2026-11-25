@@ -37,7 +37,7 @@ Players can send a report about how the addon runs on their client: `/iwt report
 
 ## Performance page
 
-`perf.html` (not linked from the main page, and hidden from search engines, but public like the rest of the site) charts how the addon ran on the exporting PC, one point per play session: a health score out of 100, memory, start-up time, time to catch up, traffic, records held, problems and the busiest send queue, plus saved size per set. The addon (1.3.0-beta.4 and later) saves these numbers at logout and /reload; the exporter adds each new session to `perf.json` (the last 300) and pushes it with `data.json`. It holds numbers only: no names or chat.
+`perf.html` (not linked from the main page, and hidden from search engines, but public like the rest of the site) charts how the addon ran on the exporting PC, one point per play session: a health score out of 100, memory, start-up time, time to catch up, traffic, records held, problems and the busiest send queue, plus saved size per set. A dashed line marks where each new addon version starts, and sessions on a character outside the guild are left out. The addon (1.3.0-beta.4 and later) saves these numbers at logout and /reload; the exporter adds each new session to `perf.json` (the last 300) and pushes it with `data.json`. It holds numbers only: no names or chat.
 
 ## What's published
 
