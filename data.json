@@ -1,8 +1,8 @@
 {
- "generated": 1795617104,
- "snapshotAt": 1795617097,
+ "generated": 1795625760,
+ "snapshotAt": 1795625755,
  "guild": "Issues with Tissues",
- "addonVersion": "1.4.0",
+ "addonVersion": "1.4.1",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -56,7 +56,7 @@
   },
   {
    "name": "Kazo Pets",
-   "level": 53,
+   "level": 54,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Veteran",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Torsten Tourettes",
-   "level": 53,
+   "level": 54,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Veteran",
@@ -191,7 +191,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 16,
+   "days": 17,
    "main": null
   },
   {
@@ -336,7 +336,7 @@
   },
   {
    "name": "Poppy Woppy",
-   "level": 50,
+   "level": 51,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -351,7 +351,7 @@
    "classFile": "WARRIOR",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -395,6 +395,16 @@
    "main": null
   },
   {
+   "name": "Viking Oil",
+   "level": 5,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Member",
+   "rankIndex": 3,
+   "days": 0,
+   "main": null
+  },
+  {
    "name": "Zervi Grimveil",
    "level": 40,
    "class": "Rogue",
@@ -431,7 +441,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -565,8 +575,13 @@
    "main": null
   }
  ],
- "players": 51,
+ "players": 52,
  "kills": [
+  {
+   "name": "Free Melly",
+   "hk": 450,
+   "mobs": 13156
+  },
   {
    "name": "Pork Likeorc",
    "hk": 299,
@@ -574,8 +589,8 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 233,
-   "mobs": 12556
+   "hk": 234,
+   "mobs": 12614
   },
   {
    "name": "Zervi Grimveil",
@@ -590,12 +605,12 @@
   {
    "name": "Farseer Tedd",
    "hk": 58,
-   "mobs": 9802
+   "mobs": 9806
   },
   {
    "name": "Kazo Pets",
    "hk": 53,
-   "mobs": 7387
+   "mobs": 7438
   },
   {
    "name": "Serenia Malcador",
@@ -605,12 +620,12 @@
   {
    "name": "Large Joseph",
    "hk": 18,
-   "mobs": 8241
+   "mobs": 8248
   },
   {
    "name": "Vatic Cane",
    "hk": 15,
-   "mobs": 6849
+   "mobs": 6872
   },
   {
    "name": "Clane Stocious",
@@ -669,14 +684,14 @@
   }
  ],
  "totals": {
-  "hk": 940,
-  "mobs": 78993,
-  "chars": 20
+  "hk": 1391,
+  "mobs": 92292,
+  "chars": 21
  },
  "eliteSoldier": {
-  "name": "Pork Likeorc",
-  "hk": 299,
-  "mobs": 7628
+  "name": "Free Melly",
+  "hk": 450,
+  "mobs": 13156
  },
  "crafting": [
   {
@@ -694,9 +709,14 @@
    "crafters": [
     {
      "name": "Serenia Malcador",
-     "rank": 219,
+     "rank": 221,
      "max": 300,
      "recipes": 87
+    },
+    {
+     "name": "Free Melly",
+     "rank": 219,
+     "max": 300
     },
     {
      "name": "Large Joseph",
