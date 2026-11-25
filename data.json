@@ -1,6 +1,6 @@
 {
- "generated": 1795591811,
- "snapshotAt": 1795591806,
+ "generated": 1795617104,
+ "snapshotAt": 1795617097,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.0",
  "roster": [
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 54,
+   "level": 55,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -56,7 +56,7 @@
   },
   {
    "name": "Kazo Pets",
-   "level": 52,
+   "level": 53,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Veteran",
@@ -76,7 +76,7 @@
   },
   {
    "name": "Scvotwo Treant",
-   "level": 38,
+   "level": 39,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Veteran",
@@ -136,7 +136,7 @@
   },
   {
    "name": "Big Baylife",
-   "level": 55,
+   "level": 56,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -161,12 +161,12 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 4,
+   "days": 5,
    "main": null
   },
   {
    "name": "Cigarette Coffee",
-   "level": 19,
+   "level": 20,
    "class": "Mage",
    "classFile": "MAGE",
    "rank": "Member",
@@ -206,7 +206,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 55,
+   "level": 56,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -221,7 +221,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 4,
+   "days": 5,
    "main": "Large Joseph"
   },
   {
@@ -281,7 +281,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 11,
+   "days": 12,
    "main": null
   },
   {
@@ -301,7 +301,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -311,7 +311,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 17,
+   "days": 18,
    "main": null
   },
   {
@@ -321,7 +321,7 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -401,7 +401,7 @@
    "classFile": "ROGUE",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -416,7 +416,7 @@
   },
   {
    "name": "Big Oily",
-   "level": 31,
+   "level": 32,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
@@ -476,12 +476,12 @@
   },
   {
    "name": "Lawn Mooèr",
-   "level": 7,
+   "level": 9,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 0,
    "main": null
   },
   {
@@ -511,7 +511,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -541,7 +541,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 0,
    "main": null
   },
   {
@@ -574,8 +574,8 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 231,
-   "mobs": 12355
+   "hk": 233,
+   "mobs": 12556
   },
   {
    "name": "Zervi Grimveil",
@@ -594,23 +594,23 @@
   },
   {
    "name": "Kazo Pets",
-   "hk": 51,
-   "mobs": 6974
+   "hk": 53,
+   "mobs": 7387
   },
   {
    "name": "Serenia Malcador",
    "hk": 37,
-   "mobs": 8581
+   "mobs": 8688
   },
   {
    "name": "Large Joseph",
    "hk": 18,
-   "mobs": 8136
+   "mobs": 8241
   },
   {
    "name": "Vatic Cane",
    "hk": 15,
-   "mobs": 6832
+   "mobs": 6849
   },
   {
    "name": "Clane Stocious",
@@ -625,7 +625,7 @@
   {
    "name": "Cigarette Coffee",
    "hk": 0,
-   "mobs": 1081
+   "mobs": 1174
   },
   {
    "name": "Helehuichiri Tenderfart",
@@ -645,7 +645,7 @@
   {
    "name": "Lawn Mooèr",
    "hk": 0,
-   "mobs": 130
+   "mobs": 233
   },
   {
    "name": "Magia Musculorum",
@@ -669,8 +669,8 @@
   }
  ],
  "totals": {
-  "hk": 936,
-  "mobs": 77954,
+  "hk": 940,
+  "mobs": 78993,
   "chars": 20
  },
  "eliteSoldier": {
@@ -702,7 +702,7 @@
      "name": "Large Joseph",
      "rank": 209,
      "max": 225,
-     "recipes": 51
+     "recipes": 52
     }
    ]
   },
@@ -719,7 +719,7 @@
      "name": "Ashano Julzara",
      "rank": 150,
      "max": 150,
-     "recipes": 21
+     "recipes": 24
     },
     {
      "name": "Magia Musculorum",
@@ -757,7 +757,7 @@
    "crafters": [
     {
      "name": "Ahyon Totempåle",
-     "rank": 235,
+     "rank": 256,
      "max": 300,
      "recipes": 0
     },
@@ -779,16 +779,16 @@
    "profession": "Tailoring",
    "crafters": [
     {
+     "name": "Cigarette Coffee",
+     "rank": 160,
+     "max": 225,
+     "recipes": 41
+    },
+    {
      "name": "Ashano Julzara",
      "rank": 150,
      "max": 150,
      "recipes": 0
-    },
-    {
-     "name": "Cigarette Coffee",
-     "rank": 146,
-     "max": 150,
-     "recipes": 36
     },
     {
      "name": "Magia Musculorum",
@@ -807,7 +807,7 @@
    "answers": [
     {
      "text": "Yes",
-     "votes": 3
+     "votes": 4
     },
     {
      "text": "No",
