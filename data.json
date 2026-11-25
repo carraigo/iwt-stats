@@ -1,6 +1,6 @@
 {
- "generated": 1795561766,
- "snapshotAt": 1795561763,
+ "generated": 1795565833,
+ "snapshotAt": 1795565829,
  "guild": "Issues with Tissues",
  "addonVersion": "1.3.3",
  "roster": [
@@ -106,7 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 53,
+   "level": 54,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -126,7 +126,7 @@
   },
   {
    "name": "Ashano Julzara",
-   "level": 11,
+   "level": 12,
    "class": "Mage",
    "classFile": "MAGE",
    "rank": "Member",
@@ -286,7 +286,7 @@
   },
   {
    "name": "Lü Everblack",
-   "level": 56,
+   "level": 57,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -521,7 +521,7 @@
    "classFile": "ROGUE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -556,7 +556,7 @@
   },
   {
    "name": "Large Joseph",
-   "level": 41,
+   "level": 42,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Guild Master",
@@ -605,12 +605,12 @@
   {
    "name": "Large Joseph",
    "hk": 18,
-   "mobs": 7764
+   "mobs": 7863
   },
   {
    "name": "Vatic Cane",
    "hk": 15,
-   "mobs": 6730
+   "mobs": 6832
   },
   {
    "name": "Clane Stocious",
@@ -620,7 +620,7 @@
   {
    "name": "Ashano Julzara",
    "hk": 0,
-   "mobs": 291
+   "mobs": 309
   },
   {
    "name": "Cigarette Coffee",
@@ -670,7 +670,7 @@
  ],
  "totals": {
   "hk": 936,
-  "mobs": 77403,
+  "mobs": 77622,
   "chars": 20
  },
  "eliteSoldier": {
@@ -694,7 +694,7 @@
    "crafters": [
     {
      "name": "Serenia Malcador",
-     "rank": 218,
+     "rank": 219,
      "max": 300,
      "recipes": 87
     },
@@ -712,7 +712,8 @@
     {
      "name": "Vatic Cane",
      "rank": 211,
-     "max": 225
+     "max": 225,
+     "recipes": 54
     },
     {
      "name": "Ashano Julzara",
