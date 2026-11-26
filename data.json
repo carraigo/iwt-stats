@@ -1,6 +1,6 @@
 {
- "generated": 1795626050,
- "snapshotAt": 1795626044,
+ "generated": 1795678034,
+ "snapshotAt": 1795678026,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.1",
  "roster": [
@@ -16,7 +16,7 @@
   },
   {
    "name": "Vatic Cane",
-   "level": 43,
+   "level": 44,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Officer",
@@ -26,7 +26,7 @@
   },
   {
    "name": "Wongo Wongo",
-   "level": 52,
+   "level": 54,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Officer",
@@ -36,7 +36,7 @@
   },
   {
    "name": "Aders War",
-   "level": 52,
+   "level": 53,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Veteran",
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 55,
+   "level": 57,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -71,7 +71,7 @@
    "classFile": "SHAMAN",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 5,
+   "days": 6,
    "main": null
   },
   {
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 51,
+   "level": 52,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -106,7 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 54,
+   "level": 55,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -146,7 +146,7 @@
   },
   {
    "name": "Bubble Error",
-   "level": 34,
+   "level": 36,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -196,7 +196,7 @@
   },
   {
    "name": "Farseer Tedd",
-   "level": 57,
+   "level": 59,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
@@ -241,12 +241,12 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Hunter Heman",
-   "level": 48,
+   "level": 50,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -261,7 +261,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -271,7 +271,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 16,
+   "days": 17,
    "main": null
   },
   {
@@ -326,7 +326,7 @@
   },
   {
    "name": "Pickled Unyen",
-   "level": 40,
+   "level": 42,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -371,7 +371,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 12,
+   "days": 13,
    "main": null
   },
   {
@@ -381,7 +381,7 @@
    "classFile": "WARLOCK",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -391,12 +391,12 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
    "name": "Viking Oil",
-   "level": 5,
+   "level": 12,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -421,7 +421,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -461,7 +461,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -471,7 +471,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -481,7 +481,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -501,7 +501,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": "Large Joseph"
   },
   {
@@ -511,7 +511,7 @@
    "classFile": "WARLOCK",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -531,7 +531,7 @@
    "classFile": "ROGUE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -561,12 +561,12 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Large Joseph",
-   "level": 42,
+   "level": 43,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Guild Master",
@@ -620,7 +620,7 @@
   {
    "name": "Large Joseph",
    "hk": 18,
-   "mobs": 8248
+   "mobs": 8257
   },
   {
    "name": "Vatic Cane",
@@ -685,7 +685,7 @@
  ],
  "totals": {
   "hk": 1391,
-  "mobs": 92297,
+  "mobs": 92306,
   "chars": 21
  },
  "eliteSoldier": {
