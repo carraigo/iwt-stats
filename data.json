@@ -1,6 +1,6 @@
 {
- "generated": 1795678034,
- "snapshotAt": 1795678026,
+ "generated": 1795688632,
+ "snapshotAt": 1795688628,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.1",
  "roster": [
@@ -161,7 +161,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 5,
+   "days": 6,
    "main": null
   },
   {
@@ -221,7 +221,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 5,
+   "days": 6,
    "main": "Large Joseph"
   },
   {
@@ -301,7 +301,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -396,7 +396,7 @@
   },
   {
    "name": "Viking Oil",
-   "level": 12,
+   "level": 13,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -579,18 +579,18 @@
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 450,
-   "mobs": 13156
+   "hk": 465,
+   "mobs": 13323
   },
   {
    "name": "Pork Likeorc",
-   "hk": 299,
-   "mobs": 7628
+   "hk": 305,
+   "mobs": 8027
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 234,
-   "mobs": 12618
+   "hk": 235,
+   "mobs": 13909
   },
   {
    "name": "Zervi Grimveil",
@@ -598,34 +598,34 @@
    "mobs": 6141
   },
   {
+   "name": "Kazo Pets",
+   "hk": 66,
+   "mobs": 7543
+  },
+  {
+   "name": "Farseer Tedd",
+   "hk": 60,
+   "mobs": 10319
+  },
+  {
    "name": "Wongo Wongo",
    "hk": 59,
    "mobs": 8472
   },
   {
-   "name": "Farseer Tedd",
-   "hk": 58,
-   "mobs": 9807
-  },
-  {
-   "name": "Kazo Pets",
-   "hk": 53,
-   "mobs": 7438
+   "name": "Vatic Cane",
+   "hk": 42,
+   "mobs": 6929
   },
   {
    "name": "Serenia Malcador",
-   "hk": 37,
-   "mobs": 8688
+   "hk": 39,
+   "mobs": 8856
   },
   {
    "name": "Large Joseph",
    "hk": 18,
-   "mobs": 8257
-  },
-  {
-   "name": "Vatic Cane",
-   "hk": 15,
-   "mobs": 6872
+   "mobs": 8363
   },
   {
    "name": "Clane Stocious",
@@ -660,7 +660,7 @@
   {
    "name": "Lawn Mooèr",
    "hk": 0,
-   "mobs": 233
+   "mobs": 238
   },
   {
    "name": "Magia Musculorum",
@@ -681,17 +681,22 @@
    "name": "Stratholm Syndrome",
    "hk": 0,
    "mobs": 134
+  },
+  {
+   "name": "Viking Oil",
+   "hk": 0,
+   "mobs": 355
   }
  ],
  "totals": {
-  "hk": 1391,
-  "mobs": 92306,
-  "chars": 21
+  "hk": 1457,
+  "mobs": 95471,
+  "chars": 22
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 450,
-  "mobs": 13156
+  "hk": 465,
+  "mobs": 13323
  },
  "crafting": [
   {
@@ -709,14 +714,15 @@
    "crafters": [
     {
      "name": "Serenia Malcador",
-     "rank": 221,
+     "rank": 225,
      "max": 300,
-     "recipes": 87
+     "recipes": 90
     },
     {
      "name": "Free Melly",
      "rank": 219,
-     "max": 300
+     "max": 300,
+     "recipes": 52
     },
     {
      "name": "Large Joseph",
@@ -777,15 +783,15 @@
    "crafters": [
     {
      "name": "Ahyon Totempåle",
-     "rank": 256,
+     "rank": 260,
      "max": 300,
-     "recipes": 0
+     "recipes": 96
     },
     {
      "name": "Kazo Pets",
-     "rank": 225,
+     "rank": 245,
      "max": 300,
-     "recipes": 80
+     "recipes": 91
     },
     {
      "name": "Farseer Tedd",
