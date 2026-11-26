@@ -1,8 +1,8 @@
 {
- "generated": 1795688632,
- "snapshotAt": 1795688628,
+ "generated": 1795708439,
+ "snapshotAt": 1795708433,
  "guild": "Issues with Tissues",
- "addonVersion": "1.4.1",
+ "addonVersion": "1.4.3",
  "roster": [
   {
    "name": "Pork Likeorc",
@@ -76,7 +76,7 @@
   },
   {
    "name": "Scvotwo Treant",
-   "level": 39,
+   "level": 40,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Veteran",
@@ -191,7 +191,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 17,
+   "days": 18,
    "main": null
   },
   {
@@ -231,7 +231,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -281,7 +281,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 12,
+   "days": 13,
    "main": null
   },
   {
@@ -311,7 +311,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 18,
+   "days": 19,
    "main": null
   },
   {
@@ -321,12 +321,12 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
    "name": "Pickled Unyen",
-   "level": 42,
+   "level": 43,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -336,7 +336,7 @@
   },
   {
    "name": "Poppy Woppy",
-   "level": 51,
+   "level": 52,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -351,7 +351,7 @@
    "classFile": "WARRIOR",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -396,7 +396,7 @@
   },
   {
    "name": "Viking Oil",
-   "level": 13,
+   "level": 15,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -411,7 +411,7 @@
    "classFile": "ROGUE",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 2,
    "main": null
   },
   {
@@ -421,7 +421,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -431,17 +431,17 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Citrate Overload",
-   "level": 8,
+   "level": 10,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 0,
    "main": null
   },
   {
@@ -521,7 +521,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -566,7 +566,7 @@
   },
   {
    "name": "Large Joseph",
-   "level": 43,
+   "level": 44,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Guild Master",
@@ -579,8 +579,8 @@
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 465,
-   "mobs": 13323
+   "hk": 489,
+   "mobs": 13349
   },
   {
    "name": "Pork Likeorc",
@@ -590,7 +590,7 @@
   {
    "name": "Ahyon Totempåle",
    "hk": 235,
-   "mobs": 13909
+   "mobs": 14486
   },
   {
    "name": "Zervi Grimveil",
@@ -620,12 +620,12 @@
   {
    "name": "Serenia Malcador",
    "hk": 39,
-   "mobs": 8856
+   "mobs": 9036
   },
   {
    "name": "Large Joseph",
    "hk": 18,
-   "mobs": 8363
+   "mobs": 8590
   },
   {
    "name": "Clane Stocious",
@@ -685,18 +685,18 @@
   {
    "name": "Viking Oil",
    "hk": 0,
-   "mobs": 355
+   "mobs": 529
   }
  ],
  "totals": {
-  "hk": 1457,
-  "mobs": 95471,
+  "hk": 1481,
+  "mobs": 96655,
   "chars": 22
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 465,
-  "mobs": 13323
+  "hk": 489,
+  "mobs": 13349
  },
  "crafting": [
   {
@@ -716,11 +716,11 @@
      "name": "Serenia Malcador",
      "rank": 225,
      "max": 300,
-     "recipes": 90
+     "recipes": 91
     },
     {
      "name": "Free Melly",
-     "rank": 219,
+     "rank": 225,
      "max": 300,
      "recipes": 52
     },
@@ -785,7 +785,7 @@
      "name": "Ahyon Totempåle",
      "rank": 260,
      "max": 300,
-     "recipes": 96
+     "recipes": 100
     },
     {
      "name": "Kazo Pets",
