@@ -1,6 +1,6 @@
 {
- "generated": 1795717833,
- "snapshotAt": 1795717824,
+ "generated": 1795739054,
+ "snapshotAt": 1795739045,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.3",
  "roster": [
@@ -21,12 +21,12 @@
    "classFile": "PRIEST",
    "rank": "Officer",
    "rankIndex": 1,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Wongo Wongo",
-   "level": 54,
+   "level": 55,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Officer",
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 57,
+   "level": 58,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 52,
+   "level": 53,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Torsten Tourettes",
-   "level": 54,
+   "level": 55,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Veteran",
@@ -136,7 +136,7 @@
   },
   {
    "name": "Big Baylife",
-   "level": 56,
+   "level": 57,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -176,7 +176,7 @@
   },
   {
    "name": "Drakir Felmaw",
-   "level": 46,
+   "level": 47,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Member",
@@ -231,12 +231,12 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
    "name": "Holygraphic Death",
-   "level": 29,
+   "level": 30,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -246,7 +246,7 @@
   },
   {
    "name": "Hunter Heman",
-   "level": 50,
+   "level": 51,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -261,7 +261,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -271,7 +271,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 17,
+   "days": 18,
    "main": null
   },
   {
@@ -286,7 +286,7 @@
   },
   {
    "name": "Lü Everblack",
-   "level": 58,
+   "level": 59,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -321,12 +321,12 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 2,
-   "main": null
+   "days": 0,
+   "main": "Viking Oil"
   },
   {
    "name": "Pickled Unyen",
-   "level": 43,
+   "level": 44,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -371,7 +371,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 13,
+   "days": 14,
    "main": null
   },
   {
@@ -391,12 +391,12 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 4,
+   "days": 5,
    "main": null
   },
   {
    "name": "Viking Oil",
-   "level": 18,
+   "level": 21,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -416,7 +416,7 @@
   },
   {
    "name": "Aders Droid",
-   "level": 17,
+   "level": 21,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Initiate",
@@ -431,12 +431,12 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
-   "main": null
+   "days": 0,
+   "main": "Viking Oil"
   },
   {
    "name": "Citrate Overload",
-   "level": 10,
+   "level": 11,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
@@ -461,7 +461,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -471,7 +471,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -491,7 +491,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -511,7 +511,7 @@
    "classFile": "WARLOCK",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -531,7 +531,7 @@
    "classFile": "ROGUE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 2,
+   "days": 3,
    "main": null
   },
   {
@@ -541,7 +541,7 @@
    "classFile": "PALADIN",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": "Vatic Cane"
   },
   {
@@ -556,7 +556,7 @@
   },
   {
    "name": "Who Ha",
-   "level": 16,
+   "level": 17,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -575,22 +575,22 @@
    "main": null
   }
  ],
- "players": 52,
+ "players": 50,
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 717,
-   "mobs": 13589
+   "hk": 784,
+   "mobs": 13759
   },
   {
    "name": "Pork Likeorc",
    "hk": 305,
-   "mobs": 8038
+   "mobs": 8360
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 235,
-   "mobs": 14486
+   "hk": 237,
+   "mobs": 15028
   },
   {
    "name": "Zervi Grimveil",
@@ -599,8 +599,8 @@
   },
   {
    "name": "Wongo Wongo",
-   "hk": 107,
-   "mobs": 11113
+   "hk": 109,
+   "mobs": 11172
   },
   {
    "name": "Kazo Pets",
@@ -609,13 +609,18 @@
   },
   {
    "name": "Farseer Tedd",
-   "hk": 62,
-   "mobs": 10404
+   "hk": 63,
+   "mobs": 10506
   },
   {
    "name": "Scvotwo Treant",
    "hk": 53,
-   "mobs": 4768
+   "mobs": 4793
+  },
+  {
+   "name": "Serenia Malcador",
+   "hk": 44,
+   "mobs": 9558
   },
   {
    "name": "Vatic Cane",
@@ -623,14 +628,19 @@
    "mobs": 6929
   },
   {
-   "name": "Serenia Malcador",
-   "hk": 39,
-   "mobs": 9036
+   "name": "Large Joseph",
+   "hk": 22,
+   "mobs": 8974
   },
   {
-   "name": "Large Joseph",
-   "hk": 18,
-   "mobs": 8797
+   "name": "Oily Starweaver",
+   "hk": 6,
+   "mobs": 4904
+  },
+  {
+   "name": "Big Oily",
+   "hk": 2,
+   "mobs": 2795
   },
   {
    "name": "Clane Stocious",
@@ -646,6 +656,11 @@
    "name": "Cigarette Coffee",
    "hk": 0,
    "mobs": 1174
+  },
+  {
+   "name": "Citrate Overload",
+   "hk": 0,
+   "mobs": 283
   },
   {
    "name": "Helehuichiri Tenderfart",
@@ -690,18 +705,18 @@
   {
    "name": "Viking Oil",
    "hk": 0,
-   "mobs": 798
+   "mobs": 1291
   }
  ],
  "totals": {
-  "hk": 1812,
-  "mobs": 104876,
-  "chars": 23
+  "hk": 1901,
+  "mobs": 115270,
+  "chars": 26
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 717,
-  "mobs": 13589
+  "hk": 784,
+  "mobs": 13759
  },
  "crafting": [
   {
@@ -721,7 +736,7 @@
      "name": "Serenia Malcador",
      "rank": 225,
      "max": 300,
-     "recipes": 91
+     "recipes": 93
     },
     {
      "name": "Free Melly",
@@ -731,9 +746,15 @@
     },
     {
      "name": "Large Joseph",
-     "rank": 209,
+     "rank": 211,
      "max": 225,
      "recipes": 52
+    },
+    {
+     "name": "Viking Oil",
+     "rank": 101,
+     "max": 150,
+     "recipes": 14
     }
    ]
   },
@@ -765,9 +786,9 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 250,
+     "rank": 266,
      "max": 300,
-     "recipes": 46
+     "recipes": 48
     },
     {
      "name": "Sorin Lupercal",
@@ -800,8 +821,15 @@
     },
     {
      "name": "Scvotwo Treant",
-     "rank": 164,
-     "max": 225
+     "rank": 170,
+     "max": 225,
+     "recipes": 72
+    },
+    {
+     "name": "Oily Starweaver",
+     "rank": 125,
+     "max": 150,
+     "recipes": 21
     },
     {
      "name": "Farseer Tedd",
