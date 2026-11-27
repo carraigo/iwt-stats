@@ -1,12 +1,12 @@
 {
- "generated": 1795708439,
- "snapshotAt": 1795708433,
+ "generated": 1795717833,
+ "snapshotAt": 1795717824,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.3",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 44,
+   "level": 45,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -71,7 +71,7 @@
    "classFile": "SHAMAN",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 6,
+   "days": 7,
    "main": null
   },
   {
@@ -241,7 +241,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -286,7 +286,7 @@
   },
   {
    "name": "Lü Everblack",
-   "level": 57,
+   "level": 58,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -381,7 +381,7 @@
    "classFile": "WARLOCK",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -396,7 +396,7 @@
   },
   {
    "name": "Viking Oil",
-   "level": 15,
+   "level": 18,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -416,7 +416,7 @@
   },
   {
    "name": "Aders Droid",
-   "level": 15,
+   "level": 17,
    "class": "Druid",
    "classFile": "DRUID",
    "rank": "Initiate",
@@ -481,7 +481,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -561,12 +561,12 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
    "name": "Large Joseph",
-   "level": 44,
+   "level": 45,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Guild Master",
@@ -579,13 +579,13 @@
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 489,
-   "mobs": 13349
+   "hk": 717,
+   "mobs": 13589
   },
   {
    "name": "Pork Likeorc",
    "hk": 305,
-   "mobs": 8027
+   "mobs": 8038
   },
   {
    "name": "Ahyon Totempåle",
@@ -598,19 +598,24 @@
    "mobs": 6141
   },
   {
+   "name": "Wongo Wongo",
+   "hk": 107,
+   "mobs": 11113
+  },
+  {
    "name": "Kazo Pets",
    "hk": 66,
    "mobs": 7543
   },
   {
    "name": "Farseer Tedd",
-   "hk": 60,
-   "mobs": 10319
+   "hk": 62,
+   "mobs": 10404
   },
   {
-   "name": "Wongo Wongo",
-   "hk": 59,
-   "mobs": 8472
+   "name": "Scvotwo Treant",
+   "hk": 53,
+   "mobs": 4768
   },
   {
    "name": "Vatic Cane",
@@ -625,7 +630,7 @@
   {
    "name": "Large Joseph",
    "hk": 18,
-   "mobs": 8590
+   "mobs": 8797
   },
   {
    "name": "Clane Stocious",
@@ -685,18 +690,18 @@
   {
    "name": "Viking Oil",
    "hk": 0,
-   "mobs": 529
+   "mobs": 798
   }
  ],
  "totals": {
-  "hk": 1481,
-  "mobs": 96655,
-  "chars": 22
+  "hk": 1812,
+  "mobs": 104876,
+  "chars": 23
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 489,
-  "mobs": 13349
+  "hk": 717,
+  "mobs": 13589
  },
  "crafting": [
   {
@@ -782,16 +787,21 @@
    "profession": "Leatherworking",
    "crafters": [
     {
+     "name": "Kazo Pets",
+     "rank": 263,
+     "max": 300,
+     "recipes": 93
+    },
+    {
      "name": "Ahyon Totempåle",
      "rank": 260,
      "max": 300,
      "recipes": 100
     },
     {
-     "name": "Kazo Pets",
-     "rank": 245,
-     "max": 300,
-     "recipes": 91
+     "name": "Scvotwo Treant",
+     "rank": 164,
+     "max": 225
     },
     {
      "name": "Farseer Tedd",
