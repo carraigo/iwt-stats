@@ -1,6 +1,6 @@
 {
- "generated": 1795739054,
- "snapshotAt": 1795739045,
+ "generated": 1795793784,
+ "snapshotAt": 1795793778,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.3",
  "roster": [
@@ -21,7 +21,7 @@
    "classFile": "PRIEST",
    "rank": "Officer",
    "rankIndex": 1,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -46,7 +46,7 @@
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 58,
+   "level": 59,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 53,
+   "level": 55,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Torsten Tourettes",
-   "level": 55,
+   "level": 56,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Veteran",
@@ -121,7 +121,7 @@
    "classFile": "WARRIOR",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -146,7 +146,7 @@
   },
   {
    "name": "Bubble Error",
-   "level": 36,
+   "level": 37,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -161,7 +161,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 6,
+   "days": 7,
    "main": null
   },
   {
@@ -171,7 +171,7 @@
    "classFile": "MAGE",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": "Vatic Cane"
   },
   {
@@ -196,7 +196,7 @@
   },
   {
    "name": "Farseer Tedd",
-   "level": 59,
+   "level": 60,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Member",
@@ -206,7 +206,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 56,
+   "level": 57,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -221,7 +221,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 6,
+   "days": 7,
    "main": "Large Joseph"
   },
   {
@@ -281,7 +281,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 13,
+   "days": 14,
    "main": null
   },
   {
@@ -301,7 +301,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 4,
+   "days": 0,
    "main": null
   },
   {
@@ -311,7 +311,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 19,
+   "days": 20,
    "main": null
   },
   {
@@ -336,7 +336,7 @@
   },
   {
    "name": "Poppy Woppy",
-   "level": 52,
+   "level": 53,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -351,12 +351,12 @@
    "classFile": "WARRIOR",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 4,
+   "days": 5,
    "main": null
   },
   {
    "name": "Rockspetard Apocalypse",
-   "level": 37,
+   "level": 38,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Member",
@@ -411,7 +411,7 @@
    "classFile": "ROGUE",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 2,
+   "days": 0,
    "main": null
   },
   {
@@ -436,7 +436,7 @@
   },
   {
    "name": "Citrate Overload",
-   "level": 11,
+   "level": 12,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
@@ -461,7 +461,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 0,
    "main": null
   },
   {
@@ -491,8 +491,18 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
+  },
+  {
+   "name": "Lengthy Linton",
+   "level": 6,
+   "class": "Paladin",
+   "classFile": "PALADIN",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": "Large Joseph"
   },
   {
    "name": "Magia Musculorum",
@@ -501,7 +511,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": "Large Joseph"
   },
   {
@@ -521,7 +531,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 4,
+   "days": 5,
    "main": null
   },
   {
@@ -566,7 +576,7 @@
   },
   {
    "name": "Large Joseph",
-   "level": 45,
+   "level": 46,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Guild Master",
@@ -579,8 +589,8 @@
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 784,
-   "mobs": 13759
+   "hk": 805,
+   "mobs": 14022
   },
   {
    "name": "Pork Likeorc",
@@ -590,12 +600,12 @@
   {
    "name": "Ahyon Totempåle",
    "hk": 237,
-   "mobs": 15028
+   "mobs": 15630
   },
   {
    "name": "Zervi Grimveil",
    "hk": 167,
-   "mobs": 6141
+   "mobs": 6157
   },
   {
    "name": "Wongo Wongo",
@@ -610,7 +620,7 @@
   {
    "name": "Farseer Tedd",
    "hk": 63,
-   "mobs": 10506
+   "mobs": 10551
   },
   {
    "name": "Scvotwo Treant",
@@ -619,18 +629,18 @@
   },
   {
    "name": "Serenia Malcador",
-   "hk": 44,
-   "mobs": 9558
+   "hk": 45,
+   "mobs": 9855
   },
   {
    "name": "Vatic Cane",
    "hk": 42,
-   "mobs": 6929
+   "mobs": 6986
   },
   {
    "name": "Large Joseph",
    "hk": 22,
-   "mobs": 8974
+   "mobs": 9095
   },
   {
    "name": "Oily Starweaver",
@@ -660,7 +670,7 @@
   {
    "name": "Citrate Overload",
    "hk": 0,
-   "mobs": 283
+   "mobs": 339
   },
   {
    "name": "Helehuichiri Tenderfart",
@@ -681,6 +691,11 @@
    "name": "Lawn Mooèr",
    "hk": 0,
    "mobs": 238
+  },
+  {
+   "name": "Lengthy Linton",
+   "hk": 0,
+   "mobs": 151
   },
   {
    "name": "Magia Musculorum",
@@ -705,18 +720,18 @@
   {
    "name": "Viking Oil",
    "hk": 0,
-   "mobs": 1291
+   "mobs": 1313
   }
  ],
  "totals": {
-  "hk": 1901,
-  "mobs": 115270,
-  "chars": 26
+  "hk": 1923,
+  "mobs": 116900,
+  "chars": 27
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 784,
-  "mobs": 13759
+  "hk": 805,
+  "mobs": 14022
  },
  "crafting": [
   {
@@ -733,28 +748,28 @@
    "profession": "Blacksmithing",
    "crafters": [
     {
+     "name": "Free Melly",
+     "rank": 235,
+     "max": 300,
+     "recipes": 55
+    },
+    {
      "name": "Serenia Malcador",
-     "rank": 225,
+     "rank": 231,
      "max": 300,
      "recipes": 93
     },
     {
-     "name": "Free Melly",
-     "rank": 225,
-     "max": 300,
-     "recipes": 52
-    },
-    {
      "name": "Large Joseph",
-     "rank": 211,
+     "rank": 225,
      "max": 225,
-     "recipes": 52
+     "recipes": 53
     },
     {
      "name": "Viking Oil",
      "rank": 101,
      "max": 150,
-     "recipes": 14
+     "recipes": 15
     }
    ]
   },
@@ -856,9 +871,9 @@
     },
     {
      "name": "Magia Musculorum",
-     "rank": 97,
+     "rank": 150,
      "max": 150,
-     "recipes": 34
+     "recipes": 42
     }
    ]
   }
