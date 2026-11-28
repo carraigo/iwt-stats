@@ -1,12 +1,12 @@
 {
- "generated": 1795831807,
- "snapshotAt": 1795831797,
+ "generated": 1795877836,
+ "snapshotAt": 1795877832,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.3",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 47,
+   "level": 48,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -41,7 +41,7 @@
    "classFile": "WARRIOR",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -56,12 +56,12 @@
   },
   {
    "name": "Kazo Pets",
-   "level": 54,
+   "level": 55,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -86,7 +86,7 @@
   },
   {
    "name": "Serenia Malcador",
-   "level": 55,
+   "level": 56,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Veteran",
@@ -106,17 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 56,
-   "class": "Warrior",
-   "classFile": "WARRIOR",
-   "rank": "Member",
-   "rankIndex": 3,
-   "days": 0,
-   "main": null
-  },
-  {
-   "name": "Ars Amandi",
-   "level": 60,
+   "level": 57,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -126,7 +116,7 @@
   },
   {
    "name": "Ashano Julzara",
-   "level": 12,
+   "level": 14,
    "class": "Mage",
    "classFile": "MAGE",
    "rank": "Member",
@@ -161,7 +151,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 7,
+   "days": 8,
    "main": null
   },
   {
@@ -176,7 +166,7 @@
   },
   {
    "name": "Drakir Felmaw",
-   "level": 49,
+   "level": 50,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Member",
@@ -221,7 +211,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 7,
+   "days": 8,
    "main": "Large Joseph"
   },
   {
@@ -241,12 +231,12 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
    "name": "Hunter Heman",
-   "level": 51,
+   "level": 53,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Member",
@@ -281,7 +271,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 14,
+   "days": 15,
    "main": null
   },
   {
@@ -311,7 +301,7 @@
    "classFile": "HUNTER",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 20,
+   "days": 21,
    "main": null
   },
   {
@@ -336,7 +326,7 @@
   },
   {
    "name": "Poppy Woppy",
-   "level": 53,
+   "level": 54,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -396,7 +386,7 @@
   },
   {
    "name": "Viking Oil",
-   "level": 23,
+   "level": 24,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -421,7 +411,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -436,7 +426,7 @@
   },
   {
    "name": "Citrate Overload",
-   "level": 12,
+   "level": 13,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Initiate",
@@ -461,7 +451,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -491,7 +481,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -531,7 +521,7 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 5,
+   "days": 6,
    "main": null
   },
   {
@@ -576,7 +566,7 @@
   },
   {
    "name": "Who Ha",
-   "level": 17,
+   "level": 18,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -586,7 +576,7 @@
   },
   {
    "name": "Large Joseph",
-   "level": 46,
+   "level": 48,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Guild Master",
@@ -595,17 +585,17 @@
    "main": null
   }
  ],
- "players": 50,
+ "players": 49,
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 825,
-   "mobs": 14461
+   "hk": 829,
+   "mobs": 14539
   },
   {
    "name": "Pork Likeorc",
-   "hk": 308,
-   "mobs": 8939
+   "hk": 317,
+   "mobs": 9182
   },
   {
    "name": "Ahyon Totempåle",
@@ -624,13 +614,13 @@
   },
   {
    "name": "Kazo Pets",
-   "hk": 66,
-   "mobs": 7543
+   "hk": 70,
+   "mobs": 7877
   },
   {
    "name": "Farseer Tedd",
    "hk": 63,
-   "mobs": 10603
+   "mobs": 10725
   },
   {
    "name": "Scvotwo Treant",
@@ -640,7 +630,7 @@
   {
    "name": "Serenia Malcador",
    "hk": 45,
-   "mobs": 9910
+   "mobs": 10063
   },
   {
    "name": "Vatic Cane",
@@ -650,7 +640,7 @@
   {
    "name": "Large Joseph",
    "hk": 22,
-   "mobs": 9603
+   "mobs": 9985
   },
   {
    "name": "Oily Starweaver",
@@ -670,7 +660,7 @@
   {
    "name": "Ashano Julzara",
    "hk": 0,
-   "mobs": 309
+   "mobs": 389
   },
   {
    "name": "Cigarette Coffee",
@@ -680,7 +670,7 @@
   {
    "name": "Citrate Overload",
    "hk": 0,
-   "mobs": 350
+   "mobs": 374
   },
   {
    "name": "Helehuichiri Tenderfart",
@@ -735,18 +725,18 @@
   {
    "name": "Viking Oil",
    "hk": 0,
-   "mobs": 1482
+   "mobs": 1584
   }
  ],
  "totals": {
-  "hk": 1951,
-  "mobs": 121047,
+  "hk": 1968,
+  "mobs": 122565,
   "chars": 28
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 825,
-  "mobs": 14461
+  "hk": 829,
+  "mobs": 14539
  },
  "crafting": [
   {
@@ -770,7 +760,7 @@
     },
     {
      "name": "Serenia Malcador",
-     "rank": 231,
+     "rank": 232,
      "max": 300,
      "recipes": 93
     },
@@ -778,13 +768,13 @@
      "name": "Large Joseph",
      "rank": 225,
      "max": 225,
-     "recipes": 55
+     "recipes": 56
     },
     {
      "name": "Viking Oil",
-     "rank": 101,
+     "rank": 111,
      "max": 150,
-     "recipes": 15
+     "recipes": 16
     }
    ]
   },
@@ -816,7 +806,7 @@
    "crafters": [
     {
      "name": "Pork Likeorc",
-     "rank": 266,
+     "rank": 270,
      "max": 300,
      "recipes": 48
     },
@@ -863,7 +853,7 @@
     },
     {
      "name": "Farseer Tedd",
-     "rank": 82,
+     "rank": 95,
      "max": 150,
      "recipes": 23
     },
