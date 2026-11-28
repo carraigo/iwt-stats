@@ -1,12 +1,12 @@
 {
- "generated": 1795793784,
- "snapshotAt": 1795793778,
+ "generated": 1795820191,
+ "snapshotAt": 1795820182,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.3",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 45,
+   "level": 46,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -16,7 +16,7 @@
   },
   {
    "name": "Vatic Cane",
-   "level": 44,
+   "level": 45,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Officer",
@@ -41,12 +41,12 @@
    "classFile": "WARRIOR",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
    "name": "Ahyon Totempåle",
-   "level": 59,
+   "level": 60,
    "class": "Shaman",
    "classFile": "SHAMAN",
    "rank": "Veteran",
@@ -61,7 +61,7 @@
    "classFile": "HUNTER",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -71,7 +71,7 @@
    "classFile": "SHAMAN",
    "rank": "Veteran",
    "rankIndex": 2,
-   "days": 7,
+   "days": 8,
    "main": null
   },
   {
@@ -121,7 +121,7 @@
    "classFile": "WARRIOR",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 0,
    "main": null
   },
   {
@@ -136,7 +136,7 @@
   },
   {
    "name": "Big Baylife",
-   "level": 57,
+   "level": 58,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -146,7 +146,7 @@
   },
   {
    "name": "Bubble Error",
-   "level": 37,
+   "level": 38,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -176,7 +176,7 @@
   },
   {
    "name": "Drakir Felmaw",
-   "level": 47,
+   "level": 49,
    "class": "Warlock",
    "classFile": "WARLOCK",
    "rank": "Member",
@@ -191,7 +191,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 18,
+   "days": 19,
    "main": null
   },
   {
@@ -206,7 +206,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 57,
+   "level": 58,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -241,7 +241,7 @@
    "classFile": "PALADIN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -261,7 +261,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 4,
+   "days": 5,
    "main": null
   },
   {
@@ -271,7 +271,7 @@
    "classFile": "DRUID",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 18,
+   "days": 19,
    "main": null
   },
   {
@@ -286,7 +286,7 @@
   },
   {
    "name": "Lü Everblack",
-   "level": 59,
+   "level": 60,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -371,7 +371,7 @@
    "classFile": "PRIEST",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 14,
+   "days": 15,
    "main": null
   },
   {
@@ -381,7 +381,7 @@
    "classFile": "WARLOCK",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 4,
+   "days": 5,
    "main": null
   },
   {
@@ -391,12 +391,12 @@
    "classFile": "SHAMAN",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 5,
+   "days": 6,
    "main": null
   },
   {
    "name": "Viking Oil",
-   "level": 21,
+   "level": 23,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -406,7 +406,7 @@
   },
   {
    "name": "Zervi Grimveil",
-   "level": 40,
+   "level": 41,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -421,7 +421,7 @@
    "classFile": "DRUID",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -431,7 +431,7 @@
    "classFile": "WARRIOR",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": "Viking Oil"
   },
   {
@@ -471,12 +471,12 @@
    "classFile": "HUNTER",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
    "name": "Lagertha Bowsmaiden",
-   "level": 40,
+   "level": 41,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -496,7 +496,7 @@
   },
   {
    "name": "Lengthy Linton",
-   "level": 6,
+   "level": 10,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Initiate",
@@ -521,7 +521,7 @@
    "classFile": "WARLOCK",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -551,7 +551,7 @@
    "classFile": "PALADIN",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 1,
+   "days": 2,
    "main": "Vatic Cane"
   },
   {
@@ -561,7 +561,7 @@
    "classFile": "MAGE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 0,
+   "days": 1,
    "main": null
   },
   {
@@ -589,28 +589,28 @@
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 805,
-   "mobs": 14022
+   "hk": 824,
+   "mobs": 14459
   },
   {
    "name": "Pork Likeorc",
-   "hk": 305,
-   "mobs": 8360
+   "hk": 308,
+   "mobs": 8580
   },
   {
    "name": "Ahyon Totempåle",
    "hk": 237,
-   "mobs": 15630
+   "mobs": 16544
   },
   {
    "name": "Zervi Grimveil",
-   "hk": 167,
-   "mobs": 6157
+   "hk": 171,
+   "mobs": 6277
   },
   {
    "name": "Wongo Wongo",
    "hk": 109,
-   "mobs": 11172
+   "mobs": 11221
   },
   {
    "name": "Kazo Pets",
@@ -620,7 +620,7 @@
   {
    "name": "Farseer Tedd",
    "hk": 63,
-   "mobs": 10551
+   "mobs": 10603
   },
   {
    "name": "Scvotwo Treant",
@@ -630,17 +630,17 @@
   {
    "name": "Serenia Malcador",
    "hk": 45,
-   "mobs": 9855
+   "mobs": 9910
   },
   {
    "name": "Vatic Cane",
    "hk": 42,
-   "mobs": 6986
+   "mobs": 7432
   },
   {
    "name": "Large Joseph",
    "hk": 22,
-   "mobs": 9095
+   "mobs": 9444
   },
   {
    "name": "Oily Starweaver",
@@ -670,7 +670,7 @@
   {
    "name": "Citrate Overload",
    "hk": 0,
-   "mobs": 339
+   "mobs": 350
   },
   {
    "name": "Helehuichiri Tenderfart",
@@ -695,7 +695,7 @@
   {
    "name": "Lengthy Linton",
    "hk": 0,
-   "mobs": 151
+   "mobs": 275
   },
   {
    "name": "Magia Musculorum",
@@ -720,18 +720,18 @@
   {
    "name": "Viking Oil",
    "hk": 0,
-   "mobs": 1313
+   "mobs": 1482
   }
  ],
  "totals": {
-  "hk": 1923,
-  "mobs": 116900,
+  "hk": 1949,
+  "mobs": 119846,
   "chars": 27
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 805,
-  "mobs": 14022
+  "hk": 824,
+  "mobs": 14459
  },
  "crafting": [
   {
@@ -836,9 +836,9 @@
     },
     {
      "name": "Scvotwo Treant",
-     "rank": 170,
+     "rank": 178,
      "max": 225,
-     "recipes": 72
+     "recipes": 79
     },
     {
      "name": "Oily Starweaver",
@@ -848,9 +848,9 @@
     },
     {
      "name": "Farseer Tedd",
-     "rank": 40,
-     "max": 75,
-     "recipes": 6
+     "rank": 82,
+     "max": 150,
+     "recipes": 23
     }
    ]
   },
