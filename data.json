@@ -1,12 +1,12 @@
 {
- "generated": 1795820191,
- "snapshotAt": 1795820182,
+ "generated": 1795831807,
+ "snapshotAt": 1795831797,
  "guild": "Issues with Tissues",
  "addonVersion": "1.4.3",
  "roster": [
   {
    "name": "Pork Likeorc",
-   "level": 46,
+   "level": 47,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Officer",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Torsten Tourettes",
-   "level": 56,
+   "level": 57,
    "class": "Priest",
    "classFile": "PRIEST",
    "rank": "Veteran",
@@ -106,7 +106,7 @@
   },
   {
    "name": "Affe Avtändning",
-   "level": 55,
+   "level": 56,
    "class": "Warrior",
    "classFile": "WARRIOR",
    "rank": "Member",
@@ -136,7 +136,7 @@
   },
   {
    "name": "Big Baylife",
-   "level": 58,
+   "level": 59,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Member",
@@ -166,12 +166,12 @@
   },
   {
    "name": "Cigarette Coffee",
-   "level": 20,
+   "level": 21,
    "class": "Mage",
    "classFile": "MAGE",
    "rank": "Member",
    "rankIndex": 3,
-   "days": 1,
+   "days": 0,
    "main": "Vatic Cane"
   },
   {
@@ -206,7 +206,7 @@
   },
   {
    "name": "Free Melly",
-   "level": 58,
+   "level": 59,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Member",
@@ -476,7 +476,7 @@
   },
   {
    "name": "Lagertha Bowsmaiden",
-   "level": 41,
+   "level": 42,
    "class": "Hunter",
    "classFile": "HUNTER",
    "rank": "Initiate",
@@ -496,7 +496,7 @@
   },
   {
    "name": "Lengthy Linton",
-   "level": 10,
+   "level": 12,
    "class": "Paladin",
    "classFile": "PALADIN",
    "rank": "Initiate",
@@ -535,13 +535,23 @@
    "main": null
   },
   {
+   "name": "Skelli Tony",
+   "level": 7,
+   "class": "Rogue",
+   "classFile": "ROGUE",
+   "rank": "Initiate",
+   "rankIndex": 4,
+   "days": 0,
+   "main": "Vatic Cane"
+  },
+  {
    "name": "Sorin Lupercal",
    "level": 10,
    "class": "Rogue",
    "classFile": "ROGUE",
    "rank": "Initiate",
    "rankIndex": 4,
-   "days": 3,
+   "days": 4,
    "main": null
   },
   {
@@ -589,18 +599,18 @@
  "kills": [
   {
    "name": "Free Melly",
-   "hk": 824,
-   "mobs": 14459
+   "hk": 825,
+   "mobs": 14461
   },
   {
    "name": "Pork Likeorc",
    "hk": 308,
-   "mobs": 8580
+   "mobs": 8939
   },
   {
    "name": "Ahyon Totempåle",
-   "hk": 237,
-   "mobs": 16544
+   "hk": 238,
+   "mobs": 16734
   },
   {
    "name": "Zervi Grimveil",
@@ -610,7 +620,7 @@
   {
    "name": "Wongo Wongo",
    "hk": 109,
-   "mobs": 11221
+   "mobs": 11251
   },
   {
    "name": "Kazo Pets",
@@ -635,12 +645,12 @@
   {
    "name": "Vatic Cane",
    "hk": 42,
-   "mobs": 7432
+   "mobs": 7435
   },
   {
    "name": "Large Joseph",
    "hk": 22,
-   "mobs": 9444
+   "mobs": 9603
   },
   {
    "name": "Oily Starweaver",
@@ -665,7 +675,7 @@
   {
    "name": "Cigarette Coffee",
    "hk": 0,
-   "mobs": 1174
+   "mobs": 1309
   },
   {
    "name": "Citrate Overload",
@@ -695,7 +705,7 @@
   {
    "name": "Lengthy Linton",
    "hk": 0,
-   "mobs": 275
+   "mobs": 448
   },
   {
    "name": "Magia Musculorum",
@@ -706,6 +716,11 @@
    "name": "Nightcrowler Felfury",
    "hk": 0,
    "mobs": 0
+  },
+  {
+   "name": "Skelli Tony",
+   "hk": 0,
+   "mobs": 150
   },
   {
    "name": "Sorin Lupercal",
@@ -724,14 +739,14 @@
   }
  ],
  "totals": {
-  "hk": 1949,
-  "mobs": 119846,
-  "chars": 27
+  "hk": 1951,
+  "mobs": 121047,
+  "chars": 28
  },
  "eliteSoldier": {
   "name": "Free Melly",
-  "hk": 824,
-  "mobs": 14459
+  "hk": 825,
+  "mobs": 14461
  },
  "crafting": [
   {
@@ -763,7 +778,7 @@
      "name": "Large Joseph",
      "rank": 225,
      "max": 225,
-     "recipes": 53
+     "recipes": 55
     },
     {
      "name": "Viking Oil",
@@ -851,6 +866,12 @@
      "rank": 82,
      "max": 150,
      "recipes": 23
+    },
+    {
+     "name": "Skelli Tony",
+     "rank": 26,
+     "max": 75,
+     "recipes": 8
     }
    ]
   },
@@ -861,7 +882,7 @@
      "name": "Cigarette Coffee",
      "rank": 160,
      "max": 225,
-     "recipes": 41
+     "recipes": 46
     },
     {
      "name": "Ashano Julzara",
@@ -873,7 +894,7 @@
      "name": "Magia Musculorum",
      "rank": 150,
      "max": 150,
-     "recipes": 42
+     "recipes": 43
     }
    ]
   }
